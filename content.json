@@ -1,0 +1,65 @@
+{
+  "company": {
+    "name": "UMANG",
+    "nameSuffix": "INFRASTRUCTURE",
+    "tagline": "Building Bihar's water infrastructure for the next generation",
+    "established": "2006"
+  },
+  "hero": [
+    {
+      "kicker": "Water Infrastructure · Since 2006",
+      "title": "Engineering the infrastructure Bihar relies on",
+      "text": "For nearly two decades, Umang Infrastructure has designed and built the water towers, reservoirs and supply networks that bring safe water to communities across Bihar."
+    },
+    {
+      "kicker": "Quality · Delivered On Time",
+      "title": "Built to last. Delivered on schedule.",
+      "text": "From reinforced-concrete reservoirs to district supply networks, we hold every project to exacting standards — and to its deadline."
+    },
+    {
+      "kicker": "Safe Water For All",
+      "title": "Clean water is the foundation of growth",
+      "text": "We treat, supply and recycle water responsibly, protecting both the communities we serve and the environment we share."
+    }
+  ],
+  "about": {
+    "heading": "Two decades of building water that lasts",
+    "body": "Established in 2006, Umang Infrastructure is a leading water-infrastructure firm headquartered in Purnia, Bihar. With over a decade of specialised experience, we deliver the full lifecycle of water engineering — treatment, supply, recycling and waste-water handling — across both rural and urban Bihar.",
+    "points": [
+      "50+ water infrastructure projects delivered across Bihar",
+      "World-class reinforced-concrete reservoirs and overhead towers",
+      "Complete water treatment, supply and recycling systems",
+      "Responsible waste-water handling and management",
+      "Trusted quality in rural and urban construction alike"
+    ],
+    "image": "img/about/1.jpg"
+  },
+  "services": [
+    { "icon": "fa-clock-o", "title": "Delivered On Time", "text": "We are bound by our commitment to deliver every project to specification and schedule." },
+    { "icon": "fa-building", "title": "Engineering Quality", "text": "Reinforced, durable, and built to exacting standards that stand the test of time." },
+    { "icon": "fa-tint", "title": "Safe Drinking Water", "text": "Making clean, safe drinking water available and affordable to the communities we serve." },
+    { "icon": "fa-leaf", "title": "Environmental Care", "text": "We protect the environment in everything we build, from sourcing to recycling." },
+    { "icon": "fa-users", "title": "Skilled People", "text": "Our experienced engineers and teams are the strength behind every project." },
+    { "icon": "fa-shield", "title": "Trusted & Accountable", "text": "Two decades of reliable delivery have made us a name communities trust." }
+  ],
+  "team": [
+    { "name": "Anil Kumar Singh", "role": "Director", "image": "img/team/1.jpg" },
+    { "name": "Anita Kumari", "role": "Managing Director", "image": "img/team/2.jpg" },
+    { "name": "Anand Mohan Mishra", "role": "Manager, Operations", "image": "img/team/3.jpg" },
+    { "name": "Prashant Kumar", "role": "Manager, Finance", "image": "img/team/4.jpg" }
+  ],
+  "portfolio": [
+    { "title": "Rural Water Tower", "category": "Water Towers", "image": "img/portfolio/1.jpg" },
+    { "title": "Overhead Reservoir", "category": "Reservoirs", "image": "img/portfolio/2.jpg" },
+    { "title": "Dansar Water Tower", "category": "Water Towers", "image": "img/portfolio/3.jpg" },
+    { "title": "Kankhudiya Water Tower", "category": "Water Towers", "image": "img/portfolio/4.jpg" },
+    { "title": "Jalalgarh Block Tower", "category": "Reservoirs", "image": "img/portfolio/5.jpg" },
+    { "title": "Water Supply Network", "category": "Supply Networks", "image": "img/portfolio/6.jpg" }
+  ],
+  "contact": {
+    "phone": "+91 6454 244252",
+    "hours": "Monday – Saturday · 9:00am – 5:00pm",
+    "email": "ui@umanginfra.com",
+    "address": "Teachers Colony, near Sudin Chowk, Purnia – 854301, Bihar, India"
+  }
+}

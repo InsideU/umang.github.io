@@ -4,67 +4,100 @@
 <meta charset="utf-8" />
 <title>Site Manager — Umang Infrastructure</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Raleway:wght@500;700;800;900&display=swap" rel="stylesheet" />
+<meta name="robots" content="noindex,nofollow" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <style>
-:root{--brand:#0a66c2;--brand-dark:#0b3d6b;--brand-deep:#062a4d;--accent:#16b8a6;--ink:#1a2230;--muted:#5b6675;--line:#e6eaf0;--bg-soft:#f5f8fc;--radius:16px;--shadow:0 10px 30px rgba(12,40,80,.08)}
-*{box-sizing:border-box}body{margin:0;font-family:"Open Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg-soft);line-height:1.6}
-h1,h2,h3,h4{font-family:"Raleway",sans-serif;margin:0 0 .4em}p{color:var(--muted)}
+:root{--navy-deep:#091627;--navy:#0e2440;--navy-2:#15375f;--gold:#c6a256;--gold-bright:#e0c179;--gold-deep:#a8863c;--ink:#0f1a2b;--muted:#5d6776;--line:#e8eaf0;--bg-soft:#f6f7fa;--radius:14px;--shadow:0 12px 34px rgba(9,22,39,.1)}
+*{box-sizing:border-box}body{margin:0;font-family:"Inter",system-ui,sans-serif;color:var(--ink);background:var(--bg-soft);line-height:1.6}
+h1,h2,h3,h4{font-family:"Fraunces",serif;margin:0 0 .4em}p{color:var(--muted)}
 .container{width:100%;max-width:1140px;margin:0 auto;padding:0 20px}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:13px 22px;border-radius:999px;font-weight:700;font-family:"Raleway",sans-serif;cursor:pointer;border:2px solid transparent;font-size:.95rem;transition:.2s}
-.btn-sm{padding:8px 15px;font-size:.85rem}
-.btn-primary{background:var(--brand);color:#fff}.btn-primary:hover{background:var(--brand-dark)}
-.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:#fff;color:var(--brand-dark)}
-.btn-light{background:#fff;color:var(--brand-dark);border:1px solid var(--line)}.btn-light:hover{background:var(--bg-soft)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:13px 22px;border-radius:999px;font-weight:600;font-family:"Inter",sans-serif;cursor:pointer;border:1.5px solid transparent;font-size:.92rem;transition:.2s}
+.btn-sm{padding:9px 16px;font-size:.85rem}
+.btn-gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:var(--navy-deep)}.btn-gold:hover{filter:brightness(1.04)}
+.btn-primary{background:var(--navy);color:#fff}.btn-primary:hover{background:var(--navy-2)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}.btn-ghost:hover{background:#fff;color:var(--navy)}
+.btn-light{background:#fff;color:var(--navy);border:1px solid var(--line)}.btn-light:hover{background:var(--bg-soft)}
 .btn-danger{background:#fff;color:#c0392b;border:1px solid #f0c4bf}.btn-danger:hover{background:#c0392b;color:#fff}
-.field{margin-bottom:16px}.field label{display:block;font-weight:600;font-size:.85rem;margin-bottom:6px}
+.field{margin-bottom:16px}.field label{display:block;font-weight:600;font-size:.82rem;margin-bottom:6px}
 .field input,.field textarea{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff;color:var(--ink)}
-.field input:focus,.field textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(10,102,194,.12)}
-.admin-top{background:var(--brand-deep);color:#fff;padding:16px 0;position:sticky;top:0;z-index:50;box-shadow:var(--shadow)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(198,162,86,.18)}
+.admin-top{background:var(--navy-deep);color:#fff;padding:16px 0;position:sticky;top:0;z-index:50;box-shadow:var(--shadow)}
 .admin-top .container{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.admin-top h1{color:#fff;font-size:1.2rem;margin:0;display:flex;align-items:center;gap:10px}
+.admin-top h1{color:#fff;font-size:1.18rem;margin:0;display:flex;align-items:center;gap:10px}
+.admin-top h1 .mark{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--gold-bright),var(--gold-deep));display:grid;place-items:center;color:var(--navy-deep);font-size:.9rem}
 .admin-top .actions{display:flex;gap:10px;flex-wrap:wrap}
-.wrap{max-width:960px;margin:28px auto;padding:0 20px}
+.wrap{max-width:960px;margin:24px auto;padding:0 20px}
+.notice{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:16px 18px;margin-bottom:22px;font-size:.9rem;color:var(--muted)}
+.notice strong{color:var(--ink)}
 .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px}
-.tabs button{border:1px solid var(--line);background:#fff;padding:9px 16px;border-radius:999px;cursor:pointer;font-weight:700;font-family:"Raleway",sans-serif;color:var(--muted)}
-.tabs button.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+.tabs button{border:1px solid var(--line);background:#fff;padding:9px 16px;border-radius:999px;cursor:pointer;font-weight:600;font-family:"Inter",sans-serif;color:var(--muted)}
+.tabs button.active{background:var(--navy);color:#fff;border-color:var(--navy)}
 .panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:22px;box-shadow:var(--shadow);display:none}
 .panel.active{display:block}.panel h2{font-size:1.25rem;margin-top:0}
-.panel .hint{color:var(--muted);font-size:.9rem;margin:-6px 0 18px}
+.panel .hint{color:var(--muted);font-size:.88rem;margin:-6px 0 18px}
 .item{border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:16px;background:var(--bg-soft)}
 .item .item-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.item .item-head strong{font-family:"Raleway",sans-serif}
+.item .item-head strong{font-family:"Fraunces",serif}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .thumb{width:72px;height:72px;border-radius:12px;object-fit:cover;border:1px solid var(--line);background:#fff}
 .photo-row{display:flex;gap:14px;align-items:center}
 .add-row{text-align:center;margin-top:8px}
-.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:12px 22px;border-radius:999px;opacity:0;transition:.3s;z-index:100;font-weight:600}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--navy);color:#fff;padding:12px 22px;border-radius:999px;opacity:0;transition:.3s;z-index:100;font-weight:600}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .save-bar{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--line);padding:14px 0;margin-top:10px}
 .save-bar .container{display:flex;gap:12px;justify-content:flex-end;align-items:center;flex-wrap:wrap}
-.save-bar .status{margin-right:auto;color:var(--muted);font-size:.9rem}
+.save-bar .status{margin-right:auto;color:var(--muted);font-size:.88rem}
+/* Lock screen */
+.lock{position:fixed;inset:0;z-index:200;background:linear-gradient(120deg,var(--navy-deep),var(--navy-2));display:grid;place-items:center;padding:20px}
+.lock-card{background:#fff;border-radius:18px;padding:38px 34px;max-width:380px;width:100%;box-shadow:0 30px 70px rgba(0,0,0,.35);text-align:center}
+.lock-card .mark{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--gold-bright),var(--gold-deep));display:grid;place-items:center;color:var(--navy-deep);font-size:1.4rem;margin:0 auto 16px}
+.lock-card h2{font-size:1.4rem;margin-bottom:4px}
+.lock-card p{font-size:.88rem;margin-bottom:20px}
+.lock-card input{text-align:center;letter-spacing:2px}
+.lock-card .err{color:#c0392b;font-size:.84rem;min-height:18px;margin-top:8px}
+.hide{display:none!important}
 @media(max-width:720px){.grid2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
+<!-- ===== Passcode lock ===== -->
+<div class="lock" id="lock">
+  <div class="lock-card">
+    <div class="mark"><i class="fa fa-lock"></i></div>
+    <h2>Site Manager</h2>
+    <p>This editor is private. Enter your passcode to continue.</p>
+    <div class="field" style="margin-bottom:6px"><input type="password" id="pass" placeholder="Passcode" autocomplete="off" /></div>
+    <div class="err" id="passErr"></div>
+    <button class="btn btn-gold" id="unlockBtn" style="width:100%;justify-content:center"><i class="fa fa-unlock-alt"></i> Unlock</button>
+  </div>
+</div>
+
+<div id="app" class="hide">
 <div class="admin-top">
   <div class="container">
-    <h1><i class="fa fa-sliders"></i> Site Manager</h1>
+    <h1><span class="mark"><i class="fa fa-sliders"></i></span> Site Manager</h1>
     <div class="actions">
       <a href="index.html" target="_blank" class="btn btn-sm btn-ghost"><i class="fa fa-external-link"></i> View Site</a>
       <button class="btn btn-sm btn-light" id="importBtn"><i class="fa fa-upload"></i> Import</button>
-      <button class="btn btn-sm btn-light" id="exportBtn"><i class="fa fa-download"></i> Export</button>
+      <button class="btn btn-sm btn-gold" id="exportBtn"><i class="fa fa-download"></i> Export content.json</button>
       <input type="file" id="importFile" accept="application/json" hidden />
     </div>
   </div>
 </div>
 
 <div class="wrap">
+  <div class="notice">
+    <strong>How publishing works:</strong> edits here are previewed in your own browser. To make changes go live for everyone, click
+    <strong>Export content.json</strong> and replace the <code>content.json</code> file in your GitHub repository (or ask Claude to do it).
+    Nothing changes on the live site until that file is committed — which only you, with your GitHub login, can do.
+  </div>
+
   <div class="tabs" id="tabs">
     <button data-tab="company" class="active">Company</button>
     <button data-tab="about">About</button>
-    <button data-tab="services">Services</button>
+    <button data-tab="services">What We Do</button>
     <button data-tab="team">Team</button>
     <button data-tab="portfolio">Projects</button>
     <button data-tab="contact">Contact</button>
@@ -92,16 +125,16 @@ h1,h2,h3,h4{font-family:"Raleway",sans-serif;margin:0 0 .4em}p{color:var(--muted
     <div class="field"><label>Image path / URL</label><input id="a_img" /></div>
     <div class="field"><label>Heading</label><input id="a_head" /></div>
     <div class="field"><label>Body text</label><textarea id="a_body" rows="3"></textarea></div>
-    <label style="font-weight:600;font-size:.85rem">Key points</label>
+    <label style="font-weight:600;font-size:.82rem">Key points</label>
     <div id="pointsList"></div>
     <div class="add-row"><button class="btn btn-sm btn-light" data-add="points"><i class="fa fa-plus"></i> Add point</button></div>
   </div>
 
   <div class="panel" data-panel="services">
-    <h2>Services / Values</h2>
-    <p class="hint">Icon names use Font Awesome 4 (e.g. fa-leaf, fa-building, fa-tint).</p>
+    <h2>What We Do</h2>
+    <p class="hint">Icon names use Font Awesome 4 (e.g. fa-leaf, fa-building, fa-tint, fa-shield).</p>
     <div id="servicesList"></div>
-    <div class="add-row"><button class="btn btn-sm btn-light" data-add="services"><i class="fa fa-plus"></i> Add service</button></div>
+    <div class="add-row"><button class="btn btn-sm btn-light" data-add="services"><i class="fa fa-plus"></i> Add item</button></div>
   </div>
 
   <div class="panel" data-panel="team">
@@ -112,7 +145,7 @@ h1,h2,h3,h4{font-family:"Raleway",sans-serif;margin:0 0 .4em}p{color:var(--muted
   </div>
 
   <div class="panel" data-panel="portfolio">
-    <h2>Portfolio Projects</h2>
+    <h2>Projects</h2>
     <div id="portfolioList"></div>
     <div class="add-row"><button class="btn btn-sm btn-light" data-add="portfolio"><i class="fa fa-plus"></i> Add project</button></div>
   </div>
@@ -130,32 +163,54 @@ h1,h2,h3,h4{font-family:"Raleway",sans-serif;margin:0 0 .4em}p{color:var(--muted
 
 <div class="save-bar">
   <div class="container">
-    <span class="status" id="status">Edits are saved in this browser</span>
+    <span class="status" id="status">Previewing in this browser</span>
     <button class="btn btn-sm btn-danger" id="resetBtn"><i class="fa fa-undo"></i> Reset to defaults</button>
-    <button class="btn btn-sm btn-primary" id="saveBtn"><i class="fa fa-check"></i> Save changes</button>
+    <button class="btn btn-sm btn-primary" id="saveBtn"><i class="fa fa-check"></i> Save preview</button>
   </div>
 </div>
+</div><!-- /app -->
 
 <div class="toast" id="toast"></div>
 
 <script>
-/* ===== Self-contained store (identical defaults to index.html) ===== */
+/* ===== Passcode gate =====
+   Default passcode: umang2006  (change it: see README → "Change the editor passcode")
+   Only a SHA-256 hash is stored here, never the passcode itself. This gate keeps casual
+   visitors out; real security comes from the fact that the LIVE site only updates when
+   content.json is committed to your GitHub repo (which requires your GitHub login). */
+var PASS_HASH="a02ccae1f9937e4e66ed8a6d8ba895a04b3daaaf8431edad4a488fe5135a8462";
+async function sha256(t){var b=new TextEncoder().encode(t);var h=await crypto.subtle.digest("SHA-256",b);return [].map.call(new Uint8Array(h),function(x){return x.toString(16).padStart(2,"0");}).join("");}
+function unlocked(){return sessionStorage.getItem("umang_admin_ok")==="1";}
+async function tryUnlock(){
+  var v=document.getElementById("pass").value;
+  var err=document.getElementById("passErr");
+  if(!v){err.textContent="Enter your passcode.";return;}
+  var ok=false;try{ok=(await sha256(v))===PASS_HASH;}catch(e){ok=false;}
+  if(ok){sessionStorage.setItem("umang_admin_ok","1");showApp();}
+  else{err.textContent="Incorrect passcode.";document.getElementById("pass").value="";}
+}
+function showApp(){document.getElementById("lock").classList.add("hide");document.getElementById("app").classList.remove("hide");boot();}
+document.getElementById("unlockBtn").addEventListener("click",tryUnlock);
+document.getElementById("pass").addEventListener("keydown",function(e){if(e.key==="Enter")tryUnlock();});
+if(unlocked()){showApp();}else{document.getElementById("pass").focus();}
+
+/* ===== Editor (runs after unlock) ===== */
 var STORE_KEY="umangSiteContent_v1";
 var DEFAULT_CONTENT={
-  company:{name:"UMANG",nameSuffix:"INFRASTRUCTURE",tagline:"We are the firm that builds your dream",established:"2006"},
+  company:{name:"UMANG",nameSuffix:"INFRASTRUCTURE",tagline:"Building Bihar's water infrastructure",established:"2006"},
   hero:[
-    {kicker:"The Best Company",title:"We are the firm that builds your dream",text:"Quality construction and water infrastructure, delivered on time, every time across Bihar."},
-    {kicker:"Our Values",title:"In the business of quality service",text:"We're committed to high standards, safe drinking water, and a protected environment."},
-    {kicker:"Our Goal",title:"Quality project delivery, on time",text:"We are bound by our commitment to deliver every project to specification and schedule."}
+    {kicker:"Water Infrastructure · Since 2006",title:"Engineering the infrastructure Bihar relies on",text:"For nearly two decades, Umang Infrastructure has designed and built the water towers, reservoirs and supply networks that bring safe water to communities across Bihar."},
+    {kicker:"Quality · Delivered On Time",title:"Built to last. Delivered on schedule.",text:"From reinforced-concrete reservoirs to district supply networks, we hold every project to exacting standards — and to its deadline."},
+    {kicker:"Safe Water For All",title:"Clean water is the foundation of growth",text:"We treat, supply and recycle water responsibly, protecting both the communities we serve and the environment we share."}
   ],
-  about:{heading:"Project Maintenance",body:"Established in 2006, Umang Infrastructure is a leading infrastructure firm with over a decade of specialised experience in the field of water — from treatment and supply to recycling and waste-water handling.",points:["Managed and implemented over 50 projects in Bihar","World-class infrastructure for water treatment","Waste water handling and recycling","Treatment and recycling of water","Quality construction in rural as well as urban areas"],image:"img/about/1.jpg"},
+  about:{heading:"Two decades of building water that lasts",body:"Established in 2006, Umang Infrastructure is a leading water-infrastructure firm headquartered in Purnia, Bihar. With over a decade of specialised experience, we deliver the full lifecycle of water engineering — treatment, supply, recycling and waste-water handling — across both rural and urban Bihar.",points:["50+ water infrastructure projects delivered across Bihar","World-class reinforced-concrete reservoirs and overhead towers","Complete water treatment, supply and recycling systems","Responsible waste-water handling and management","Trusted quality in rural and urban construction alike"],image:"img/about/1.jpg"},
   services:[
-    {icon:"fa-clock-o",title:"Time Matters",text:"We are bound by our commitment to ensure project delivery on time."},
-    {icon:"fa-building",title:"High Quality",text:"We prioritise our principles of adhering to high quality standards."},
-    {icon:"fa-tint",title:"Safe Water",text:"Making safe drinking water available and affordable to all."},
-    {icon:"fa-leaf",title:"Protect Environment",text:"We care deeply about the environment in everything we build."},
-    {icon:"fa-handshake-o",title:"Our People",text:"Our employees are our strength, so we focus on their development."},
-    {icon:"fa-share-alt",title:"We Share",text:"We share knowledge and experience to help develop our nation."}
+    {icon:"fa-clock-o",title:"Delivered On Time",text:"We are bound by our commitment to deliver every project to specification and schedule."},
+    {icon:"fa-building",title:"Engineering Quality",text:"Reinforced, durable, and built to exacting standards that stand the test of time."},
+    {icon:"fa-tint",title:"Safe Drinking Water",text:"Making clean, safe drinking water available and affordable to the communities we serve."},
+    {icon:"fa-leaf",title:"Environmental Care",text:"We protect the environment in everything we build, from sourcing to recycling."},
+    {icon:"fa-users",title:"Skilled People",text:"Our experienced engineers and teams are the strength behind every project."},
+    {icon:"fa-shield",title:"Trusted & Accountable",text:"Two decades of reliable delivery have made us a name communities trust."}
   ],
   team:[
     {name:"Anil Kumar Singh",role:"Director",image:"img/team/1.jpg"},
@@ -164,33 +219,26 @@ var DEFAULT_CONTENT={
     {name:"Prashant Kumar",role:"Manager, Finance",image:"img/team/4.jpg"}
   ],
   portfolio:[
-    {title:"Water Tower",category:"Construction",image:"img/portfolio/1.jpg"},
-    {title:"Overhead Reservoir",category:"Infrastructure",image:"img/portfolio/2.jpg"},
-    {title:"Dansar Water Tower",category:"Construction",image:"img/portfolio/3.jpg"},
-    {title:"Kankhudiya Water Tower",category:"Construction",image:"img/portfolio/4.jpg"},
-    {title:"Jalagar Block Water Tower",category:"Infrastructure",image:"img/portfolio/5.jpg"},
-    {title:"Water Supply Network",category:"Infrastructure",image:"img/portfolio/6.jpg"}
+    {title:"Rural Water Tower",category:"Water Towers",image:"img/portfolio/1.jpg"},
+    {title:"Overhead Reservoir",category:"Reservoirs",image:"img/portfolio/2.jpg"},
+    {title:"Dansar Water Tower",category:"Water Towers",image:"img/portfolio/3.jpg"},
+    {title:"Kankhudiya Water Tower",category:"Water Towers",image:"img/portfolio/4.jpg"},
+    {title:"Jalalgarh Block Tower",category:"Reservoirs",image:"img/portfolio/5.jpg"},
+    {title:"Water Supply Network",category:"Supply Networks",image:"img/portfolio/6.jpg"}
   ],
-  contact:{phone:"+91 6454244252",hours:"Monday – Saturday (9am – 5pm)",email:"ui@umanginfra.com",address:"Teachers Colony, near Sudin Chowk, Purnia – 854301, Bihar"}
+  contact:{phone:"+91 6454 244252",hours:"Monday – Saturday · 9:00am – 5:00pm",email:"ui@umanginfra.com",address:"Teachers Colony, near Sudin Chowk, Purnia – 854301, Bihar, India"}
 };
 function _clone(o){return JSON.parse(JSON.stringify(o));}
 function loadContent(){try{var r=localStorage.getItem(STORE_KEY);if(!r)return _clone(DEFAULT_CONTENT);return Object.assign(_clone(DEFAULT_CONTENT),JSON.parse(r));}catch(e){return _clone(DEFAULT_CONTENT);}}
 function saveContent(c){localStorage.setItem(STORE_KEY,JSON.stringify(c));}
 function resetContent(){localStorage.removeItem(STORE_KEY);return _clone(DEFAULT_CONTENT);}
 
-var C=loadContent();
-var $=function(s,r){return (r||document).querySelector(s);};
-var $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s));};
-function toast(m){var t=$("#toast");t.textContent=m;t.classList.add("show");setTimeout(function(){t.classList.remove("show");},1800);}
+var C,$,$$;
+function toast(m){var t=document.getElementById("toast");t.textContent=m;t.classList.add("show");setTimeout(function(){t.classList.remove("show");},1900);}
 function escAttr(s){return String(s==null?"":s).replace(/"/g,"&quot;").replace(/</g,"&lt;");}
 function escHtml(s){return String(s==null?"":s).replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-
-$("#tabs").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
-  $$("#tabs button").forEach(function(x){x.classList.remove("active");});
-  $$(".panel").forEach(function(p){p.classList.remove("active");});
-  b.classList.add("active");$('.panel[data-panel="'+b.getAttribute("data-tab")+'"]').classList.add("active");});
-
 function fileToDataURL(file,cb){var r=new FileReader();r.onload=function(){cb(r.result);};r.readAsDataURL(file);}
+function setPath(path,val){var k=path.split("."),o=C;for(var i=0;i<k.length-1;i++)o=o[k[i]];o[k[k.length-1]]=val;}
 
 function render(){
   $("#c_name").value=C.company.name;$("#c_suffix").value=C.company.nameSuffix;$("#c_est").value=C.company.established;
@@ -198,48 +246,59 @@ function render(){
   $("#a_img").value=C.about.image;$("#a_imgPrev").src=C.about.image;$("#a_head").value=C.about.heading;$("#a_body").value=C.about.body;
   $("#pointsList").innerHTML=C.about.points.map(function(p,i){return '<div class="photo-row" style="margin-bottom:8px"><input data-set="about.points.'+i+'" value="'+escAttr(p)+'" style="flex:1"><button class="btn btn-sm btn-danger" data-del="points" data-i="'+i+'"><i class="fa fa-trash"></i></button></div>';}).join("");
   $("#servicesList").innerHTML=C.services.map(function(s,i){return '<div class="item"><div class="item-head"><strong><i class="fa '+escAttr(s.icon)+'"></i> '+escAttr(s.title)+'</strong><button class="btn btn-sm btn-danger" data-del="services" data-i="'+i+'"><i class="fa fa-trash"></i></button></div><div class="grid2"><div class="field"><label>Icon (fa-…)</label><input data-set="services.'+i+'.icon" value="'+escAttr(s.icon)+'"></div><div class="field"><label>Title</label><input data-set="services.'+i+'.title" value="'+escAttr(s.title)+'"></div></div><div class="field"><label>Text</label><textarea rows="2" data-set="services.'+i+'.text">'+escHtml(s.text)+'</textarea></div></div>';}).join("");
-  $("#teamList").innerHTML=C.team.map(function(m,i){return '<div class="item"><div class="item-head"><strong>'+escAttr(m.name)+'</strong><button class="btn btn-sm btn-danger" data-del="team" data-i="'+i+'"><i class="fa fa-trash"></i></button></div><div class="photo-row" style="margin-bottom:12px"><img class="thumb" src="'+escAttr(m.image)+'" onerror="this.onerror=null;this.src=\'https://ui-avatars.com/api/?name='+encodeURIComponent(m.name||"?")+'&background=0a66c2&color=fff\'"><label class="btn btn-sm btn-light"><i class="fa fa-image"></i> Upload photo<input type="file" accept="image/*" hidden data-img="team.'+i+'.image"></label></div><div class="grid2"><div class="field"><label>Name</label><input data-set="team.'+i+'.name" value="'+escAttr(m.name)+'"></div><div class="field"><label>Role</label><input data-set="team.'+i+'.role" value="'+escAttr(m.role)+'"></div></div><div class="field"><label>Image path / URL</label><input data-set="team.'+i+'.image" value="'+escAttr(m.image)+'"></div></div>';}).join("");
-  $("#portfolioList").innerHTML=C.portfolio.map(function(p,i){return '<div class="item"><div class="item-head"><strong>'+escAttr(p.title)+'</strong><button class="btn btn-sm btn-danger" data-del="portfolio" data-i="'+i+'"><i class="fa fa-trash"></i></button></div><div class="photo-row" style="margin-bottom:12px"><img class="thumb" src="'+escAttr(p.image)+'" onerror="this.onerror=null;this.src=\'https://picsum.photos/seed/umang'+i+'/120/120\'"><label class="btn btn-sm btn-light"><i class="fa fa-image"></i> Upload photo<input type="file" accept="image/*" hidden data-img="portfolio.'+i+'.image"></label></div><div class="grid2"><div class="field"><label>Title</label><input data-set="portfolio.'+i+'.title" value="'+escAttr(p.title)+'"></div><div class="field"><label>Category</label><input data-set="portfolio.'+i+'.category" value="'+escAttr(p.category)+'"></div></div><div class="field"><label>Image path / URL</label><input data-set="portfolio.'+i+'.image" value="'+escAttr(p.image)+'"></div></div>';}).join("");
+  $("#teamList").innerHTML=C.team.map(function(m,i){return '<div class="item"><div class="item-head"><strong>'+escAttr(m.name)+'</strong><button class="btn btn-sm btn-danger" data-del="team" data-i="'+i+'"><i class="fa fa-trash"></i></button></div><div class="photo-row" style="margin-bottom:12px"><img class="thumb" src="'+escAttr(m.image)+'" onerror="this.onerror=null;this.src=\'https://ui-avatars.com/api/?name='+encodeURIComponent(m.name||"?")+'&background=0e2440&color=e0c179\'"><label class="btn btn-sm btn-light"><i class="fa fa-image"></i> Upload photo<input type="file" accept="image/*" hidden data-img="team.'+i+'.image"></label></div><div class="grid2"><div class="field"><label>Name</label><input data-set="team.'+i+'.name" value="'+escAttr(m.name)+'"></div><div class="field"><label>Role</label><input data-set="team.'+i+'.role" value="'+escAttr(m.role)+'"></div></div><div class="field"><label>Image path / URL</label><input data-set="team.'+i+'.image" value="'+escAttr(m.image)+'"></div></div>';}).join("");
+  $("#portfolioList").innerHTML=C.portfolio.map(function(p,i){return '<div class="item"><div class="item-head"><strong>'+escAttr(p.title)+'</strong><button class="btn btn-sm btn-danger" data-del="portfolio" data-i="'+i+'"><i class="fa fa-trash"></i></button></div><div class="photo-row" style="margin-bottom:12px"><img class="thumb" src="'+escAttr(p.image)+'" onerror="this.onerror=null;this.src=\'img/portfolio/'+((i%6)+1)+'.jpg\'"><label class="btn btn-sm btn-light"><i class="fa fa-image"></i> Upload photo<input type="file" accept="image/*" hidden data-img="portfolio.'+i+'.image"></label></div><div class="grid2"><div class="field"><label>Title</label><input data-set="portfolio.'+i+'.title" value="'+escAttr(p.title)+'"></div><div class="field"><label>Category</label><input data-set="portfolio.'+i+'.category" value="'+escAttr(p.category)+'"></div></div><div class="field"><label>Image path / URL</label><input data-set="portfolio.'+i+'.image" value="'+escAttr(p.image)+'"></div></div>';}).join("");
   $("#ct_phone").value=C.contact.phone;$("#ct_hours").value=C.contact.hours;$("#ct_email").value=C.contact.email;$("#ct_addr").value=C.contact.address;
 }
-function setPath(path,val){var k=path.split("."),o=C;for(var i=0;i<k.length-1;i++)o=o[k[i]];o[k[k.length-1]]=val;}
-
-document.addEventListener("input",function(e){var el=e.target;
-  if(el.getAttribute&&el.getAttribute("data-set")){setPath(el.getAttribute("data-set"),el.value);markDirty();}
-  var map={c_name:"company.name",c_suffix:"company.nameSuffix",c_est:"company.established",a_img:"about.image",a_head:"about.heading",a_body:"about.body",ct_phone:"contact.phone",ct_hours:"contact.hours",ct_email:"contact.email",ct_addr:"contact.address"};
-  if(map[el.id]){setPath(map[el.id],el.value);markDirty();}
-  if(el.id==="a_img")$("#a_imgPrev").src=el.value;});
-
-document.addEventListener("change",function(e){var el=e.target;
-  if(el.getAttribute&&el.getAttribute("data-img")&&el.files&&el.files[0]){
-    if(el.files[0].size>1.5*1024*1024)toast("Large image (>1.5MB) — consider a smaller file");
-    fileToDataURL(el.files[0],function(url){setPath(el.getAttribute("data-img"),url);markDirty();render();toast("Photo updated");});}});
-
-document.addEventListener("click",function(e){
-  var add=e.target.closest("[data-add]");
-  if(add){var t=add.getAttribute("data-add");
-    if(t==="hero")C.hero.push({kicker:"New",title:"New headline",text:""});
-    if(t==="points")C.about.points.push("New point");
-    if(t==="services")C.services.push({icon:"fa-star",title:"New Service",text:""});
-    if(t==="team")C.team.push({name:"New Member",role:"Role",image:""});
-    if(t==="portfolio")C.portfolio.push({title:"New Project",category:"Construction",image:""});
-    markDirty();render();return;}
-  var del=e.target.closest("[data-del]");
-  if(del){var tt=del.getAttribute("data-del"),ii=+del.getAttribute("data-i");
-    if(!confirm("Delete this item?"))return;
-    if(tt==="points")C.about.points.splice(ii,1);else C[tt].splice(ii,1);
-    markDirty();render();toast("Deleted");}});
 
 var dirty=false;
 function markDirty(){dirty=true;$("#status").textContent="Unsaved changes";}
-$("#saveBtn").addEventListener("click",function(){saveContent(C);dirty=false;$("#status").textContent="Saved in this browser ✓";toast("Saved — open the site to see it");});
-$("#resetBtn").addEventListener("click",function(){if(confirm("Reset all content to original defaults?")){C=resetContent();render();toast("Reset to defaults");}});
-$("#exportBtn").addEventListener("click",function(){saveContent(C);var blob=new Blob([JSON.stringify(C,null,2)],{type:"application/json"});var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="content.json";a.click();toast("Exported content.json");});
-$("#importBtn").addEventListener("click",function(){$("#importFile").click();});
-$("#importFile").addEventListener("change",function(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{C=Object.assign(resetContent(),JSON.parse(r.result));saveContent(C);render();toast("Imported");}catch(x){alert("Invalid JSON file");}};r.readAsText(f);});
-window.addEventListener("beforeunload",function(e){if(dirty){e.preventDefault();e.returnValue="";}});
 
-render();
+function boot(){
+  $=function(s,r){return (r||document).querySelector(s);};
+  $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s));};
+  C=loadContent();
+
+  $("#tabs").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
+    $$("#tabs button").forEach(function(x){x.classList.remove("active");});
+    $$(".panel").forEach(function(p){p.classList.remove("active");});
+    b.classList.add("active");$('.panel[data-panel="'+b.getAttribute("data-tab")+'"]').classList.add("active");});
+
+  document.addEventListener("input",function(e){var el=e.target;
+    if(el.getAttribute&&el.getAttribute("data-set")){setPath(el.getAttribute("data-set"),el.value);markDirty();}
+    var map={c_name:"company.name",c_suffix:"company.nameSuffix",c_est:"company.established",a_img:"about.image",a_head:"about.heading",a_body:"about.body",ct_phone:"contact.phone",ct_hours:"contact.hours",ct_email:"contact.email",ct_addr:"contact.address"};
+    if(map[el.id]){setPath(map[el.id],el.value);markDirty();}
+    if(el.id==="a_img")$("#a_imgPrev").src=el.value;});
+
+  document.addEventListener("change",function(e){var el=e.target;
+    if(el.getAttribute&&el.getAttribute("data-img")&&el.files&&el.files[0]){
+      if(el.files[0].size>1.5*1024*1024)toast("Large image (>1.5MB) — consider a smaller file");
+      fileToDataURL(el.files[0],function(url){setPath(el.getAttribute("data-img"),url);markDirty();render();toast("Photo updated");});}});
+
+  document.addEventListener("click",function(e){
+    var add=e.target.closest("[data-add]");
+    if(add){var t=add.getAttribute("data-add");
+      if(t==="hero")C.hero.push({kicker:"New",title:"New headline",text:""});
+      if(t==="points")C.about.points.push("New point");
+      if(t==="services")C.services.push({icon:"fa-star",title:"New Item",text:""});
+      if(t==="team")C.team.push({name:"New Member",role:"Role",image:""});
+      if(t==="portfolio")C.portfolio.push({title:"New Project",category:"Water Towers",image:""});
+      markDirty();render();return;}
+    var del=e.target.closest("[data-del]");
+    if(del){var tt=del.getAttribute("data-del"),ii=+del.getAttribute("data-i");
+      if(!confirm("Delete this item?"))return;
+      if(tt==="points")C.about.points.splice(ii,1);else C[tt].splice(ii,1);
+      markDirty();render();toast("Deleted");}});
+
+  $("#saveBtn").addEventListener("click",function(){saveContent(C);dirty=false;$("#status").textContent="Preview saved ✓";toast("Saved — open the site to preview");});
+  $("#resetBtn").addEventListener("click",function(){if(confirm("Reset all content to original defaults?")){C=resetContent();render();toast("Reset to defaults");}});
+  $("#exportBtn").addEventListener("click",function(){saveContent(C);var blob=new Blob([JSON.stringify(C,null,2)],{type:"application/json"});var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="content.json";a.click();toast("Exported content.json — commit it to publish");});
+  $("#importBtn").addEventListener("click",function(){$("#importFile").click();});
+  $("#importFile").addEventListener("change",function(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{C=Object.assign(resetContent(),JSON.parse(r.result));saveContent(C);render();toast("Imported");}catch(x){alert("Invalid JSON file");}};r.readAsText(f);});
+  window.addEventListener("beforeunload",function(e){if(dirty){e.preventDefault();e.returnValue="";}});
+
+  render();
+}
 </script>
 </body>
 </html>
