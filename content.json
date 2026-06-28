@@ -56,6 +56,47 @@
     { "title": "Jalalgarh Block Tower", "category": "Reservoirs", "image": "img/projects/05 - Jalalgarh Block Tower - Reservoirs.jpg" },
     { "title": "Water Supply Network", "category": "Supply Networks", "image": "img/projects/06 - Water Supply Network - Supply Networks.jpg" }
   ],
+  "achievements": {
+    "intro": "Nearly two decades of milestones — and the standards that back them. (Sample content — replace with your real milestones, awards and certifications.)",
+    "milestones": [
+      { "year": "2006", "title": "Founded in Purnia", "text": "Umang Infrastructure is established to serve Bihar's growing water-infrastructure needs." },
+      { "year": "2012", "title": "25th project delivered", "text": "Reached 25 completed water towers and reservoirs across the region." },
+      { "year": "2018", "title": "Expanded to supply networks", "text": "Added district and rural water-distribution networks to our capabilities." },
+      { "year": "2024", "title": "50+ projects milestone", "text": "Crossed 50 delivered projects serving over a million people with safe water." }
+    ],
+    "highlights": [
+      { "icon": "fa-trophy", "title": "50+ Projects Delivered", "text": "A track record communities across Bihar trust." },
+      { "icon": "fa-check-circle", "title": "Quality-First Construction", "text": "Reinforced builds held to exacting engineering standards." },
+      { "icon": "fa-clock-o", "title": "On-Time Commitment", "text": "Delivered to specification and schedule, project after project." }
+    ]
+  },
+  "news": {
+    "intro": "Updates, milestones and moments from our sites and our team. (Sample posts — replace with your real news, or add photos to img/news.)",
+    "posts": [
+      { "date": "2026", "tag": "Project", "title": "New overhead reservoir commissioned", "text": "A new reinforced-concrete reservoir handed over, expanding safe water access in the district.", "image": "img/projects/02 - Overhead Reservoir - Reservoirs.jpg" },
+      { "date": "2025", "tag": "Milestone", "title": "Crossing 50 delivered projects", "text": "We marked our 50th completed water-infrastructure project across Bihar.", "image": "img/projects/01 - Rural Water Tower - Water Towers.jpg" },
+      { "date": "2025", "tag": "Community", "title": "Hand-pump drive in rural panchayats", "text": "Our team supported installation and repair of community hand-pumps for safe drinking water.", "image": "img/projects/06 - Water Supply Network - Supply Networks.jpg" }
+    ]
+  },
+  "impact": {
+    "heading": "Water is a right, not a privilege.",
+    "body": "Beyond our projects, we work to bring safe, clean water to the communities that need it most — supporting wells, hand-pumps and hygiene awareness across rural Bihar. (Sample text — replace with your real initiatives.)",
+    "items": [
+      { "icon": "fa-tint", "title": "Clean Water Access", "text": "Helping under-served villages reach a reliable, safe source of drinking water." },
+      { "icon": "fa-users", "title": "Community Wells & Hand-pumps", "text": "Installing and maintaining shared water points that serve families for years." },
+      { "icon": "fa-heart", "title": "Awareness & Hygiene", "text": "Running sanitation and water-hygiene awareness drives in local schools and panchayats." }
+    ],
+    "stat": { "value": "25+", "label": "Communities supported" }
+  },
+  "careers": {
+    "intro": "We are always looking for engineers, site supervisors and project staff who take pride in building infrastructure that lasts. Join a team that is shaping Bihar's water future.",
+    "applyEmail": "ui@umanginfra.com",
+    "jobs": [
+      { "title": "Site Engineer (Civil)", "location": "Purnia, Bihar", "type": "Full-time", "desc": "Supervise on-site execution of water tower and reservoir projects, ensuring quality and timelines. (Sample opening — replace with your real role.)" },
+      { "title": "Project Manager", "location": "Bihar (Field)", "type": "Full-time", "desc": "Own end-to-end delivery of water infrastructure projects from planning to commissioning. (Sample opening — replace with your real role.)" },
+      { "title": "Junior Accountant", "location": "Purnia, Bihar", "type": "Full-time", "desc": "Support project accounting, billing and vendor reconciliation for ongoing works. (Sample opening — replace with your real role.)" }
+    ]
+  },
   "contact": {
     "phone": "+91 6454 244252",
     "hours": "Monday – Saturday · 9:00am – 5:00pm",

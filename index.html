@@ -180,6 +180,66 @@ section{padding:108px 0}
 .field input,.field textarea{width:100%;padding:14px 16px;border:1px solid var(--line2);border-radius:var(--radius);font:inherit;font-size:1rem;color:var(--ink);background:var(--bg2);transition:border .2s,box-shadow .2s}
 .field input:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(10,102,194,.15);background:#fff}
 
+/* Achievements */
+.ach-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.timeline{position:relative;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--line2)}
+.tl{position:relative;padding-bottom:30px}
+.tl:last-child{padding-bottom:0}
+.tl::before{content:"";position:absolute;left:-34px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--blue)}
+.tl .yr{font-family:var(--display);font-weight:800;color:var(--blue);font-size:1.1rem;letter-spacing:0}
+.tl h4{margin:2px 0 4px;font-size:1.18rem;font-weight:700}
+.tl p{margin:0;font-size:.96rem}
+.ach-side{display:grid;gap:16px}
+.ach-hl{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:22px 24px;transition:.3s}
+.ach-hl:hover{box-shadow:var(--shadow);border-color:transparent;transform:translateX(4px)}
+.ach-hl .ic{flex:0 0 50px;height:50px;border-radius:12px;display:grid;place-items:center;background:var(--bg3);color:var(--blue);font-size:1.3rem}
+.ach-hl h4{margin:0 0 3px;font-size:1.1rem;font-weight:700}.ach-hl p{margin:0;font-size:.94rem}
+
+/* News & Events */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.post{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s}
+.post:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.post .ph{aspect-ratio:16/10;overflow:hidden;background:var(--bg3)}
+.post .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.post:hover .ph img{transform:scale(1.06)}
+.post .bd{padding:24px 26px 28px}
+.post .meta{display:flex;gap:10px;align-items:center;margin-bottom:10px}
+.post .tag{font-size:.7rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#fff;background:var(--blue);padding:4px 10px;border-radius:99px}
+.post .date{font-size:.84rem;color:var(--muted);font-weight:600}
+.post h4{font-size:1.2rem;font-weight:700;margin:0 0 6px}.post p{margin:0;font-size:.96rem}
+@media(max-width:980px){.ach-grid{grid-template-columns:1fr;gap:40px}.news-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.news-grid{grid-template-columns:1fr}}
+
+/* Impact / NGO */
+.impact{background:linear-gradient(180deg,#eaf2fb,#f4f6f9)}
+.impact-head{display:grid;grid-template-columns:1.5fr .8fr;gap:40px;align-items:center;margin-bottom:50px}
+.impact-head h2{font-size:clamp(1.9rem,3.6vw,2.8rem);margin-top:16px}
+.impact-head .lead{font-size:1.12rem;color:var(--ink2);margin:0}
+.impact-stat{text-align:center;background:var(--blue);color:#fff;border-radius:var(--radius-lg);padding:30px 24px;box-shadow:var(--shadow)}
+.impact-stat strong{font-family:var(--display);font-size:3rem;font-weight:800;display:block;line-height:1}
+.impact-stat span{font-size:.86rem;letter-spacing:.4px;opacity:.9;margin-top:8px;display:block}
+.impact .card .ic{color:#fff;background:linear-gradient(135deg,#0a66c2,#063e7a)}
+.impact .card:hover .ic{background:var(--gold)}
+
+/* Careers */
+.careers-note{max-width:62ch;margin:0 auto 40px;text-align:center}
+.jobs{display:grid;grid-template-columns:1fr;gap:16px;max-width:920px;margin:0 auto 50px}
+.job{display:flex;justify-content:space-between;gap:24px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px 30px;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
+.job:hover{box-shadow:var(--shadow);border-color:transparent;transform:translateY(-3px)}
+.job .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.chip{font-size:.72rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--blue);background:var(--bg3);padding:5px 11px;border-radius:99px}
+.job h4{margin:0 0 6px;font-size:1.22rem;font-weight:700}
+.job p{margin:0;color:var(--sub);font-size:.95rem;max-width:62ch}
+.job .apply-btn{flex:0 0 auto}
+.apply-card{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:38px;box-shadow:var(--shadow)}
+.apply-card h3{font-size:1.5rem;margin-bottom:6px}
+.apply-card .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.apply-card .field select{width:100%;padding:14px 16px;border:1px solid var(--line2);border-radius:var(--radius);font:inherit;font-size:1rem;color:var(--ink);background:var(--bg2)}
+.fstatus{margin-top:14px;font-size:.95rem;font-weight:600;display:none}
+.fstatus.show{display:block}.fstatus.ok{color:#1a7f37}.fstatus.err{color:#c0392b}
+@media(max-width:760px){.impact-head{grid-template-columns:1fr}.job{flex-direction:column;align-items:flex-start;gap:16px}.apply-card .row{grid-template-columns:1fr}}
+
 /* Footer */
 .footer{background:#0a1626;color:rgba(255,255,255,.66);padding:72px 0 0}
 .footer h4{color:#fff;font-size:.82rem;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;font-family:var(--sans);font-weight:700}
@@ -226,11 +286,11 @@ section{padding:108px 0}
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#capabilities">Capabilities</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#team">Team</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#careers">Careers</a></li>
       <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
     </ul>
   </div>
@@ -301,11 +361,68 @@ section{padding:108px 0}
   </div>
 </div>
 
+<section id="achievements" class="bg2">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow">Our Track Record</span><h2>Built on milestones, backed by standards.</h2><p id="achIntro"></p></div>
+    <div class="ach-grid">
+      <div class="timeline reveal" id="timeline"></div>
+      <div class="ach-side reveal" id="achHighlights"></div>
+    </div>
+  </div>
+</section>
+
 <section id="projects">
   <div class="container">
     <div class="sec-head reveal"><span class="eyebrow">Our Work</span><h2>Projects that stand across Bihar.</h2><p>Water towers, reservoirs and supply networks built to serve communities for decades.</p></div>
     <div class="filters reveal" id="projectFilters"></div>
     <div class="gallery" id="projectGrid"></div>
+  </div>
+</section>
+
+<section id="news" class="bg2">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow">News &amp; Events</span><h2>What's happening at Umang.</h2><p id="newsIntro"></p></div>
+    <div class="news-grid" id="newsGrid"></div>
+  </div>
+</section>
+
+<section id="impact" class="impact">
+  <div class="container">
+    <div class="impact-head reveal">
+      <div>
+        <span class="eyebrow">Social Impact</span>
+        <h2 id="impactHeading">Water is a right, not a privilege.</h2>
+        <p class="lead" id="impactBody"></p>
+      </div>
+      <div class="impact-stat"><strong id="impactStatV">25+</strong><span id="impactStatL">Communities supported</span></div>
+    </div>
+    <div class="cards" id="impactCards"></div>
+  </div>
+</section>
+
+<section id="careers">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow">Join Us</span><h2>Build a career that builds Bihar.</h2><p class="careers-note" id="careersIntro"></p></div>
+    <div class="jobs reveal" id="jobsList"></div>
+    <div class="apply-card reveal">
+      <h3>Apply now</h3>
+      <p>Fill in your details and we'll be in touch. Add a link to your CV (Google Drive, Dropbox, etc.), or email it to <a id="applyEmailLink" href="#">us</a>.</p>
+      <form id="applyForm">
+        <div class="row">
+          <div class="field"><label>Position</label><select name="position" id="positionSelect"></select></div>
+          <div class="field"><label>Full Name</label><input type="text" name="name" required /></div>
+        </div>
+        <div class="row">
+          <div class="field"><label>Email</label><input type="email" name="email" required /></div>
+          <div class="field"><label>Phone</label><input type="tel" name="phone" /></div>
+        </div>
+        <div class="field"><label>Link to your CV / Portfolio</label><input type="url" name="cv_link" placeholder="https://..." /></div>
+        <div class="field"><label>Message</label><textarea name="message" rows="4" placeholder="Tell us a little about yourself"></textarea></div>
+        <input type="checkbox" name="botcheck" class="hp" style="display:none!important" tabindex="-1" autocomplete="off" />
+        <button type="submit" class="btn btn-blue">Submit Application <i class="fa fa-arrow-right"></i></button>
+        <div class="fstatus" id="applyStatus"></div>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -339,7 +456,9 @@ section{padding:108px 0}
           </div>
           <div class="field"><label>Subject</label><input type="text" name="subject" placeholder="New water tower enquiry" /></div>
           <div class="field"><label>Message</label><textarea name="message" rows="5" required></textarea></div>
+          <input type="checkbox" name="botcheck" style="display:none!important" tabindex="-1" autocomplete="off" />
           <button type="submit" class="btn btn-blue">Send Message <i class="fa fa-paper-plane"></i></button>
+          <div class="fstatus" id="contactStatus"></div>
         </form>
       </div>
     </div>
@@ -359,8 +478,8 @@ section{padding:108px 0}
           <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
         </div>
       </div>
-      <div><h4>Company</h4><ul><li><a href="#about">About Us</a></li><li><a href="#capabilities">Capabilities</a></li><li><a href="#projects">Projects</a></li><li><a href="#team">Team</a></li></ul></div>
-      <div><h4>Services</h4><ul><li><a href="#capabilities">Water Towers</a></li><li><a href="#capabilities">Reservoirs</a></li><li><a href="#capabilities">Supply Networks</a></li><li><a href="#capabilities">Treatment & Recycling</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#about">About Us</a></li><li><a href="#projects">Projects</a></li><li><a href="#achievements">Achievements</a></li><li><a href="#news">News &amp; Events</a></li><li><a href="#team">Team</a></li></ul></div>
+      <div><h4>Get Involved</h4><ul><li><a href="#impact">Social Impact</a></li><li><a href="#careers">Careers</a></li><li><a href="#capabilities">Capabilities</a></li><li><a href="#contact">Contact Us</a></li></ul></div>
       <div><h4>Get In Touch</h4><ul id="footerContact"></ul></div>
     </div>
     <div class="footer-bottom">
@@ -385,6 +504,36 @@ var GH={owner:"InsideU",repo:"umang.github.io"};
 var FOLDERS={team:"img/team",projects:"img/projects"};
 var CACHE_MIN=10;
 var ICONS=["fa-tint","fa-building","fa-shield","fa-leaf","fa-users","fa-clock-o"];
+
+/* ---- Web3Forms: real email delivery from a static site ----
+   Get a FREE access key at https://web3forms.com (no account needed),
+   paste it below, commit. Until then, forms fall back to the visitor's
+   email app so nothing breaks. ------------------------------------- */
+var WEB3FORMS_KEY="YOUR_ACCESS_KEY";
+function keyReady(){return WEB3FORMS_KEY&&WEB3FORMS_KEY.length>=20&&WEB3FORMS_KEY.indexOf("YOUR_")<0;}
+function submitForm(form,subject,statusEl){
+  var fields={};[].forEach.call(form.elements,function(el){if(el.name&&el.type!=="submit")fields[el.name]=el.value;});
+  if(statusEl){statusEl.className="fstatus show";statusEl.style.color="";statusEl.textContent="Sending…";}
+  if(!keyReady()){
+    /* graceful fallback: open the visitor's email app */
+    var lines=Object.keys(fields).filter(function(k){return k!=="botcheck"&&fields[k];}).map(function(k){return k+": "+fields[k];});
+    var to=(CURRENT.contact&&CURRENT.contact.email)||"ui@umanginfra.com";
+    window.location.href="mailto:"+to+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(lines.join("\n"));
+    if(statusEl){statusEl.className="fstatus show ok";statusEl.textContent="Opening your email app…";}
+    return;
+  }
+  var data=new FormData(form);
+  data.append("access_key",WEB3FORMS_KEY);
+  data.append("subject",subject);
+  data.append("from_name","Umang Infrastructure Website");
+  fetch("https://api.web3forms.com/submit",{method:"POST",headers:{Accept:"application/json"},body:data})
+    .then(function(r){return r.json();})
+    .then(function(j){
+      if(j.success){form.reset();if(statusEl){statusEl.className="fstatus show ok";statusEl.textContent="Thank you — your message has been sent. We'll be in touch shortly.";}}
+      else{throw new Error(j.message||"failed");}
+    })
+    .catch(function(){if(statusEl){statusEl.className="fstatus show err";statusEl.textContent="Sorry, something went wrong. Please email us directly at "+((CURRENT.contact&&CURRENT.contact.email)||"ui@umanginfra.com")+".";}});
+}
 
 var DEFAULT_CONTENT={
   company:{name:"Umang",nameSuffix:"Infrastructure",established:"2006"},
@@ -416,6 +565,47 @@ var DEFAULT_CONTENT={
     {title:"Jalalgarh Block Tower",category:"Reservoirs",image:"img/projects/05 - Jalalgarh Block Tower - Reservoirs.jpg"},
     {title:"Water Supply Network",category:"Supply Networks",image:"img/projects/06 - Water Supply Network - Supply Networks.jpg"}
   ],
+  achievements:{
+    intro:"Nearly two decades of milestones — and the standards that back them.",
+    milestones:[
+      {year:"2006",title:"Founded in Purnia",text:"Umang Infrastructure is established to serve Bihar's growing water-infrastructure needs."},
+      {year:"2012",title:"25th project delivered",text:"Reached 25 completed water towers and reservoirs across the region."},
+      {year:"2018",title:"Expanded to supply networks",text:"Added district and rural water-distribution networks to our capabilities."},
+      {year:"2024",title:"50+ projects milestone",text:"Crossed 50 delivered projects serving over a million people with safe water."}
+    ],
+    highlights:[
+      {icon:"fa-trophy",title:"50+ Projects Delivered",text:"A track record communities across Bihar trust."},
+      {icon:"fa-check-circle",title:"Quality-First Construction",text:"Reinforced builds held to exacting engineering standards."},
+      {icon:"fa-clock-o",title:"On-Time Commitment",text:"Delivered to specification and schedule, project after project."}
+    ]
+  },
+  news:{
+    intro:"Updates, milestones and moments from our sites and our team.",
+    posts:[
+      {date:"2026",tag:"Project",title:"New overhead reservoir commissioned",text:"A new reinforced-concrete reservoir handed over, expanding safe water access in the district.",image:"img/projects/02 - Overhead Reservoir - Reservoirs.jpg"},
+      {date:"2025",tag:"Milestone",title:"Crossing 50 delivered projects",text:"We marked our 50th completed water-infrastructure project across Bihar.",image:"img/projects/01 - Rural Water Tower - Water Towers.jpg"},
+      {date:"2025",tag:"Community",title:"Hand-pump drive in rural panchayats",text:"Our team supported installation and repair of community hand-pumps for safe drinking water.",image:"img/projects/06 - Water Supply Network - Supply Networks.jpg"}
+    ]
+  },
+  impact:{
+    heading:"Water is a right, not a privilege.",
+    body:"Beyond our projects, we work to bring safe, clean water to the communities that need it most — supporting wells, hand-pumps and hygiene awareness across rural Bihar.",
+    items:[
+      {icon:"fa-tint",title:"Clean Water Access",text:"Helping under-served villages reach a reliable, safe source of drinking water."},
+      {icon:"fa-users",title:"Community Wells & Hand-pumps",text:"Installing and maintaining shared water points that serve families for years."},
+      {icon:"fa-heart",title:"Awareness & Hygiene",text:"Running sanitation and water-hygiene awareness drives in local schools and panchayats."}
+    ],
+    stat:{value:"25+",label:"Communities supported"}
+  },
+  careers:{
+    intro:"We are always looking for engineers, site supervisors and project staff who take pride in building infrastructure that lasts.",
+    applyEmail:"ui@umanginfra.com",
+    jobs:[
+      {title:"Site Engineer (Civil)",location:"Purnia, Bihar",type:"Full-time",desc:"Supervise on-site execution of water tower and reservoir projects, ensuring quality and timelines."},
+      {title:"Project Manager",location:"Bihar (Field)",type:"Full-time",desc:"Own end-to-end delivery of water infrastructure projects from planning to commissioning."},
+      {title:"Junior Accountant",location:"Purnia, Bihar",type:"Full-time",desc:"Support project accounting, billing and vendor reconciliation for ongoing works."}
+    ]
+  },
   contact:{phone:"+91 6454 244252",hours:"Monday – Saturday · 9:00am – 5:00pm",email:"ui@umanginfra.com",address:"Teachers Colony, near Sudin Chowk, Purnia – 854301, Bihar, India"}
 };
 
@@ -475,6 +665,46 @@ function renderProjects(list){
   filters.onclick=function(e){var b=e.target.closest("button");if(!b)return;[].forEach.call(this.children,function(x){x.classList.remove("active");});b.classList.add("active");draw(b.getAttribute("data-cat"));};
 }
 
+function renderAchievements(a){
+  if(!a)return;
+  $("#achIntro").textContent=a.intro||"";
+  $("#timeline").innerHTML=(a.milestones||[]).map(function(m){return '<div class="tl"><div class="yr">'+esc(m.year)+'</div><h4>'+esc(m.title)+'</h4><p>'+esc(m.text)+'</p></div>';}).join("");
+  $("#achHighlights").innerHTML=(a.highlights||[]).map(function(h){return '<div class="ach-hl"><div class="ic"><i class="fa '+esc(h.icon||"fa-trophy")+'"></i></div><div><h4>'+esc(h.title)+'</h4><p>'+esc(h.text)+'</p></div></div>';}).join("");
+}
+function renderNews(n){
+  if(!n)return;
+  $("#newsIntro").textContent=n.intro||"";
+  $("#newsGrid").innerHTML=(n.posts||[]).map(function(p,i){
+    var img=p.image?'<div class="ph"><img src="'+esc(p.image)+'" alt="'+esc(p.title)+'" onerror="this.onerror=null;this.src=\''+esc(DEFAULT_CONTENT.portfolio[i%6].image)+'\'"></div>':'';
+    return '<div class="post reveal">'+img+'<div class="bd"><div class="meta"><span class="tag">'+esc(p.tag||"News")+'</span><span class="date">'+esc(p.date||"")+'</span></div><h4>'+esc(p.title)+'</h4><p>'+esc(p.text)+'</p></div></div>';
+  }).join("");
+  revealObserve();
+}
+function renderImpact(im){
+  if(!im)return;
+  $("#impactHeading").textContent=im.heading||"";
+  $("#impactBody").textContent=im.body||"";
+  if(im.stat){$("#impactStatV").textContent=im.stat.value||"";$("#impactStatL").textContent=im.stat.label||"";}
+  $("#impactCards").innerHTML=(im.items||[]).map(function(s){return '<div class="card reveal"><div class="ic"><i class="fa '+esc(s.icon||"fa-tint")+'"></i></div><h3>'+esc(s.title)+'</h3><p>'+esc(s.text)+'</p></div>';}).join("");
+  revealObserve();
+}
+function renderCareers(c){
+  if(!c)return;
+  $("#careersIntro").textContent=c.intro||"";
+  var email=c.applyEmail||CURRENT.contact.email;
+  var link=$("#applyEmailLink");if(link){link.href="mailto:"+email;link.textContent=email;}
+  var jobs=c.jobs||[];
+  $("#jobsList").innerHTML=jobs.map(function(j,i){
+    return '<div class="job reveal"><div class="jt"><div class="chips"><span class="chip"><i class="fa fa-map-marker"></i> '+esc(j.location||"Bihar")+'</span><span class="chip">'+esc(j.type||"Full-time")+'</span></div><h4>'+esc(j.title)+'</h4><p>'+esc(j.desc||"")+'</p></div><button type="button" class="btn btn-blue apply-btn" data-role="'+esc(j.title)+'">Apply <i class="fa fa-arrow-right"></i></button></div>';
+  }).join("");
+  var sel=$("#positionSelect");
+  if(sel){sel.innerHTML='<option value="General Application">General Application</option>'+jobs.map(function(j){return '<option value="'+esc(j.title)+'">'+esc(j.title)+'</option>';}).join("");}
+  $("#jobsList").onclick=function(e){var b=e.target.closest(".apply-btn");if(!b)return;var r=b.getAttribute("data-role");if(sel)sel.value=r;document.getElementById("careers").querySelector(".apply-card").scrollIntoView({behavior:"smooth",block:"center"});};
+  var af=$("#applyForm");
+  if(af)af.onsubmit=function(e){e.preventDefault();submitForm(af,"New Job Application — "+(sel?sel.value:"Careers"),$("#applyStatus"));};
+  revealObserve();
+}
+
 function renderText(C){
   CURRENT=C;
   document.title=C.company.name+" "+C.company.nameSuffix+" — Water Infrastructure in Bihar Since "+C.company.established;
@@ -502,8 +732,9 @@ function renderText(C){
     '<div class="info-row"><div class="ic"><i class="fa fa-envelope"></i></div><div><div class="lb">Email Us</div><div class="vl"><a href="mailto:'+esc(C.contact.email)+'">'+esc(C.contact.email)+'</a></div></div></div>'+
     '<div class="info-row"><div class="ic"><i class="fa fa-map-marker"></i></div><div><div class="lb">Visit Us</div><div class="vl" style="font-weight:500;font-size:1.04rem">'+esc(C.contact.address)+'</div></div></div>';
   $("#footerContact").innerHTML='<li>'+esc(C.contact.phone)+'</li><li><a href="mailto:'+esc(C.contact.email)+'">'+esc(C.contact.email)+'</a></li><li>'+esc(C.contact.address)+'</li>';
-  $("#contactForm").onsubmit=function(e){e.preventDefault();var f=e.target;var body=encodeURIComponent("Name: "+f.name.value+"\nEmail: "+f.email.value+"\n\n"+f.message.value);window.location.href="mailto:"+C.contact.email+"?subject="+encodeURIComponent(f.subject.value||"Website enquiry")+"&body="+body;};
+  $("#contactForm").onsubmit=function(e){e.preventDefault();submitForm(e.target,"Website Enquiry — "+(e.target.subject.value||"General"),$("#contactStatus"));};
   $("#year").textContent=new Date().getFullYear();
+  renderAchievements(C.achievements);renderNews(C.news);renderImpact(C.impact);renderCareers(C.careers);
   revealObserve();
 }
 
