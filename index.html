@@ -10,265 +10,208 @@
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <link rel="icon" type="image/svg+xml" href="img/logo-mark.svg" />
 <link rel="apple-touch-icon" href="img/logo-mark.svg" />
 <style>
 :root{
-  --navy-deep:#081326;--navy:#0d2240;--navy-2:#143560;--navy-soft:#1d4a7e;
-  --gold:#c6a256;--gold-bright:#e6c987;--gold-deep:#a8863c;
-  --ink:#0d1726;--muted:#5c6776;--line:#e7e9f0;--bg:#ffffff;--bg-soft:#f5f6fa;--paper:#f0f2f7;
-  --radius:14px;--radius-lg:24px;
-  --shadow:0 14px 38px rgba(8,19,38,.09);--shadow-lg:0 34px 70px rgba(8,19,38,.2);
-  --maxw:1220px;--ease:cubic-bezier(.22,1,.36,1);
-  --mono:"Space Mono",ui-monospace,Menlo,monospace;
+  --bg:#ffffff;--bg2:#f5f5f7;--bg3:#fbfbfd;
+  --ink:#1d1d1f;--sub:#6e6e73;--ter:#86868b;--line:#d2d2d7;--line-soft:#e8e8ed;
+  --blue:#0071e3;--blue-h:#0077ed;--blue-link:#0066cc;
+  --navy:#0b3a6f;
+  --radius:18px;--radius-lg:28px;--radius-xl:34px;
+  --maxw:1100px;--wide:1280px;
+  --ease:cubic-bezier(.28,.11,.32,1);
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter",system-ui,"Helvetica Neue",Arial,sans-serif;
+  --shadow:0 6px 30px rgba(0,0,0,.08);--shadow-lg:0 30px 70px rgba(0,0,0,.14);
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;color:var(--ink);line-height:1.08;margin:0 0 .4em;font-weight:600;letter-spacing:-.015em}
-p{margin:0 0 1em;color:var(--muted)}a{color:var(--navy-2);text-decoration:none}img{max-width:100%;display:block}
-.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 30px}
-.label{font-family:var(--mono);font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold-deep);display:inline-flex;align-items:center;gap:10px}
-.label::before{content:"";width:24px;height:1px;background:var(--gold)}
-.num{font-family:var(--mono);font-weight:700;color:var(--gold)}
-.btn{display:inline-flex;align-items:center;gap:.6rem;padding:15px 30px;border-radius:2px;font-weight:600;font-family:"Inter",sans-serif;cursor:pointer;border:1.5px solid transparent;transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .3s,color .3s,border-color .3s;font-size:.9rem;letter-spacing:.2px}
-.btn i{transition:transform .3s var(--ease)}.btn:hover i{transform:translateX(4px)}
-.btn-gold{background:var(--gold);color:var(--navy-deep);box-shadow:0 12px 30px rgba(198,162,86,.35)}
-.btn-gold:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(198,162,86,.45);background:var(--gold-bright)}
-.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
-.btn-outline:hover{background:#fff;color:var(--navy);border-color:#fff;transform:translateY(-3px)}
-.btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:var(--navy-2);transform:translateY(-3px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;overflow-x:hidden}
+h1,h2,h3,h4{margin:0 0 .35em;font-weight:600;letter-spacing:-.025em;line-height:1.06;color:var(--ink)}
+p{margin:0 0 1em;color:var(--sub)}
+a{color:var(--blue-link);text-decoration:none}img{max-width:100%;display:block}
+.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.wide{max-width:var(--wide)}
+.eyebrow{font-size:.95rem;font-weight:600;letter-spacing:0;color:var(--blue-link);margin-bottom:8px}
+.lead{font-size:1.35rem;color:var(--sub);font-weight:400;letter-spacing:-.01em;line-height:1.4}
+.tlink{color:var(--blue-link);font-size:1.06rem;font-weight:400;display:inline-flex;align-items:center;gap:3px}
+.tlink::after{content:"\203A";font-size:1.2em;line-height:0;transition:transform .25s var(--ease)}
+.tlink:hover{text-decoration:underline}.tlink:hover::after{transform:translateX(3px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:11px 22px;border-radius:980px;font-weight:500;font-family:var(--sans);font-size:1rem;cursor:pointer;border:1px solid transparent;transition:background .25s var(--ease),transform .25s var(--ease),color .25s,border-color .25s;letter-spacing:-.01em}
+.btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:var(--blue-h)}
+.btn-ghost{background:transparent;color:var(--blue-link);border-color:var(--line)}.btn-ghost:hover{border-color:var(--ink);color:var(--ink)}
 
-/* Header */
-.site-header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s,box-shadow .35s,padding .35s;padding:22px 0}
-.site-header.scrolled{background:rgba(8,19,38,.94);box-shadow:0 10px 34px rgba(8,19,38,.3);padding:13px 0;backdrop-filter:blur(10px)}
-.nav{display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:12px;color:#fff}
-.logo-mark{width:44px;height:44px;object-fit:contain;flex:0 0 auto;display:block;filter:drop-shadow(0 3px 8px rgba(0,0,0,.25))}
-.sign .logo-mark{width:46px;height:46px;filter:none}
-.brand .mark{width:38px;height:38px;border:1.5px solid var(--gold);display:grid;place-items:center;color:var(--gold-bright);font-size:1rem;position:relative}
-.brand .mark::after{content:"";position:absolute;inset:4px;border:1px solid rgba(198,162,86,.4)}
-.brand .bt b{font-family:"Fraunces",serif;font-weight:700;font-size:1.24rem;letter-spacing:.3px;display:block;line-height:1}
-.brand .bt small{font-family:var(--mono);font-weight:400;font-size:.56rem;letter-spacing:3.5px;color:var(--gold-bright);display:block;margin-top:3px}
-.nav-links{display:flex;gap:2px;list-style:none;margin:0;padding:0;align-items:center}
-.nav-links a{color:rgba(255,255,255,.82);font-weight:500;font-size:.9rem;padding:9px 15px;transition:color .2s;position:relative}
-.nav-links a:not(.nav-cta)::after{content:"";position:absolute;left:15px;right:15px;bottom:4px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
-.nav-links a:not(.nav-cta):hover::after,.nav-links a.active::after{transform:scaleX(1)}
-.nav-links a:hover,.nav-links a.active{color:#fff}
-.nav-cta{margin-left:12px;background:var(--gold);color:var(--navy-deep)!important;font-weight:600;padding:11px 22px!important}
-.nav-cta:hover{background:var(--gold-bright);transform:translateY(-2px)}
-.nav-toggle{display:none;background:none;border:0;cursor:pointer;width:44px;height:44px}
-.nav-toggle span{display:block;width:24px;height:2px;background:#fff;margin:5px auto;transition:.3s}
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(251,251,253,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.06);transition:background .3s}
+.nav-in{max-width:var(--wide);height:100%;margin:0 auto;padding:0 26px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:9px;color:var(--ink)}
+.brand .logo-mark{width:26px;height:26px;object-fit:contain;display:block}
+.brand b{font-weight:600;font-size:1.02rem;letter-spacing:-.02em}
+.brand small{display:none}
+.nav-links{display:flex;gap:6px;list-style:none;margin:0;padding:0;align-items:center}
+.nav-links a{color:var(--ink);font-weight:400;font-size:.84rem;padding:7px 13px;border-radius:8px;opacity:.85;transition:opacity .2s,background .2s}
+.nav-links a:hover{opacity:1}
+.nav-cta{background:var(--blue);color:#fff!important;opacity:1!important;padding:7px 16px!important;border-radius:980px!important;font-weight:500}
+.nav-cta:hover{background:var(--blue-h)}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;width:40px;height:40px;color:var(--ink)}
+.nav-toggle span{display:block;width:20px;height:1.5px;background:currentColor;margin:5px auto;transition:.3s}
 
 /* Hero */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--navy-deep);padding:120px 0 80px}
-.hero-blueprint{position:absolute;inset:0;z-index:0;opacity:.5;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:46px 46px}
-.hero-glow{position:absolute;right:-6%;top:8%;width:48%;height:80%;z-index:0;background:radial-gradient(closest-side,rgba(198,162,86,.22),transparent 72%);filter:blur(6px)}
-.hero .container{position:relative;z-index:3;display:grid;grid-template-columns:1.06fr .94fr;gap:30px;align-items:center}
-.hero-copy{max-width:620px}
-.hero-copy .label{color:var(--gold-bright);margin-bottom:24px}
-.hero-copy .label::before{background:var(--gold-bright)}
-.hero h1{color:#fff;font-size:clamp(2.5rem,5.6vw,4.7rem);font-weight:500;margin-bottom:0;letter-spacing:-.02em}
-.hero h1 .draw{position:relative;color:var(--gold-bright);font-style:italic;white-space:nowrap}
-.hero h1 .draw::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.07em;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 1s var(--ease) .5s}
-.hero.ready h1 .draw::after{transform:scaleX(1)}
-.hero-sub{color:rgba(255,255,255,.84);font-size:1.16rem;max-width:520px;margin:24px 0 0;min-height:3.4em}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-.hero-stats{display:flex;gap:14px;margin-top:50px;flex-wrap:wrap}
-.hero-stats .s{padding-right:26px;border-right:1px solid rgba(255,255,255,.14)}
-.hero-stats .s:last-child{border-right:0}
-.hero-stats .s strong{font-family:"Fraunces",serif;font-size:2.4rem;display:block;line-height:1;color:#fff;font-weight:600}
-.hero-stats .s span{font-family:var(--mono);font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.6)}
-/* 3D stage */
-.hero-stage{position:relative;height:560px;display:flex;align-items:center;justify-content:center}
-.hero-stage .ground{position:absolute;left:50%;bottom:60px;width:340px;height:120px;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(198,162,86,.22),transparent 70%);filter:blur(8px)}
-#tower3d{width:100%;height:100%;position:relative;z-index:2}
-.hero-fallback{position:absolute;inset:0;z-index:1;border-radius:var(--radius-lg);overflow:hidden;opacity:0;transition:opacity .5s;border:1px solid rgba(255,255,255,.1)}
-.hero-fallback img{width:100%;height:100%;object-fit:cover;opacity:.6}
-.hero-seal{position:absolute;right:6px;top:18px;z-index:3;width:104px;height:104px;border:1px solid rgba(230,201,135,.5);border-radius:50%;display:grid;place-items:center;text-align:center;background:rgba(8,19,38,.4);backdrop-filter:blur(4px);animation:spinSeal 26s linear infinite}
-@keyframes spinSeal{to{transform:rotate(360deg)}}
-.hero-seal span{font-family:var(--mono);font-size:.58rem;letter-spacing:2px;color:var(--gold-bright);line-height:1.5;animation:spinSeal 26s linear infinite reverse}
-.scroll-cue{position:absolute;left:30px;bottom:30px;z-index:4;font-family:var(--mono);font-size:.66rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:10px}
-.scroll-cue .ln{width:42px;height:1px;background:rgba(255,255,255,.3);position:relative;overflow:hidden}
-.scroll-cue .ln::after{content:"";position:absolute;left:-42px;top:0;width:42px;height:1px;background:var(--gold-bright);animation:cue 2.2s var(--ease) infinite}
-@keyframes cue{to{left:42px}}
-.hero-dots{position:absolute;left:30px;bottom:64px;z-index:4;display:flex;gap:9px}
-.hero-dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.34);cursor:pointer;transition:.3s;padding:0}
-.hero-dots button.active{background:var(--gold-bright);width:26px;border-radius:99px}
+.hero{position:relative;padding:130px 0 40px;text-align:center;overflow:hidden;background:radial-gradient(110% 80% at 50% 0%,#f3f8ff 0%,#ffffff 55%)}
+.hero .eyebrow{font-size:1.05rem}
+.hero h1{font-size:clamp(2.6rem,7vw,5.2rem);font-weight:600;letter-spacing:-.03em;max-width:16ch;margin:6px auto 0}
+.hero h1 .grad{background:linear-gradient(120deg,#0a84ff,#0066cc 55%,#0a3f80);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{font-size:clamp(1.15rem,2.2vw,1.55rem);color:var(--sub);max-width:30ch;margin:18px auto 0;font-weight:400;line-height:1.38;min-height:2.4em}
+.hero-links{display:flex;gap:26px;justify-content:center;align-items:center;margin-top:22px;flex-wrap:wrap}
+.hero-dots{display:flex;gap:8px;justify-content:center;margin-top:26px}
+.hero-dots button{width:7px;height:7px;border-radius:50%;border:0;background:rgba(0,0,0,.18);cursor:pointer;transition:.3s;padding:0}
+.hero-dots button.active{background:var(--blue);width:22px;border-radius:99px}
+/* Orb stage */
+.orb-stage{position:relative;height:460px;margin:6px auto 0;display:flex;align-items:center;justify-content:center}
+.orb-shadow{position:absolute;left:50%;bottom:74px;width:300px;height:60px;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(10,80,170,.28),transparent 70%);filter:blur(10px);z-index:1}
+.orb-css{position:absolute;z-index:2;width:300px;height:300px;border-radius:50%;
+  background:
+    radial-gradient(130px 110px at 38% 30%,rgba(255,255,255,.96),rgba(255,255,255,0) 60%),
+    radial-gradient(circle at 50% 46%,#9fccff 0%,#3a93ff 50%,#0a64d8 100%);
+  box-shadow:inset -28px -36px 60px rgba(4,38,86,.55),inset 22px 26px 48px rgba(255,255,255,.45),0 44px 80px rgba(10,100,216,.32);
+  animation:floaty 6.5s ease-in-out infinite}
+.orb-css::after{content:"";position:absolute;left:24%;top:18%;width:74px;height:54px;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(255,255,255,.95),rgba(255,255,255,0) 70%);filter:blur(2px)}
+#orb3d{position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center}
+#orb3d canvas{display:block}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+.scroll-cue{margin-top:8px;color:var(--ter);font-size:.78rem;letter-spacing:.04em}
 
-/* Marquee */
-.marquee{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:18px 0;overflow:hidden}
-.marquee-track{display:flex;gap:0;white-space:nowrap;width:max-content;animation:scroll 28s linear infinite;font-family:var(--mono);font-size:.84rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.55)}
-.marquee-track span{padding:0 30px;display:inline-flex;align-items:center;gap:30px}
-.marquee-track span::after{content:"\f111";font-family:FontAwesome;font-size:.34rem;color:var(--gold);vertical-align:middle}
-@keyframes scroll{to{transform:translateX(-50%)}}
+/* Generic section */
+section{padding:120px 0}
+.sec-head{max-width:760px;margin:0 auto 60px;text-align:center}
+.sec-head h2{font-size:clamp(2.1rem,4.6vw,3.4rem);font-weight:600;letter-spacing:-.03em}
+.sec-head p{font-size:1.2rem;color:var(--sub);margin-top:12px;font-weight:400}
+.bg2{background:var(--bg2)}
 
-section{padding:118px 0}
-.sec-head{max-width:680px;margin-bottom:64px}
-.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
-.sec-head.center .label{justify-content:center}
-.sec-head h2{font-size:clamp(2.1rem,4.2vw,3.1rem);margin-top:18px;font-weight:500}
-.sec-head p{margin-top:14px;font-size:1.04rem}
-.bg-soft{background:var(--bg-soft)}
+/* Bento — What we do */
+.bento{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:236px;gap:20px}
+.tile{background:var(--bg2);border-radius:var(--radius-lg);padding:34px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.tile:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.tile.lg{grid-column:span 2;grid-row:span 1}
+.tile .ic{position:absolute;top:30px;left:34px;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:1.3rem;color:#fff;background:linear-gradient(135deg,#3a93ff,#0066cc)}
+.tile h3{font-size:1.5rem;font-weight:600;margin:0 0 6px;letter-spacing:-.02em}
+.tile p{margin:0;color:var(--sub);font-size:1rem;max-width:34ch}
+.tile.dark{background:#1d1d1f;color:#fff}
+.tile.dark h3{color:#fff}.tile.dark p{color:rgba(255,255,255,.66)}
+.tile.dark .ic{background:rgba(255,255,255,.14)}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center;max-width:960px;margin:0 auto}
+.stats .st strong{font-size:clamp(2.8rem,6vw,4.2rem);font-weight:600;letter-spacing:-.03em;display:block;line-height:1;background:linear-gradient(120deg,#0a84ff,#0a3f80);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats .st span{color:var(--sub);font-size:1rem;margin-top:10px;display:block}
 
 /* About */
-.about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:70px;align-items:center}
-.about-media{position:relative}
-.about-media .frame{position:relative;overflow:hidden;box-shadow:var(--shadow-lg);border-radius:6px}
-.about-media .frame img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/4.4;transition:transform 1s var(--ease)}
-.about-media:hover .frame img{transform:scale(1.05)}
-.about-media .tag{position:absolute;left:0;bottom:0;background:var(--navy-deep);color:#fff;padding:18px 22px;z-index:2}
-.about-media .tag b{font-family:"Fraunces",serif;font-size:2.6rem;color:var(--gold-bright);display:block;line-height:1}
-.about-media .tag span{font-family:var(--mono);font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.7)}
-.about-media .vcap{position:absolute;right:-14px;top:30px;writing-mode:vertical-rl;font-family:var(--mono);font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep)}
-.about-media::before{content:"";position:absolute;top:-16px;right:24px;width:90px;height:90px;border-top:2px solid var(--gold);border-right:2px solid var(--gold);z-index:1}
-.about-body h2{font-size:clamp(2rem,3.6vw,2.9rem);margin-top:16px;font-weight:500}
-.about-lead{font-size:1.12rem;color:var(--ink);font-weight:400}
-.checklist{list-style:none;padding:0;margin:26px 0 32px;display:grid;grid-template-columns:1fr 1fr;gap:12px 24px}
-.checklist li{display:flex;gap:12px;align-items:flex-start;color:var(--ink);font-weight:500;font-size:.96rem}
-.checklist i{color:var(--gold-deep);margin-top:5px;font-size:.85rem}
-.sign{display:flex;align-items:center;gap:16px;padding-top:24px;border-top:1px solid var(--line)}
-.sign .mark{width:46px;height:46px;border:1.5px solid var(--navy);display:grid;place-items:center;color:var(--navy);font-size:1.05rem}
-.sign .nm{font-family:"Fraunces",serif;font-size:1.12rem;color:var(--ink)}
-.sign .rl{font-family:var(--mono);font-size:.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-media{border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--bg2)}
+.about-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:5/4.6;transition:transform 1s var(--ease)}
+.about-media:hover img{transform:scale(1.04)}
+.about-body h2{font-size:clamp(2rem,3.8vw,3rem);font-weight:600}
+.about-body .lead{margin:14px 0 22px}
+.checklist{list-style:none;padding:0;margin:0}
+.checklist li{display:flex;gap:13px;align-items:flex-start;padding:13px 0;border-top:1px solid var(--line-soft);color:var(--ink);font-size:1.04rem}
+.checklist li:last-child{border-bottom:1px solid var(--line-soft)}
+.checklist i{color:var(--blue);margin-top:4px}
 
-/* Services — hover rows */
-.svc-list{border-top:1px solid var(--line)}
-.svc-row{display:grid;grid-template-columns:90px 1fr auto;gap:30px;align-items:center;padding:30px 24px;border-bottom:1px solid var(--line);position:relative;cursor:default;transition:background .35s var(--ease),padding .35s var(--ease)}
-.svc-row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transform-origin:top;transition:transform .35s var(--ease)}
-.svc-row:hover{background:var(--navy-deep);padding-left:40px;color:#fff}
-.svc-row:hover::before{transform:scaleY(1)}
-.svc-row .idx{font-family:var(--mono);font-weight:700;font-size:.92rem;color:var(--gold-deep)}
-.svc-row:hover .idx{color:var(--gold-bright)}
-.svc-row .mid h3{font-size:1.5rem;margin:0 0 2px;font-weight:500;transition:color .35s}
-.svc-row:hover .mid h3{color:#fff}
-.svc-row .mid p{margin:0;font-size:.96rem;max-width:60ch;opacity:0;max-height:0;transition:opacity .35s var(--ease),max-height .35s var(--ease),margin .35s}
-.svc-row:hover .mid p{opacity:.82;max-height:60px;margin-top:6px;color:rgba(255,255,255,.82)}
-.svc-row .ar{width:46px;height:46px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--muted);transition:.35s;flex:0 0 auto}
-.svc-row:hover .ar{background:var(--gold);border-color:var(--gold);color:var(--navy-deep);transform:rotate(-45deg)}
-
-/* Stat band */
-.statband{background:var(--navy-deep);color:#fff;position:relative;overflow:hidden}
-.statband .hero-blueprint{opacity:.4}
-.statband .container{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr)}
-.statband .st{text-align:center;padding:14px 20px;border-right:1px solid rgba(255,255,255,.1)}
-.statband .st:last-child{border-right:0}
-.statband .st strong{font-family:"Fraunces",serif;font-size:clamp(2.6rem,5vw,3.6rem);color:var(--gold-bright);display:block;line-height:1;font-weight:600}
-.statband .st span{font-family:var(--mono);font-size:.66rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.62);margin-top:10px;display:block}
-
-/* Projects gallery */
-.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
-.filters button{border:1px solid var(--line);background:#fff;color:var(--muted);padding:9px 20px;border-radius:2px;cursor:pointer;font-family:var(--mono);font-size:.74rem;letter-spacing:1px;text-transform:uppercase;transition:.25s}
-.filters button.active,.filters button:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:236px;gap:18px}
-.project{position:relative;overflow:hidden;background:var(--navy);border-radius:6px}
-.project.feature{grid-column:span 2;grid-row:span 2}
-.project img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease),filter .5s}
-.project:hover img{transform:scale(1.07)}
-.project-ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;color:#fff;background:linear-gradient(0deg,rgba(8,19,38,.9) 6%,rgba(8,19,38,.05) 58%)}
-.project-ov .pidx{position:absolute;top:18px;left:20px;font-family:var(--mono);font-size:.72rem;color:var(--gold-bright);letter-spacing:1px}
-.project-ov .cat{font-family:var(--mono);font-size:.66rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-bright)}
-.project-ov h4{color:#fff;margin:7px 0 0;font-size:1.3rem;font-weight:500;transform:translateY(6px);transition:transform .4s var(--ease)}
-.project:hover .project-ov h4{transform:none}
-.project .corner{position:absolute;top:16px;right:16px;width:40px;height:40px;border-top:1.5px solid var(--gold-bright);border-right:1.5px solid var(--gold-bright);opacity:0;transition:.4s}
-.project:hover .corner{opacity:1}
+/* Projects */
+.filters{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:44px}
+.filters button{border:1px solid var(--line);background:transparent;color:var(--sub);padding:8px 18px;border-radius:980px;cursor:pointer;font-family:var(--sans);font-size:.92rem;transition:.25s}
+.filters button.active,.filters button:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.project{border-radius:var(--radius-lg);overflow:hidden;background:var(--bg2);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.project:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.project .ph{aspect-ratio:4/3;overflow:hidden;background:var(--bg2)}
+.project .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.project:hover .ph img{transform:scale(1.05)}
+.project .cap{padding:20px 22px 24px}
+.project .cap .cat{color:var(--blue-link);font-size:.84rem;font-weight:500}
+.project .cap h4{font-size:1.22rem;font-weight:600;margin:4px 0 0;letter-spacing:-.02em;color:var(--ink)}
 
 /* Team */
-.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.member{position:relative;overflow:hidden;border-radius:6px;background:var(--navy);aspect-ratio:4/4.7}
-.member img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%) brightness(.92);transition:filter .6s var(--ease),transform .8s var(--ease)}
-.member::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,19,38,.92) 4%,rgba(8,19,38,.15) 46%,rgba(8,19,38,.4));transition:opacity .5s}
-.member:hover img{filter:grayscale(0%) brightness(1);transform:scale(1.05)}
-.member .midx{position:absolute;top:14px;left:16px;z-index:2;font-family:var(--mono);font-size:.7rem;letter-spacing:1px;color:var(--gold-bright)}
-.member .minfo{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:20px 18px}
-.member .minfo h4{margin:0;color:#fff;font-size:1.16rem;font-weight:500}
-.member .minfo span{font-family:var(--mono);font-size:.66rem;letter-spacing:1px;text-transform:uppercase;color:var(--gold-bright)}
-.member .minfo .ml{margin-top:10px;display:flex;gap:8px;opacity:0;transform:translateY(8px);transition:.4s}
-.member:hover .minfo .ml{opacity:1;transform:none}
-.member .minfo .ml a{width:32px;height:32px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:grid;place-items:center;color:#fff;transition:.25s}
-.member .minfo .ml a:hover{background:var(--gold);border-color:var(--gold);color:var(--navy-deep)}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.member{text-align:center}
+.member .ph{border-radius:var(--radius-lg);overflow:hidden;background:var(--bg2);aspect-ratio:1/1;position:relative}
+.member .ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%);transition:filter .5s var(--ease),transform .8s var(--ease)}
+.member:hover .ph img{filter:grayscale(0);transform:scale(1.04)}
+.member h4{font-size:1.16rem;font-weight:600;margin:16px 0 2px;letter-spacing:-.02em}
+.member span{color:var(--sub);font-size:.96rem}
+.member .ml{margin-top:10px;display:flex;gap:8px;justify-content:center}
+.member .ml a{width:34px;height:34px;border-radius:50%;background:var(--bg2);color:var(--sub);display:grid;place-items:center;transition:.25s}
+.member .ml a:hover{background:var(--blue);color:#fff}
 
 /* CTA */
-.cta{background:var(--navy-deep);color:#fff;text-align:center;position:relative;overflow:hidden}
-.cta .hero-blueprint{opacity:.45}
-.cta .hero-glow{left:50%;top:50%;transform:translate(-50%,-50%);width:60%;height:140%}
-.cta .container{position:relative;z-index:2}
-.cta h2{color:#fff;font-size:clamp(2rem,4vw,3rem);font-weight:500;max-width:760px;margin:14px auto 0}
-.cta p{color:rgba(255,255,255,.82);max-width:600px;margin:18px auto 30px}
+.cta{text-align:center;background:radial-gradient(120% 90% at 50% 0%,#eaf3ff,#f5f5f7 60%)}
+.cta h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:600;letter-spacing:-.03em;max-width:18ch;margin:0 auto}
+.cta p{font-size:1.25rem;color:var(--sub);max-width:40ch;margin:16px auto 28px;font-weight:400}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
 /* Contact */
-.contact-grid{display:grid;grid-template-columns:1fr 1.12fr;gap:56px}
-.info-card{display:flex;gap:18px;align-items:flex-start;padding:24px 0;border-bottom:1px solid var(--line)}
-.info-card:first-child{padding-top:0}
-.info-card .ic{flex:0 0 50px;height:50px;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold-deep);font-size:1.1rem}
-.info-card h4{margin:0 0 3px;font-size:.78rem;font-family:var(--mono);letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
-.info-card p{margin:0;font-size:1.04rem;color:var(--ink)}
-.info-card p a{color:var(--ink)}
-.form{background:#fff;border:1px solid var(--line);border-radius:8px;padding:38px;box-shadow:var(--shadow)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:60px}
+.info-row{display:flex;gap:18px;align-items:flex-start;padding:22px 0;border-top:1px solid var(--line-soft)}
+.info-row:first-child{padding-top:0;border-top:0}
+.info-row .ic{flex:0 0 46px;height:46px;border-radius:13px;display:grid;place-items:center;background:var(--bg2);color:var(--blue);font-size:1.1rem}
+.info-row .lb{font-size:.84rem;color:var(--ter);font-weight:500}
+.info-row .vl{font-size:1.12rem;color:var(--ink);font-weight:500;letter-spacing:-.01em}
+.info-row .vl a{color:var(--ink)}
+.form{background:var(--bg2);border-radius:var(--radius-lg);padding:38px}
 .form .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.field{margin-bottom:18px}.field label{display:block;font-family:var(--mono);font-weight:400;font-size:.7rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;color:var(--muted)}
-.field input,.field textarea{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:4px;font:inherit;color:var(--ink);background:var(--bg-soft);transition:border .2s,box-shadow .2s}
-.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(198,162,86,.16);background:#fff}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:.84rem;color:var(--sub);margin-bottom:7px;font-weight:500}
+.field input,.field textarea{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:12px;font:inherit;font-size:1rem;color:var(--ink);background:#fff;transition:border .2s,box-shadow .2s}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(0,113,227,.15)}
 
 /* Footer */
-.footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:84px 0 0;position:relative;overflow:hidden}
-.footer .hero-blueprint{opacity:.3}
-.footer .container{position:relative;z-index:2}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:50px}
-.footer h4{color:#fff;margin-bottom:18px;font-family:var(--mono);font-size:.74rem;letter-spacing:2px;text-transform:uppercase;font-weight:400}
-.footer p{color:rgba(255,255,255,.6)}.footer a{color:rgba(255,255,255,.6)}.footer a:hover{color:var(--gold-bright)}
-.footer ul{list-style:none;padding:0;margin:0}.footer ul li{margin-bottom:11px}
-.footer .socials{display:flex;gap:10px;margin-top:20px}
-.footer .socials a{width:42px;height:42px;border:1px solid rgba(255,255,255,.16);display:grid;place-items:center;color:#fff;transition:.25s}
-.footer .socials a:hover{background:var(--gold);border-color:var(--gold);color:var(--navy-deep);transform:translateY(-3px)}
-.footer-word{font-family:"Fraunces",serif;font-size:clamp(2.6rem,9vw,7rem);font-weight:600;color:rgba(255,255,255,.05);line-height:.9;margin-top:60px;letter-spacing:-.02em;white-space:nowrap}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:30px;padding:24px 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:.72rem;letter-spacing:.5px;color:rgba(255,255,255,.5)}
-.footer-bottom .gold{color:var(--gold-bright)}
+.footer{background:var(--bg2);color:var(--sub);padding:54px 0 30px;font-size:.84rem}
+.footer .container{max-width:var(--wide)}
+.footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:30px;padding-bottom:30px;border-bottom:1px solid var(--line)}
+.footer .brand{color:var(--ink);margin-bottom:12px}
+.footer h4{font-size:.84rem;color:var(--ink);font-weight:600;margin-bottom:14px;letter-spacing:-.01em}
+.footer ul{list-style:none;padding:0;margin:0}.footer ul li{margin-bottom:9px}
+.footer a{color:var(--sub)}.footer a:hover{color:var(--ink);text-decoration:underline}
+.footer .socials{display:flex;gap:10px;margin-top:14px}
+.footer .socials a{width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--sub);transition:.25s}
+.footer .socials a:hover{background:var(--blue);color:#fff}
+.footer-bottom{padding-top:22px;color:var(--ter);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
-.to-top{position:fixed;right:26px;bottom:26px;width:48px;height:48px;background:var(--navy);color:var(--gold-bright);border:0;cursor:pointer;display:grid;place-items:center;opacity:0;pointer-events:none;transition:.3s;box-shadow:var(--shadow);z-index:90}
-.to-top.show{opacity:1;pointer-events:auto}.to-top:hover{background:var(--navy-2);transform:translateY(-3px)}
-.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}.reveal.in{opacity:1;transform:none}
+.to-top{position:fixed;right:24px;bottom:24px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);color:var(--ink);border:1px solid var(--line);cursor:pointer;display:grid;place-items:center;opacity:0;pointer-events:none;transition:.3s;box-shadow:var(--shadow);z-index:90}
+.to-top.show{opacity:1;pointer-events:auto}.to-top:hover{transform:translateY(-3px)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}.reveal.in{opacity:1;transform:none}
 
-@media(max-width:1000px){
-  .hero .container{grid-template-columns:1fr;gap:10px}
-  .hero-stage{height:380px;order:-1}
-  .hero-dots,.scroll-cue{display:none}
-  .about-grid,.contact-grid,.footer-grid{grid-template-columns:1fr;gap:44px}
-  .about-media{max-width:480px}
-  .team-grid,.gallery{grid-template-columns:repeat(2,1fr)}
-  .project.feature{grid-column:span 2;grid-row:span 1}
-  .statband .container{grid-template-columns:repeat(2,1fr);gap:24px 0}
-  .statband .st:nth-child(2){border-right:0}
+@media(max-width:980px){
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .about-media{max-width:560px;margin:0 auto}
+  .bento,.team-grid,.gallery{grid-template-columns:repeat(2,1fr)}
+  .tile.lg{grid-column:span 2}
+  .stats{grid-template-columns:repeat(2,1fr);gap:40px 20px}
+  .footer-top{grid-template-columns:1fr 1fr}
 }
 @media(max-width:680px){
   .nav-toggle{display:block}
-  .nav-links{position:absolute;top:calc(100% + 8px);left:18px;right:18px;flex-direction:column;align-items:stretch;background:var(--navy);padding:14px;gap:2px;box-shadow:var(--shadow-lg);transform:translateY(-12px);opacity:0;pointer-events:none;transition:.28s}
+  .nav-links{position:absolute;top:calc(100% + 6px);left:14px;right:14px;flex-direction:column;align-items:stretch;background:rgba(251,251,253,.96);backdrop-filter:blur(20px);padding:12px;gap:2px;box-shadow:var(--shadow-lg);border-radius:18px;transform:translateY(-10px);opacity:0;pointer-events:none;transition:.26s}
   .nav-links.open{transform:none;opacity:1;pointer-events:auto}
-  .nav-links a{color:rgba(255,255,255,.9)}.nav-cta{margin:8px 0 0}
-  section{padding:78px 0}
-  .team-grid,.gallery,.form .row,.checklist{grid-template-columns:1fr}
-  .gallery{grid-auto-rows:230px}.project.feature{grid-column:span 1}
-  .svc-row{grid-template-columns:50px 1fr;gap:16px;padding:22px 16px}.svc-row .ar{display:none}
-  .svc-row:hover{padding-left:24px}.svc-row .mid p{display:none}
-  .statband .container{grid-template-columns:1fr}.statband .st{border-right:0;border-bottom:1px solid rgba(255,255,255,.1);padding:24px}
-  .hero-stats .s strong{font-size:2rem}
+  .nav-links a{padding:11px 14px;font-size:1rem}.nav-cta{margin-top:6px;text-align:center}
+  section{padding:84px 0}
+  .bento,.team-grid,.gallery,.form .row{grid-template-columns:1fr}
+  .tile.lg{grid-column:span 1}
+  .orb-stage{height:360px}.orb-css{width:240px;height:240px}
 }
 </style>
 </head>
 <body>
 
-<header class="site-header" id="header">
-  <div class="container nav">
-    <a href="#home" class="brand">
-      <img class="logo-mark" src="img/logo-mark.svg" alt="Umang Infrastructure logo" />
-      <span class="bt" id="brandText"><b>UMANG</b><small>INFRASTRUCTURE</small></span>
-    </a>
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a href="#home" class="brand"><img class="logo-mark" src="img/logo-mark.svg" alt="Umang Infrastructure logo" /><b id="brandText">Umang Infrastructure</b></a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#capabilities">What We Do</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#services">What We Do</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#team">Team</a></li>
       <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
@@ -277,117 +220,95 @@ section{padding:118px 0}
 </header>
 
 <section class="hero" id="home">
-  <div class="hero-blueprint"></div>
-  <div class="hero-glow"></div>
   <div class="container">
-    <div class="hero-copy">
-      <span class="label" id="heroKicker">01 — Water Infrastructure</span>
-      <h1>We build the <span class="draw">water</span> Bihar relies on.</h1>
-      <p class="hero-sub" id="heroText"></p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-gold">View Our Projects <i class="fa fa-long-arrow-right"></i></a>
-        <a href="#contact" class="btn btn-outline">Request a Quote</a>
-      </div>
-      <div class="hero-stats">
-        <div class="s"><strong class="count" data-to="20" data-suffix="+" id="statYears">20+</strong><span>Years</span></div>
-        <div class="s"><strong class="count" data-to="50" data-suffix="+">50+</strong><span>Projects</span></div>
-        <div class="s"><strong class="count" data-to="1" data-suffix="M+">1M+</strong><span>People Served</span></div>
-      </div>
+    <p class="eyebrow" id="heroKicker">Water Infrastructure · Since 2006</p>
+    <h1>We build the <span class="grad">water</span><br>Bihar relies on.</h1>
+    <p class="hero-sub" id="heroText"></p>
+    <div class="hero-links">
+      <a href="#projects" class="tlink">View our projects</a>
+      <a href="#contact" class="tlink">Request a quote</a>
     </div>
-    <div class="hero-stage">
-      <div class="ground"></div>
-      <div class="hero-fallback" id="heroFallback"><img id="heroImg" alt="Umang Infrastructure water tower" /></div>
-      <div id="tower3d" aria-hidden="true"></div>
-      <div class="hero-seal"><span>EST · 2006 · PURNIA ·</span></div>
-    </div>
+    <div class="hero-dots" id="heroDots"></div>
   </div>
-  <div class="hero-dots" id="heroDots"></div>
-  <div class="scroll-cue"><span class="ln"></span> Scroll</div>
+  <div class="orb-stage">
+    <div class="orb-shadow"></div>
+    <div class="orb-css" id="orbCss"></div>
+    <div id="orb3d" aria-hidden="true"></div>
+  </div>
 </section>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track" id="marquee"></div>
-</div>
+<section id="capabilities">
+  <div class="container wide">
+    <div class="sec-head reveal"><p class="eyebrow">What We Do</p><h2>The full lifecycle of water.</h2><p>From treatment and supply to reservoirs, towers and recycling — engineered to last and delivered on schedule.</p></div>
+    <div class="bento reveal" id="bento"></div>
+  </div>
+</section>
+
+<section class="bg2" style="padding:96px 0">
+  <div class="container">
+    <div class="stats reveal">
+      <div class="st"><strong class="count" data-to="20" data-suffix="+" id="statYears">20+</strong><span>Years of experience</span></div>
+      <div class="st"><strong class="count" data-to="50" data-suffix="+">50+</strong><span>Projects delivered</span></div>
+      <div class="st"><strong class="count" data-to="100" data-suffix="%">100%</strong><span>On-time commitment</span></div>
+      <div class="st"><strong class="count" data-to="1" data-suffix="M+">1M+</strong><span>People served</span></div>
+    </div>
+  </div>
+</section>
 
 <section id="about">
   <div class="container">
     <div class="about-grid">
-      <div class="about-media reveal">
-        <span class="vcap">Reservoir Construction — Bihar</span>
-        <div class="frame"><img id="aboutImg" alt="Reinforced-concrete reservoir under construction" /></div>
-        <div class="tag"><b id="aboutYears">20+</b><span>Years of Experience</span></div>
-      </div>
+      <div class="about-media reveal"><img id="aboutImg" alt="Reinforced-concrete reservoir under construction" /></div>
       <div class="about-body reveal">
-        <span class="label">02 — Who We Are</span>
-        <h2 id="aboutHeading">Two decades of building water that lasts</h2>
-        <p class="about-lead" id="aboutBody"></p>
+        <p class="eyebrow">About Us</p>
+        <h2 id="aboutHeading">Two decades of building water that lasts.</h2>
+        <p class="lead" id="aboutBody"></p>
         <ul class="checklist" id="aboutPoints"></ul>
-        <div class="sign">
-          <img class="logo-mark" src="img/logo-mark.svg" alt="Umang Infrastructure logo" />
-          <div><div class="nm">Umang Infrastructure</div><div class="rl">Purnia, Bihar · Est. 2006</div></div>
-        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="services" class="bg-soft">
-  <div class="container">
-    <div class="sec-head reveal"><span class="label">03 — What We Do</span><h2>Principles that don't bend</h2><p>Every project is measured against the same standards — quality, timeliness, and care for the people and environment we serve.</p></div>
-    <div class="svc-list reveal" id="servicesList"></div>
-  </div>
-</section>
-
-<section class="statband">
-  <div class="hero-blueprint"></div>
-  <div class="container reveal">
-    <div class="st"><strong class="count" data-to="20" data-suffix="+">20+</strong><span>Years in operation</span></div>
-    <div class="st"><strong class="count" data-to="50" data-suffix="+">50+</strong><span>Projects delivered</span></div>
-    <div class="st"><strong class="count" data-to="100" data-suffix="%">100%</strong><span>On-time commitment</span></div>
-    <div class="st"><strong class="count" data-to="1" data-suffix="M+">1M+</strong><span>People served</span></div>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="container">
-    <div class="sec-head reveal"><span class="label">04 — Our Work</span><h2>Projects that stand across Bihar</h2><p>Water towers, reservoirs and supply networks built to serve communities for decades.</p></div>
+<section id="projects" class="bg2">
+  <div class="container wide">
+    <div class="sec-head reveal"><p class="eyebrow">Our Work</p><h2>Projects that stand across Bihar.</h2><p>Water towers, reservoirs and supply networks built to serve communities for decades.</p></div>
     <div class="filters reveal" id="projectFilters"></div>
     <div class="gallery" id="projectGrid"></div>
   </div>
 </section>
 
-<section id="team" class="bg-soft">
-  <div class="container">
-    <div class="sec-head reveal"><span class="label">05 — The People</span><h2>The leadership behind the build</h2><p>Experienced hands guiding every project from foundation to final delivery.</p></div>
+<section id="team">
+  <div class="container wide">
+    <div class="sec-head reveal"><p class="eyebrow">The People</p><h2>The leadership behind the build.</h2><p>Experienced hands guiding every project from foundation to final delivery.</p></div>
     <div class="team-grid" id="teamGrid"></div>
   </div>
 </section>
 
 <section class="cta">
-  <div class="hero-blueprint"></div>
-  <div class="hero-glow"></div>
   <div class="container reveal">
-    <span class="label center" style="justify-content:center;color:var(--gold-bright)">06 — Let's Build</span>
-    <h2>Have a water infrastructure project in mind?</h2>
-    <p>From feasibility to commissioning, we deliver to specification and on schedule. Let's talk about your community.</p>
-    <a href="#contact" class="btn btn-gold">Start a Conversation <i class="fa fa-long-arrow-right"></i></a>
+    <h2>Have a water project in mind?</h2>
+    <p>From feasibility to commissioning, we deliver to specification and on schedule.</p>
+    <div class="cta-actions">
+      <a href="#contact" class="btn btn-blue">Start a conversation</a>
+      <a href="#projects" class="btn btn-ghost">See our work</a>
+    </div>
   </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="bg2">
   <div class="container">
-    <div class="sec-head center reveal"><span class="label">07 — Get In Touch</span><h2>Contact Umang Infrastructure</h2></div>
+    <div class="sec-head reveal"><p class="eyebrow">Get In Touch</p><h2>Contact Umang Infrastructure.</h2></div>
     <div class="contact-grid">
       <div class="reveal" id="contactInfo"></div>
       <div class="form reveal">
         <form id="contactForm">
           <div class="row">
-            <div class="field"><label>Your Name</label><input type="text" name="name" required /></div>
-            <div class="field"><label>Your Email</label><input type="email" name="email" required /></div>
+            <div class="field"><label>Your name</label><input type="text" name="name" required /></div>
+            <div class="field"><label>Your email</label><input type="email" name="email" required /></div>
           </div>
           <div class="field"><label>Subject</label><input type="text" name="subject" placeholder="New water tower enquiry" /></div>
           <div class="field"><label>Message</label><textarea name="message" rows="5" required></textarea></div>
-          <button type="submit" class="btn btn-navy">Send Message <i class="fa fa-paper-plane"></i></button>
+          <button type="submit" class="btn btn-blue">Send message</button>
         </form>
       </div>
     </div>
@@ -395,12 +316,11 @@ section{padding:118px 0}
 </section>
 
 <footer class="footer">
-  <div class="hero-blueprint"></div>
   <div class="container">
-    <div class="footer-grid">
+    <div class="footer-top">
       <div>
-        <a href="#home" class="brand"><img class="logo-mark" src="img/logo-mark.svg" alt="Umang Infrastructure logo" /><span class="bt"><b>UMANG</b><small>INFRASTRUCTURE</small></span></a>
-        <p style="margin-top:18px">Designing and building the water towers, reservoirs and supply networks that bring safe water to communities across Bihar. Established 2006.</p>
+        <a href="#home" class="brand"><img class="logo-mark" src="img/logo-mark.svg" alt="Umang Infrastructure logo" style="width:30px;height:30px" /><b>Umang Infrastructure</b></a>
+        <p style="max-width:34ch">Designing and building the water towers, reservoirs and supply networks that bring safe water to communities across Bihar. Established 2006.</p>
         <div class="socials">
           <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
           <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
@@ -408,24 +328,12 @@ section{padding:118px 0}
           <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
         </div>
       </div>
-      <div>
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">What We Do</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#team">Our Team</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Get In Touch</h4>
-        <p id="footerContact"></p>
-      </div>
+      <div><h4>Explore</h4><ul><li><a href="#capabilities">What We Do</a></li><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#team">Team</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="#capabilities">Water Towers</a></li><li><a href="#capabilities">Reservoirs</a></li><li><a href="#capabilities">Supply Networks</a></li><li><a href="#capabilities">Treatment & Recycling</a></li></ul></div>
+      <div><h4>Contact</h4><ul id="footerContact"></ul></div>
     </div>
-    <div class="footer-word">UMANG INFRASTRUCTURE</div>
     <div class="footer-bottom">
-      <span>&copy; <span id="year"></span> <span class="gold">Umang Infrastructure</span> — All Rights Reserved.</span>
+      <span>Copyright &copy; <span id="year"></span> Umang Infrastructure. All rights reserved.</span>
       <span>Purnia · Bihar · India</span>
     </div>
   </div>
@@ -437,32 +345,32 @@ section{padding:118px 0}
 <script>
 /* ============================================================
    Umang Infrastructure — site logic
-   - Text content: content.json (committed) → inline defaults
-   - Team & Projects: auto-built from GitHub folders
+   Text  : content.json (committed) -> inline defaults
+   Team & Projects : auto-built from GitHub folders
        img/team/      "NN - Name - Role.ext"
        img/projects/  "NN - Title - Category.ext"
-     Falls back to content.json/defaults when the API is
-     unavailable (e.g. local preview, offline, rate-limited).
+   Falls back to content.json/defaults when the API is offline.
    ============================================================ */
-var GH={owner:"InsideU",repo:"umang.github.io"};           // GitHub repo for folder auto-fetch
+var GH={owner:"InsideU",repo:"umang.github.io"};
 var FOLDERS={team:"img/team",projects:"img/projects"};
-var CACHE_MIN=10;                                          // localStorage cache for folder listings
+var CACHE_MIN=10;
 
+var ICONS=["fa-tint","fa-building","fa-shield","fa-leaf","fa-users","fa-clock-o"];
 var DEFAULT_CONTENT={
-  company:{name:"UMANG",nameSuffix:"INFRASTRUCTURE",established:"2006"},
+  company:{name:"Umang",nameSuffix:"Infrastructure",established:"2006"},
   hero:[
-    {kicker:"01 — Water Infrastructure",text:"For nearly two decades, Umang Infrastructure has designed and built the water towers, reservoirs and supply networks that bring safe water to communities across Bihar."},
-    {kicker:"01 — Quality, On Time",text:"From reinforced-concrete reservoirs to district supply networks, we hold every project to exacting standards — and to its deadline."},
-    {kicker:"01 — Safe Water For All",text:"We treat, supply and recycle water responsibly, protecting both the communities we serve and the environment we share."}
+    {kicker:"Water Infrastructure · Since 2006",text:"For nearly two decades, we've designed and built the water towers, reservoirs and supply networks that serve communities across Bihar."},
+    {kicker:"Quality, delivered on time",text:"From reinforced-concrete reservoirs to district supply networks — every project to exacting standards, and to its deadline."},
+    {kicker:"Safe water for all",text:"We treat, supply and recycle water responsibly, protecting the communities we serve and the environment we share."}
   ],
-  about:{heading:"Two decades of building water that lasts",body:"Established in 2006, Umang Infrastructure is a leading water-infrastructure firm headquartered in Purnia, Bihar. We deliver the full lifecycle of water engineering — treatment, supply, recycling and waste-water handling — across rural and urban Bihar.",points:["50+ projects delivered across Bihar","Reinforced-concrete reservoirs & towers","Treatment, supply & recycling systems","Responsible waste-water handling","Trusted in rural & urban builds alike","Delivered to spec, on schedule"],image:"img/about/1.jpg"},
+  about:{heading:"Two decades of building water that lasts.",body:"Established in 2006 in Purnia, Bihar, we deliver the full lifecycle of water engineering — treatment, supply, recycling and waste-water handling — across rural and urban Bihar.",points:["50+ projects delivered across Bihar","Reinforced-concrete reservoirs & towers","Treatment, supply & recycling systems","Delivered to specification, on schedule"],image:"img/about/1.jpg"},
   services:[
-    {title:"Delivered On Time",text:"We are bound by our commitment to deliver every project to specification and schedule."},
-    {title:"Engineering Quality",text:"Reinforced, durable, and built to exacting standards that stand the test of time."},
-    {title:"Safe Drinking Water",text:"Making clean, safe drinking water available and affordable to the communities we serve."},
+    {title:"Safe Drinking Water",text:"Clean, safe water made available and affordable to the communities we serve."},
+    {title:"Water Towers & Reservoirs",text:"Reinforced-concrete towers and overhead reservoirs, engineered to last."},
+    {title:"Trusted & Accountable",text:"Two decades of reliable delivery have made us a name communities trust."},
     {title:"Environmental Care",text:"We protect the environment in everything we build, from sourcing to recycling."},
-    {title:"Skilled People",text:"Our experienced engineers and teams are the strength behind every project."},
-    {title:"Trusted & Accountable",text:"Two decades of reliable delivery have made us a name communities trust."}
+    {title:"Skilled People",text:"Experienced engineers and teams behind every project."},
+    {title:"Delivered On Time",text:"Bound by our commitment to deliver to spec and on schedule."}
   ],
   team:[
     {name:"Anil Kumar Singh",role:"Director",image:"img/team/01 - Anil Kumar Singh - Director.jpg"},
@@ -484,14 +392,12 @@ var DEFAULT_CONTENT={
 function _clone(o){return JSON.parse(JSON.stringify(o));}
 var $=function(s,r){return (r||document).querySelector(s);};
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c];});}
-function avatarFor(name){return "https://ui-avatars.com/api/?name="+encodeURIComponent(name)+"&background=0d2240&color=e6c987&size=500&font-size=0.36&bold=true";}
-function pad2(n){return (n<10?"0":"")+n;}
+function avatarFor(name){return "https://ui-avatars.com/api/?name="+encodeURIComponent(name)+"&background=e8eef6&color=0a3f80&size=500&font-size=0.36&bold=true";}
 
-/* ---- Folder auto-fetch via GitHub Contents API ---- */
+/* ---- Folder auto-fetch ---- */
 var IMG_RE=/\.(jpe?g|png|webp|gif|avif)$/i;
 function parseEntry(filename){
-  var base=filename.replace(IMG_RE,"");
-  var parts=base.split(" - ").map(function(s){return s.trim();});
+  var base=filename.replace(IMG_RE,"");var parts=base.split(" - ").map(function(s){return s.trim();});
   var order=999,a="",b="";
   if(parts.length>=3){order=parseInt(parts[0],10);if(isNaN(order))order=999;a=parts[1];b=parts.slice(2).join(" - ");}
   else if(parts.length===2){if(/^\d+$/.test(parts[0])){order=parseInt(parts[0],10);a=parts[1];}else{a=parts[0];b=parts[1];}}
@@ -499,7 +405,7 @@ function parseEntry(filename){
   return {order:order,a:a,b:b};
 }
 function fetchFolder(path){
-  var key="ghcache:"+path, now=Date.now();
+  var key="ghcache:"+path,now=Date.now();
   try{var c=JSON.parse(localStorage.getItem(key)||"null");if(c&&(now-c.t)<CACHE_MIN*6e4)return Promise.resolve(c.d);}catch(e){}
   var url="https://api.github.com/repos/"+GH.owner+"/"+GH.repo+"/contents/"+path;
   return fetch(url,{headers:{Accept:"application/vnd.github.v3+json"}})
@@ -515,14 +421,18 @@ function fetchFolder(path){
 }
 
 /* ---- Renderers ---- */
-function renderTeam(list){
-  $("#teamGrid").innerHTML=list.map(function(m,i){
-    return '<div class="member reveal"><span class="midx">'+pad2(i+1)+'</span>'+
-      '<img src="'+esc(m.image)+'" alt="'+esc(m.name)+'" onerror="this.onerror=null;this.src=\''+avatarFor(m.name)+'\'">'+
-      '<div class="minfo"><h4>'+esc(m.name)+'</h4><span>'+esc(m.role||"")+'</span>'+
-      '<div class="ml"><a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a><a href="mailto:'+esc(CURRENT.contact.email)+'" aria-label="Email"><i class="fa fa-envelope"></i></a></div></div></div>';
+var CURRENT=_clone(DEFAULT_CONTENT);
+function renderBento(list){
+  $("#bento").innerHTML=list.map(function(s,i){
+    var cls=i===0?"tile lg":(i===3?"tile lg dark":"tile");
+    return '<div class="'+cls+' reveal"><div class="ic"><i class="fa '+esc(s.icon||ICONS[i%ICONS.length])+'"></i></div><div><h3>'+esc(s.title)+'</h3><p>'+esc(s.text)+'</p></div></div>';
   }).join("");
   revealObserve();
+}
+function renderTeam(list){
+  $("#teamGrid").innerHTML=list.map(function(m){
+    return '<div class="member reveal"><div class="ph"><img src="'+esc(m.image)+'" alt="'+esc(m.name)+'" onerror="this.onerror=null;this.src=\''+avatarFor(m.name)+'\'"></div><h4>'+esc(m.name)+'</h4><span>'+esc(m.role||"")+'</span><div class="ml"><a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a><a href="mailto:'+esc(CURRENT.contact.email)+'" aria-label="Email"><i class="fa fa-envelope"></i></a></div></div>';
+  }).join("");revealObserve();
 }
 function renderProjects(list){
   var grid=$("#projectGrid"),filters=$("#projectFilters");
@@ -531,90 +441,62 @@ function renderProjects(list){
   function draw(cat){
     var l=cat==="All"?list:list.filter(function(p){return p.category===cat;});
     grid.innerHTML=l.map(function(p,i){
-      return '<div class="project reveal'+(i===0?" feature":"")+'">'+
-        '<img src="'+esc(p.image)+'" alt="'+esc(p.title)+'" onerror="this.onerror=null;this.src=\''+esc(DEFAULT_CONTENT.portfolio[i%6].image)+'\'">'+
-        '<span class="corner"></span>'+
-        '<div class="project-ov"><span class="pidx">'+pad2(i+1)+'</span><span class="cat">'+esc(p.category||"Project")+'</span><h4>'+esc(p.title)+'</h4></div></div>';
-    }).join("");
-    revealObserve();
+      return '<div class="project reveal"><div class="ph"><img src="'+esc(p.image)+'" alt="'+esc(p.title)+'" onerror="this.onerror=null;this.src=\''+esc(DEFAULT_CONTENT.portfolio[i%6].image)+'\'"></div><div class="cap"><div class="cat">'+esc(p.category||"Project")+'</div><h4>'+esc(p.title)+'</h4></div></div>';
+    }).join("");revealObserve();
   }
   draw("All");
   filters.onclick=function(e){var b=e.target.closest("button");if(!b)return;[].forEach.call(this.children,function(x){x.classList.remove("active");});b.classList.add("active");draw(b.getAttribute("data-cat"));};
 }
 
-var CURRENT=_clone(DEFAULT_CONTENT);
 function renderText(C){
   CURRENT=C;
   document.title=C.company.name+" "+C.company.nameSuffix+" — Water Infrastructure in Bihar Since "+C.company.established;
-  $("#brandText").innerHTML='<b>'+esc(C.company.name)+'</b><small>'+esc(C.company.nameSuffix)+'</small>';
+  $("#brandText").textContent=C.company.name+" "+C.company.nameSuffix;
 
-  /* hero rotator */
-  var heroIdx=0,dotsWrap=$("#heroDots");dotsWrap.innerHTML="";
-  C.hero.forEach(function(h,i){var b=document.createElement("button");b.className=i===0?"active":"";b.setAttribute("aria-label","Slide "+(i+1));b.addEventListener("click",function(){showHero(i);});dotsWrap.appendChild(b);});
-  function showHero(i){heroIdx=(i+C.hero.length)%C.hero.length;var h=C.hero[heroIdx];$("#heroKicker").textContent=h.kicker;$("#heroText").textContent=h.text;[].forEach.call(dotsWrap.children,function(d,n){d.className=n===heroIdx?"active":"";});}
-  showHero(0);
-  if(C.hero.length>1)setInterval(function(){showHero(heroIdx+1);},6500);
+  var heroIdx=0,dots=$("#heroDots");dots.innerHTML="";
+  C.hero.forEach(function(h,i){var b=document.createElement("button");b.className=i===0?"active":"";b.setAttribute("aria-label","Slide "+(i+1));b.addEventListener("click",function(){show(i);});dots.appendChild(b);});
+  function show(i){heroIdx=(i+C.hero.length)%C.hero.length;var h=C.hero[heroIdx];$("#heroKicker").textContent=h.kicker;$("#heroText").textContent=h.text;[].forEach.call(dots.children,function(d,n){d.className=n===heroIdx?"active":"";});}
+  show(0);if(C.hero.length>1)setInterval(function(){show(heroIdx+1);},6500);
 
-  /* years */
   var since=parseInt(C.company.established,10);
-  if(since){var n=new Date().getFullYear()-since;$("#statYears").setAttribute("data-to",n);$("#statYears").textContent=n+"+";$("#aboutYears").textContent=n+"+";
-    document.querySelectorAll('.count[data-to]').forEach(function(el){if(el.previousElementSibling===null&&el.parentNode.querySelector('span')&&/Years/.test(el.parentNode.textContent)){}});}
+  if(since){var n=new Date().getFullYear()-since;$("#statYears").setAttribute("data-to",n);$("#statYears").textContent=n+"+";}
 
-  /* hero + about images */
-  var hImg=$("#heroImg");hImg.src=C.about.image;hImg.onerror=function(){this.onerror=null;this.src=DEFAULT_CONTENT.portfolio[0].image;};
   var aImg=$("#aboutImg");aImg.src=C.about.image;aImg.alt=C.about.heading;aImg.onerror=function(){this.onerror=null;this.src="img/about/2.jpg";};
   $("#aboutHeading").textContent=C.about.heading;
   $("#aboutBody").textContent=C.about.body;
   $("#aboutPoints").innerHTML=C.about.points.map(function(p){return '<li><i class="fa fa-check"></i><span>'+esc(p)+'</span></li>';}).join("");
 
-  /* services rows */
-  $("#servicesList").innerHTML=C.services.map(function(s,i){
-    return '<div class="svc-row reveal"><div class="idx">'+pad2(i+1)+'</div><div class="mid"><h3>'+esc(s.title)+'</h3><p>'+esc(s.text)+'</p></div><div class="ar"><i class="fa fa-long-arrow-right"></i></div></div>';
-  }).join("");
+  renderBento(C.services.map(function(s,i){return {title:s.title,text:s.text,icon:s.icon||ICONS[i%ICONS.length]};}));
 
-  /* contact */
   $("#contactInfo").innerHTML=
-    '<div class="info-card"><div class="ic"><i class="fa fa-phone"></i></div><div><h4>Call Us</h4><p>'+esc(C.contact.phone)+'</p><p style="font-size:.84rem;color:var(--muted)">'+esc(C.contact.hours)+'</p></div></div>'+
-    '<div class="info-card"><div class="ic"><i class="fa fa-envelope"></i></div><div><h4>Email Us</h4><p><a href="mailto:'+esc(C.contact.email)+'">'+esc(C.contact.email)+'</a></p></div></div>'+
-    '<div class="info-card"><div class="ic"><i class="fa fa-map-marker"></i></div><div><h4>Visit Us</h4><p>'+esc(C.contact.address)+'</p></div></div>';
-  $("#footerContact").innerHTML='Tel: '+esc(C.contact.phone)+'<br>Email: <a href="mailto:'+esc(C.contact.email)+'">'+esc(C.contact.email)+'</a><br>'+esc(C.contact.address);
+    '<div class="info-row"><div class="ic"><i class="fa fa-phone"></i></div><div><div class="lb">Call us</div><div class="vl">'+esc(C.contact.phone)+'</div><div class="lb" style="margin-top:2px">'+esc(C.contact.hours)+'</div></div></div>'+
+    '<div class="info-row"><div class="ic"><i class="fa fa-envelope"></i></div><div><div class="lb">Email us</div><div class="vl"><a href="mailto:'+esc(C.contact.email)+'">'+esc(C.contact.email)+'</a></div></div></div>'+
+    '<div class="info-row"><div class="ic"><i class="fa fa-map-marker"></i></div><div><div class="lb">Visit us</div><div class="vl" style="font-weight:400;font-size:1.02rem;color:var(--sub)">'+esc(C.contact.address)+'</div></div></div>';
+  $("#footerContact").innerHTML='<li>'+esc(C.contact.phone)+'</li><li><a href="mailto:'+esc(C.contact.email)+'">'+esc(C.contact.email)+'</a></li><li>'+esc(C.contact.address)+'</li>';
   $("#contactForm").onsubmit=function(e){e.preventDefault();var f=e.target;var body=encodeURIComponent("Name: "+f.name.value+"\nEmail: "+f.email.value+"\n\n"+f.message.value);window.location.href="mailto:"+C.contact.email+"?subject="+encodeURIComponent(f.subject.value||"Website enquiry")+"&body="+body;};
   $("#year").textContent=new Date().getFullYear();
-
-  /* marquee */
-  var words=["Water Treatment","Supply Networks","Overhead Reservoirs","Water Towers","Waste-water Recycling","Rural & Urban Builds"];
-  var run='<span>'+words.join('</span><span>')+'</span>';
-  $("#marquee").innerHTML=run+run;
-
   revealObserve();
 }
 
 /* ---- Count-up ---- */
-function runCount(el){
-  var to=parseFloat(el.getAttribute("data-to"))||0, suf=el.getAttribute("data-suffix")||"", dur=1400, t0=null;
-  function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);var ease=1-Math.pow(1-p,3);el.textContent=Math.round(to*ease)+suf;if(p<1)requestAnimationFrame(step);}
-  requestAnimationFrame(step);
-}
+function runCount(el){var to=parseFloat(el.getAttribute("data-to"))||0,suf=el.getAttribute("data-suffix")||"",dur=1400,t0=null;
+  function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(to*e)+suf;if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
 
-/* ---- Reveal + count observers ---- */
 var io;
 function revealObserve(){
   if(!("IntersectionObserver" in window)){document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in");});return;}
-  if(!io)io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);var c=en.target.querySelector?en.target.querySelector(".count"):null;}});},{threshold:.12});
+  if(!io)io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}});},{threshold:.1});
   document.querySelectorAll(".reveal:not(.in)").forEach(function(el){io.observe(el);});
 }
-var cio;
 function countObserve(){
   if(!("IntersectionObserver" in window)){document.querySelectorAll(".count").forEach(runCount);return;}
-  cio=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){runCount(en.target);cio.unobserve(en.target);}});},{threshold:.6});
-  document.querySelectorAll(".count").forEach(function(el){cio.observe(el);});
+  var c=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){runCount(en.target);c.unobserve(en.target);}});},{threshold:.6});
+  document.querySelectorAll(".count").forEach(function(el){c.observe(el);});
 }
 
-/* ---- Header / nav / scroll ---- */
-var header=$("#header");
-window.addEventListener("scroll",function(){header.classList.toggle("scrolled",window.scrollY>40);$("#toTop").classList.toggle("show",window.scrollY>520);
-  var cur="home";document.querySelectorAll("section[id]").forEach(function(s){if(window.scrollY>=s.offsetTop-140)cur=s.id;});
-  document.querySelectorAll('.nav-links a[href^="#"]').forEach(function(a){a.classList.toggle("active",a.getAttribute("href")==="#"+cur);});});
+/* ---- Nav / scroll ---- */
+var nav=$("#nav");
+window.addEventListener("scroll",function(){nav.style.background=window.scrollY>20?"rgba(251,251,253,.86)":"rgba(251,251,253,.72)";$("#toTop").classList.toggle("show",window.scrollY>560);});
 $("#navToggle").addEventListener("click",function(){$("#navLinks").classList.toggle("open");});
 $("#navLinks").addEventListener("click",function(e){if(e.target.tagName==="A")this.classList.remove("open");});
 $("#toTop").addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});
@@ -622,15 +504,10 @@ $("#toTop").addEventListener("click",function(){window.scrollTo({top:0,behavior:
 /* ---- Boot ---- */
 function boot(C){
   renderText(C);
-  /* Team & Projects: try folders, else content fallback */
-  renderTeam(C.team); renderProjects(C.portfolio);   // immediate fallback so nothing is empty
-  fetchFolder(FOLDERS.team).then(function(items){
-    if(items&&items.length)renderTeam(items.map(function(it){return {name:it.a,role:it.b,image:it.image};}));
-  }).catch(function(){});
-  fetchFolder(FOLDERS.projects).then(function(items){
-    if(items&&items.length)renderProjects(items.map(function(it){return {title:it.a,category:it.b,image:it.image};}));
-  }).catch(function(){});
-  setTimeout(function(){document.querySelector(".hero").classList.add("ready");countObserve();},200);
+  renderTeam(C.team);renderProjects(C.portfolio);
+  fetchFolder(FOLDERS.team).then(function(items){if(items&&items.length)renderTeam(items.map(function(it){return {name:it.a,role:it.b,image:it.image};}));}).catch(function(){});
+  fetchFolder(FOLDERS.projects).then(function(items){if(items&&items.length)renderProjects(items.map(function(it){return {title:it.a,category:it.b,image:it.image};}));}).catch(function(){});
+  setTimeout(countObserve,200);
 }
 (function init(){
   if(window.fetch){
@@ -641,80 +518,68 @@ function boot(C){
 })();
 
 /* ============================================================
-   3D water tower (Three.js) — subtle, professional, slow spin.
-   Builds graceful fallback to a photo if WebGL is unavailable.
+   3D glossy water droplet — soft studio reflections, slow spin.
+   Falls back to the CSS orb if WebGL is unavailable.
    ============================================================ */
-(function tower3d(){
-  var host=document.getElementById("tower3d");
-  function showFallback(){var f=document.getElementById("heroFallback");if(f)f.style.opacity="1";if(host)host.style.display="none";}
-  if(typeof THREE==="undefined"||!host){showFallback();return;}
-  var w=host.clientWidth||520, h=host.clientHeight||520, renderer;
-  try{
-    renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
-  }catch(e){showFallback();return;}
-  renderer.setSize(w,h);renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+(function drop3d(){
+  var host=document.getElementById("orb3d"),css=document.getElementById("orbCss");
+  if(typeof THREE==="undefined"||!host){return;}            /* keep CSS orb */
+  var size=Math.min(host.clientWidth||360,360),renderer;
+  try{renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});}catch(e){return;}
+  var DIM=Math.max(300,Math.min(host.clientHeight||420,460));
+  renderer.setSize(DIM,DIM);renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
   host.appendChild(renderer.domElement);
+  if(css)css.style.display="none";                          /* 3D took over */
 
   var scene=new THREE.Scene();
-  var camera=new THREE.PerspectiveCamera(34,w/h,0.1,100);
-  camera.position.set(0,1.4,11.5);camera.lookAt(0,0.6,0);
+  var camera=new THREE.PerspectiveCamera(30,1,0.1,100);camera.position.set(0,0,7);
 
-  var navy=new THREE.MeshStandardMaterial({color:0x16345c,metalness:.25,roughness:.55});
-  var navyL=new THREE.MeshStandardMaterial({color:0x1d4a7e,metalness:.2,roughness:.6});
-  var gold=new THREE.MeshStandardMaterial({color:0xc6a256,metalness:.7,roughness:.28});
-  var goldB=new THREE.MeshStandardMaterial({color:0xe6c987,metalness:.75,roughness:.22});
-  var white=new THREE.MeshStandardMaterial({color:0xeef2f7,metalness:.1,roughness:.7});
+  /* studio gradient environment for reflections */
+  function envTex(){
+    var c=document.createElement("canvas");c.width=8;c.height=256;var g=c.getContext("2d");
+    var gr=g.createLinearGradient(0,0,0,256);
+    gr.addColorStop(0,"#ffffff");gr.addColorStop(.42,"#eaf3ff");gr.addColorStop(.72,"#bcd9ff");gr.addColorStop(1,"#5e9be6");
+    g.fillStyle=gr;g.fillRect(0,0,8,256);
+    var t=new THREE.CanvasTexture(c);t.mapping=THREE.EquirectangularReflectionMapping;return t;
+  }
+  var env=envTex();
 
-  var tower=new THREE.Group();
-  function cyl(rt,rb,ht,mat,seg){var g=new THREE.Mesh(new THREE.CylinderGeometry(rt,rb,ht,seg||40),mat);return g;}
+  var mat;
+  try{
+    mat=new THREE.MeshPhysicalMaterial({color:0xeef6ff,metalness:0,roughness:0.06,clearcoat:1,clearcoatRoughness:0.08,envMap:env,envMapIntensity:1.25,transparent:true,opacity:0.96});
+  }catch(e){
+    mat=new THREE.MeshStandardMaterial({color:0xeef6ff,metalness:0,roughness:0.06,envMap:env,envMapIntensity:1.25,transparent:true,opacity:0.96});
+  }
 
-  // base
-  var base=cyl(1.7,1.95,.35,navy);base.position.y=-3.1;tower.add(base);
-  var base2=cyl(1.45,1.6,.25,navyL);base2.position.y=-2.86;tower.add(base2);
+  /* droplet geometry: sphere with a gently pulled top */
+  var geo=new THREE.SphereGeometry(1.5,160,160);
+  var pos=geo.attributes.position,v=new THREE.Vector3();
+  for(var i=0;i<pos.count;i++){
+    v.fromBufferAttribute(pos,i);
+    var ny=v.y/1.5;                       /* -1..1 */
+    if(ny>0.35){var k=(ny-0.35)/0.65;var pull=Math.pow(k,2.2);v.y+=pull*0.95;var taper=1-pull*0.55;v.x*=taper;v.z*=taper;}
+    pos.setXYZ(i,v.x,v.y,v.z);
+  }
+  geo.computeVertexNormals();
+  var drop=new THREE.Mesh(geo,mat);drop.scale.set(1,1.04,1);scene.add(drop);
 
-  // central shaft
-  var shaft=cyl(.62,.82,3.4,navy);shaft.position.y=-1.2;tower.add(shaft);
-  // support columns (4) around the shaft
-  for(var i=0;i<4;i++){var c=cyl(.12,.14,3.2,navyL);var a=i/4*Math.PI*2;c.position.set(Math.cos(a)*1.05,-1.2,Math.sin(a)*1.05);tower.add(c);}
-  // diagonal gold bracing rings
-  [-2.4,-1.2,0].forEach(function(y){var r=new THREE.Mesh(new THREE.TorusGeometry(1.08,.035,12,40),gold);r.rotation.x=Math.PI/2;r.position.y=y;tower.add(r);});
-
-  // platform under tank
-  var plat=cyl(1.85,1.85,.16,navy);plat.position.y=.55;tower.add(plat);
-  var railing=new THREE.Mesh(new THREE.TorusGeometry(1.8,.045,14,48),goldB);railing.rotation.x=Math.PI/2;railing.position.y=.92;tower.add(railing);
-
-  // tank — frustum bottom, body, domed top
-  var taper=cyl(1.5,.7,.85,white);taper.position.y=1.05;tower.add(taper);
-  var body=cyl(1.5,1.5,1.7,white);body.position.y=2.3;tower.add(body);
-  // gold bands on tank
-  var band1=new THREE.Mesh(new THREE.TorusGeometry(1.51,.06,14,52),gold);band1.rotation.x=Math.PI/2;band1.position.y=1.7;tower.add(band1);
-  var band2=new THREE.Mesh(new THREE.TorusGeometry(1.51,.06,14,52),gold);band2.rotation.x=Math.PI/2;band2.position.y=2.9;tower.add(band2);
-  // domed top
-  var dome=new THREE.Mesh(new THREE.SphereGeometry(1.5,40,24,0,Math.PI*2,0,Math.PI/2),white);dome.position.y=3.15;dome.scale.y=.62;tower.add(dome);
-  // finial
-  var fin=cyl(.06,.06,.5,gold);fin.position.y=4.1;tower.add(fin);
-  var ball=new THREE.Mesh(new THREE.SphereGeometry(.16,20,16),goldB);ball.position.y=4.4;tower.add(ball);
-
-  tower.position.y=.4;scene.add(tower);
-
-  // lights
-  scene.add(new THREE.HemisphereLight(0xbcd2f0,0x0a1830,.85));
-  var key=new THREE.DirectionalLight(0xfff0d4,1.15);key.position.set(-6,7,6);scene.add(key);
-  var rim=new THREE.DirectionalLight(0xc6a256,.7);rim.position.set(7,2,-5);scene.add(rim);
-  var fill=new THREE.PointLight(0x2a5fa0,.5,40);fill.position.set(4,-2,6);scene.add(fill);
+  scene.add(new THREE.HemisphereLight(0xffffff,0xbcd6ff,0.95));
+  var key=new THREE.DirectionalLight(0xffffff,1.15);key.position.set(-3,5,4);scene.add(key);
+  var warm=new THREE.PointLight(0xfff0e0,0.5,40);warm.position.set(4,-1,5);scene.add(warm);
+  var blue=new THREE.PointLight(0x2f7fff,0.7,40);blue.position.set(-4,-3,2);scene.add(blue);
 
   var t0=performance.now(),paused=false;
   document.addEventListener("visibilitychange",function(){paused=document.hidden;if(!paused)loop();});
   function loop(){
     if(paused)return;
     var t=(performance.now()-t0)/1000;
-    tower.rotation.y=t*0.32;
-    tower.position.y=.4+Math.sin(t*1.1)*.08;
+    drop.rotation.y=t*0.5;
+    drop.position.y=Math.sin(t*1.1)*0.12;
+    drop.rotation.z=Math.sin(t*0.6)*0.04;
     renderer.render(scene,camera);
     requestAnimationFrame(loop);
   }
   loop();
-  window.addEventListener("resize",function(){w=host.clientWidth;h=host.clientHeight;if(!w||!h)return;camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h);});
 })();
 </script>
 </body>
