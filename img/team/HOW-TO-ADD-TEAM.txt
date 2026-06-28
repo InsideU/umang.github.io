@@ -1,0 +1,33 @@
+HOW TO ADD / REMOVE TEAM MEMBERS
+================================
+
+The website builds the Team section automatically from the photos in THIS
+folder. You don't touch any code — just manage image files here, then push to
+GitHub. The site re-arranges everything for you.
+
+NAME EACH PHOTO LIKE THIS (use " - ", a space-dash-space, between parts):
+
+    01 - Full Name - Job Title.jpg
+
+Examples:
+    01 - Anil Kumar Singh - Director.jpg
+    02 - Anita Kumari - Managing Director.jpg
+    03 - Anand Mohan Mishra - Manager, Operations.jpg
+
+RULES
+-----
+- The number at the start (01, 02, 03 ...) sets the order they appear in.
+- The middle part is the person's NAME.
+- The last part is their ROLE / title.
+- Allowed image types: .jpg  .jpeg  .png  .webp
+- Square photos look best (e.g. 800 x 800). Keep files under ~1.5 MB.
+
+TO ADD a person:  drop a correctly-named photo into this folder.
+TO REMOVE a person:  delete their photo from this folder.
+TO RENAME / change a role:  rename the file.
+
+Then commit & push to GitHub (or ask Claude to do it). The live site updates
+within a minute or two and arranges the new grid automatically.
+
+Tip: keep this .txt file here — the website ignores any file that isn't an
+image, so it won't appear on the site.

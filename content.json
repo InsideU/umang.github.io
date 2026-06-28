@@ -43,18 +43,18 @@
     { "icon": "fa-shield", "title": "Trusted & Accountable", "text": "Two decades of reliable delivery have made us a name communities trust." }
   ],
   "team": [
-    { "name": "Anil Kumar Singh", "role": "Director", "image": "img/team/1.jpg" },
-    { "name": "Anita Kumari", "role": "Managing Director", "image": "img/team/2.jpg" },
-    { "name": "Anand Mohan Mishra", "role": "Manager, Operations", "image": "img/team/3.jpg" },
-    { "name": "Prashant Kumar", "role": "Manager, Finance", "image": "img/team/4.jpg" }
+    { "name": "Anil Kumar Singh", "role": "Director", "image": "img/team/01 - Anil Kumar Singh - Director.jpg" },
+    { "name": "Anita Kumari", "role": "Managing Director", "image": "img/team/02 - Anita Kumari - Managing Director.jpg" },
+    { "name": "Anand Mohan Mishra", "role": "Manager, Operations", "image": "img/team/03 - Anand Mohan Mishra - Manager, Operations.jpg" },
+    { "name": "Prashant Kumar", "role": "Manager, Finance", "image": "img/team/04 - Prashant Kumar - Manager, Finance.jpg" }
   ],
   "portfolio": [
-    { "title": "Rural Water Tower", "category": "Water Towers", "image": "img/portfolio/1.jpg" },
-    { "title": "Overhead Reservoir", "category": "Reservoirs", "image": "img/portfolio/2.jpg" },
-    { "title": "Dansar Water Tower", "category": "Water Towers", "image": "img/portfolio/3.jpg" },
-    { "title": "Kankhudiya Water Tower", "category": "Water Towers", "image": "img/portfolio/4.jpg" },
-    { "title": "Jalalgarh Block Tower", "category": "Reservoirs", "image": "img/portfolio/5.jpg" },
-    { "title": "Water Supply Network", "category": "Supply Networks", "image": "img/portfolio/6.jpg" }
+    { "title": "Rural Water Tower", "category": "Water Towers", "image": "img/projects/01 - Rural Water Tower - Water Towers.jpg" },
+    { "title": "Overhead Reservoir", "category": "Reservoirs", "image": "img/projects/02 - Overhead Reservoir - Reservoirs.jpg" },
+    { "title": "Dansar Water Tower", "category": "Water Towers", "image": "img/projects/03 - Dansar Water Tower - Water Towers.jpg" },
+    { "title": "Kankhudiya Water Tower", "category": "Water Towers", "image": "img/projects/04 - Kankhudiya Water Tower - Water Towers.jpg" },
+    { "title": "Jalalgarh Block Tower", "category": "Reservoirs", "image": "img/projects/05 - Jalalgarh Block Tower - Reservoirs.jpg" },
+    { "title": "Water Supply Network", "category": "Supply Networks", "image": "img/projects/06 - Water Supply Network - Supply Networks.jpg" }
   ],
   "contact": {
     "phone": "+91 6454 244252",

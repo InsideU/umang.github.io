@@ -1,0 +1,31 @@
+HOW TO ADD / REMOVE PROJECTS
+============================
+
+The website builds the Projects gallery automatically from the photos in THIS
+folder. Just manage image files here, then push to GitHub — the site arranges
+and filters them for you.
+
+NAME EACH PHOTO LIKE THIS (use " - ", a space-dash-space, between parts):
+
+    01 - Project Name - Category.jpg
+
+Examples:
+    01 - Rural Water Tower - Water Towers.jpg
+    02 - Overhead Reservoir - Reservoirs.jpg
+    03 - Water Supply Network - Supply Networks.jpg
+
+RULES
+-----
+- The number at the start (01, 02 ...) sets the display order.
+- The middle part is the PROJECT NAME (shown on the photo).
+- The last part is the CATEGORY. Photos with the same category are grouped,
+  and each category becomes a filter button automatically.
+- Allowed image types: .jpg  .jpeg  .png  .webp
+- Landscape photos look best (e.g. 1200 x 900). Keep files under ~1.5 MB.
+
+TO ADD a project:  drop a correctly-named photo into this folder.
+TO REMOVE a project:  delete its photo.
+TO change the name/category:  rename the file.
+
+Then commit & push to GitHub (or ask Claude). The live site updates within a
+minute or two. Keep this .txt file here — non-image files are ignored.
