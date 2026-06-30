@@ -56,6 +56,24 @@
     { "title": "Jalalgarh Block Tower", "category": "Reservoirs", "image": "img/projects/05 - Jalalgarh Block Tower - Reservoirs.jpg" },
     { "title": "Water Supply Network", "category": "Supply Networks", "image": "img/projects/06 - Water Supply Network - Supply Networks.jpg" }
   ],
+  "process": {
+    "intro": "A clear, accountable path from first survey to final handover.",
+    "steps": [
+      { "step": "01", "title": "Survey & Feasibility", "text": "We assess the site, water source and demand, and define a buildable, budget-aware plan." },
+      { "step": "02", "title": "Design & Engineering", "text": "Structural design and drawings for towers, reservoirs and networks — built to last." },
+      { "step": "03", "title": "Construction", "text": "Reinforced, quality-controlled execution by our experienced site teams, on schedule." },
+      { "step": "04", "title": "Commissioning & Handover", "text": "Testing, commissioning and a clean handover — with support after we leave site." }
+    ]
+  },
+  "faq": {
+    "items": [
+      { "q": "What kind of projects does Umang Infrastructure take on?", "a": "Water towers, overhead reservoirs, treatment and supply networks, and waste-water/recycling works across rural and urban Bihar." },
+      { "q": "Which areas do you operate in?", "a": "We are headquartered in Purnia, Bihar, and deliver projects across the state." },
+      { "q": "Do you handle a project end-to-end?", "a": "Yes — from survey and feasibility through design, construction and commissioning, with post-handover support." },
+      { "q": "How do I request a quote or proposal?", "a": "Use the contact form below or email ui@umanginfra.com with your location and requirement, and we'll get back to you." },
+      { "q": "Are your builds quality-certified?", "a": "Every project is executed to exacting reinforced-construction standards, with quality checks at each stage." }
+    ]
+  },
   "achievements": {
     "intro": "Nearly two decades of milestones — and the standards that back them. (Sample content — replace with your real milestones, awards and certifications.)",
     "milestones": [

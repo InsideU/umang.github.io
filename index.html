@@ -19,7 +19,7 @@
   --ink:#0d1c2e;--ink2:#16293f;--ink3:#22384f;
   --blue:#0a66c2;--blue-h:#0b73da;--blue-deep:#063e7a;
   --gold:#c89b3c;
-  --bg:#ffffff;--bg2:#f4f6f9;--bg3:#eef1f6;
+  --bg:#ffffff;--bg2:#eaf2fb;--bg3:#e1ecf8;
   --sub:#56657a;--muted:#7c8aa0;--line:#e2e7ee;--line2:#d6dce6;
   --radius:6px;--radius-lg:12px;
   --maxw:1240px;--ease:cubic-bezier(.22,1,.36,1);
@@ -35,7 +35,7 @@ p{margin:0 0 1em;color:var(--sub)}a{color:var(--blue);text-decoration:none}img{m
 .eyebrow{display:inline-flex;align-items:center;gap:11px;font-family:var(--sans);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;font-size:.74rem;color:var(--blue)}
 .eyebrow::before{content:"";width:30px;height:2px;background:var(--gold)}
 .eyebrow.light{color:#fff}.eyebrow.light::before{background:var(--gold)}
-.btn{display:inline-flex;align-items:center;gap:.6rem;padding:15px 30px;font-weight:600;font-family:var(--sans);font-size:.95rem;cursor:pointer;border:2px solid transparent;border-radius:var(--radius);transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s,box-shadow .25s;letter-spacing:.2px}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:15px 30px;font-weight:600;font-family:var(--sans);font-size:.95rem;cursor:pointer;border:2px solid transparent;border-radius:999px;transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s,box-shadow .25s;letter-spacing:.2px}
 .btn i{transition:transform .25s var(--ease)}.btn:hover i{transform:translateX(4px)}
 .btn-blue{background:var(--blue);color:#fff;box-shadow:0 12px 28px rgba(10,102,194,.32)}
 .btn-blue:hover{background:var(--blue-h);transform:translateY(-3px);box-shadow:0 18px 36px rgba(10,102,194,.4)}
@@ -56,7 +56,7 @@ p{margin:0 0 1em;color:var(--sub)}a{color:var(--blue);text-decoration:none}img{m
 .nav-links a{color:rgba(255,255,255,.9);font-weight:500;font-size:.92rem;padding:9px 15px;border-radius:6px;transition:color .2s,background .2s}
 .hdr.scrolled .nav-links a{color:var(--ink2)}
 .nav-links a:hover{color:var(--blue)}.hdr.scrolled .nav-links a:hover{background:var(--bg2)}
-.nav-cta{margin-left:10px;background:var(--blue);color:#fff!important;padding:10px 20px!important;border-radius:6px!important;font-weight:600}
+.nav-cta{margin-left:10px;background:var(--blue);color:#fff!important;padding:10px 22px!important;border-radius:999px!important;font-weight:600}
 .nav-cta:hover{background:var(--blue-h)}
 .nav-toggle{display:none;background:none;border:0;cursor:pointer;width:44px;height:44px}
 .nav-toggle span{display:block;width:24px;height:2px;background:#fff;margin:5px auto;transition:.3s}
@@ -180,6 +180,28 @@ section{padding:108px 0}
 .field input,.field textarea{width:100%;padding:14px 16px;border:1px solid var(--line2);border-radius:var(--radius);font:inherit;font-size:1rem;color:var(--ink);background:var(--bg2);transition:border .2s,box-shadow .2s}
 .field input:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(10,102,194,.15);background:#fff}
 
+/* Process */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.pstep{position:relative;padding:34px 28px;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
+.pstep:hover{box-shadow:var(--shadow);transform:translateY(-5px);border-color:transparent}
+.pstep .pn{font-family:var(--display);font-size:2.6rem;font-weight:800;color:var(--blue);opacity:.22;line-height:1}
+.pstep h3{font-size:1.18rem;margin:12px 0 6px;font-weight:700}
+.pstep p{margin:0;font-size:.95rem}
+.pstep .ar{position:absolute;top:46px;right:-12px;color:var(--line2);z-index:2;font-size:1rem;background:var(--bg);padding:2px}
+.pstep:last-child .ar{display:none}
+
+/* FAQ */
+.faq{max-width:840px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--line2)}
+.faq-q{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:26px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;font-family:var(--display);font-weight:700;font-size:1.16rem;color:var(--ink)}
+.faq-q .pm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center;color:var(--blue);transition:.3s;font-size:.9rem}
+.faq-item.open .faq-q .pm{background:var(--blue);color:#fff;border-color:var(--blue);transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.faq-a p{margin:0;padding:0 50px 24px 0;color:var(--sub);font-size:1.02rem}
+
+/* Team (no photos) */
+.member .mono{aspect-ratio:1/1;display:grid;place-items:center;background:linear-gradient(140deg,#eaf2fb,#d8e6f8);color:var(--blue-deep);font-family:var(--display);font-weight:800;font-size:2.6rem;letter-spacing:.01em}
+
 /* Achievements */
 .ach-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
 .timeline{position:relative;padding-left:34px}
@@ -208,7 +230,8 @@ section{padding:108px 0}
 .post .tag{font-size:.7rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#fff;background:var(--blue);padding:4px 10px;border-radius:99px}
 .post .date{font-size:.84rem;color:var(--muted);font-weight:600}
 .post h4{font-size:1.2rem;font-weight:700;margin:0 0 6px}.post p{margin:0;font-size:.96rem}
-@media(max-width:980px){.ach-grid{grid-template-columns:1fr;gap:40px}.news-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:980px){.ach-grid{grid-template-columns:1fr;gap:40px}.news-grid{grid-template-columns:repeat(2,1fr)}.process-grid{grid-template-columns:repeat(2,1fr)}.pstep .ar{display:none}}
+@media(max-width:560px){.process-grid{grid-template-columns:1fr}}
 @media(max-width:680px){.news-grid{grid-template-columns:1fr}}
 
 /* Impact / NGO */
@@ -349,6 +372,13 @@ section{padding:108px 0}
   </div>
 </section>
 
+<section id="process">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow">How We Work</span><h2>From first survey to final handover.</h2><p id="processIntro"></p></div>
+    <div class="process-grid reveal" id="processGrid"></div>
+  </div>
+</section>
+
 <div class="band">
   <div class="band-bg"></div>
   <div class="container reveal">
@@ -442,6 +472,13 @@ section{padding:108px 0}
     <a href="#contact" class="btn btn-blue">Start a Conversation <i class="fa fa-arrow-right"></i></a>
   </div>
 </div>
+
+<section id="faq" class="bg2">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow">FAQ</span><h2>Questions, answered.</h2></div>
+    <div class="faq reveal" id="faqList"></div>
+  </div>
+</section>
 
 <section id="contact">
   <div class="container">
@@ -565,6 +602,22 @@ var DEFAULT_CONTENT={
     {title:"Jalalgarh Block Tower",category:"Reservoirs",image:"img/projects/05 - Jalalgarh Block Tower - Reservoirs.jpg"},
     {title:"Water Supply Network",category:"Supply Networks",image:"img/projects/06 - Water Supply Network - Supply Networks.jpg"}
   ],
+  process:{
+    intro:"A clear, accountable path from first survey to final handover.",
+    steps:[
+      {step:"01",title:"Survey & Feasibility",text:"We assess the site, water source and demand, and define a buildable, budget-aware plan."},
+      {step:"02",title:"Design & Engineering",text:"Structural design and drawings for towers, reservoirs and networks — built to last."},
+      {step:"03",title:"Construction",text:"Reinforced, quality-controlled execution by our experienced site teams, on schedule."},
+      {step:"04",title:"Commissioning & Handover",text:"Testing, commissioning and a clean handover — with support after we leave site."}
+    ]
+  },
+  faq:{items:[
+    {q:"What kind of projects does Umang Infrastructure take on?",a:"Water towers, overhead reservoirs, treatment and supply networks, and waste-water/recycling works across rural and urban Bihar."},
+    {q:"Which areas do you operate in?",a:"We are headquartered in Purnia, Bihar, and deliver projects across the state."},
+    {q:"Do you handle a project end-to-end?",a:"Yes — from survey and feasibility through design, construction and commissioning, with post-handover support."},
+    {q:"How do I request a quote or proposal?",a:"Use the contact form below or email ui@umanginfra.com with your location and requirement, and we'll get back to you."},
+    {q:"Are your builds quality-certified?",a:"Every project is executed to exacting reinforced-construction standards, with quality checks at each stage."}
+  ]},
   achievements:{
     intro:"Nearly two decades of milestones — and the standards that back them.",
     milestones:[
@@ -646,10 +699,25 @@ function renderCards(list){
   $("#cards").innerHTML=list.map(function(s){return '<div class="card reveal"><div class="ic"><i class="fa '+esc(s.icon)+'"></i></div><h3>'+esc(s.title)+'</h3><p>'+esc(s.text)+'</p></div>';}).join("");
   revealObserve();
 }
+function initials(name){return String(name||"").trim().split(/\s+/).map(function(w){return w[0];}).slice(0,2).join("").toUpperCase();}
 function renderTeam(list){
+  /* photos removed for now — clean monogram cards */
   $("#teamGrid").innerHTML=list.map(function(m){
-    return '<div class="member reveal"><div class="ph"><img src="'+esc(m.image)+'" alt="'+esc(m.name)+'" onerror="this.onerror=null;this.src=\''+avatarFor(m.name)+'\'"></div><div class="info"><h4>'+esc(m.name)+'</h4><span>'+esc(m.role||"")+'</span><div class="ml"><a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a><a href="mailto:'+esc(CURRENT.contact.email)+'" aria-label="Email"><i class="fa fa-envelope"></i></a></div></div></div>';
+    return '<div class="member reveal"><div class="mono">'+esc(initials(m.name))+'</div><div class="info"><h4>'+esc(m.name)+'</h4><span>'+esc(m.role||"")+'</span></div></div>';
   }).join("");revealObserve();
+}
+function renderProcess(p){
+  if(!p)return;
+  $("#processIntro").textContent=p.intro||"";
+  $("#processGrid").innerHTML=(p.steps||[]).map(function(s){return '<div class="pstep reveal"><div class="pn">'+esc(s.step)+'</div><h3>'+esc(s.title)+'</h3><p>'+esc(s.text)+'</p><span class="ar"><i class="fa fa-long-arrow-right"></i></span></div>';}).join("");
+  revealObserve();
+}
+function renderFAQ(f){
+  if(!f)return;
+  $("#faqList").innerHTML=(f.items||[]).map(function(it){return '<div class="faq-item"><button type="button" class="faq-q">'+esc(it.q)+'<span class="pm"><i class="fa fa-plus"></i></span></button><div class="faq-a"><p>'+esc(it.a)+'</p></div></div>';}).join("");
+  $("#faqList").onclick=function(e){var b=e.target.closest(".faq-q");if(!b)return;var item=b.parentNode,a=item.querySelector(".faq-a"),open=item.classList.contains("open");
+    [].forEach.call(this.querySelectorAll(".faq-item"),function(x){x.classList.remove("open");x.querySelector(".faq-a").style.maxHeight=null;});
+    if(!open){item.classList.add("open");a.style.maxHeight=a.scrollHeight+"px";}};
 }
 function renderProjects(list){
   var grid=$("#projectGrid"),filters=$("#projectFilters");
@@ -734,7 +802,7 @@ function renderText(C){
   $("#footerContact").innerHTML='<li>'+esc(C.contact.phone)+'</li><li><a href="mailto:'+esc(C.contact.email)+'">'+esc(C.contact.email)+'</a></li><li>'+esc(C.contact.address)+'</li>';
   $("#contactForm").onsubmit=function(e){e.preventDefault();submitForm(e.target,"Website Enquiry — "+(e.target.subject.value||"General"),$("#contactStatus"));};
   $("#year").textContent=new Date().getFullYear();
-  renderAchievements(C.achievements);renderNews(C.news);renderImpact(C.impact);renderCareers(C.careers);
+  renderProcess(C.process);renderAchievements(C.achievements);renderNews(C.news);renderImpact(C.impact);renderCareers(C.careers);renderFAQ(C.faq);
   revealObserve();
 }
 
