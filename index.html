@@ -9,10 +9,10 @@
 <meta property="og:description" content="Turnkey infrastructure across Water Supply, WTP, STP, Roads & Highways, and Building Construction. Established 2006." />
 <meta property="og:type" content="website" />
 
-<!-- Google Fonts: Inter & Montserrat -->
+<!-- Google Fonts: Plus Jakarta Sans, Outfit, Inter & Montserrat -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800;900&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
 <!-- FontAwesome Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -51,8 +51,8 @@
   --shadow-lg: 0 10px 25px -3px rgba(11, 28, 48, 0.1), 0 4px 6px -2px rgba(11, 28, 48, 0.05);
   --shadow-xl: 0 20px 40px -5px rgba(11, 28, 48, 0.15);
   
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-head: "Montserrat", "Inter", sans-serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-head: "Outfit", "Montserrat", "Inter", sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -1489,32 +1489,36 @@ function fetchFolder(path) {
 
 var CURRENT = _clone(DEFAULT_CONTENT);
 function renderCards(list) {
-  $("#cards").innerHTML = list.map(function(s) { return '<div class="card reveal"><div class="ic"><i class="fa ' + esc(s.icon) + '"></i></div><h3>' + esc(s.title) + '</h3><p>' + esc(s.text) + '</p></div>'; }).join("");
+  var c = $("#cards"); if (c) c.innerHTML = list.map(function(s) { return '<div class="card reveal"><div class="ic"><i class="fa ' + esc(s.icon) + '"></i></div><h3>' + esc(s.title) + '</h3><p>' + esc(s.text) + '</p></div>'; }).join("");
   revealObserve(); initTiltCards();
 }
 function initials(name) { return String(name || "").trim().split(/\s+/).map(function(w) { return w[0]; }).slice(0, 2).join("").toUpperCase(); }
 function renderTeam(list) {
-  $("#teamGrid").innerHTML = list.map(function(m) {
+  var tg = $("#teamGrid"); if (tg) tg.innerHTML = list.map(function(m) {
     return '<div class="member reveal"><div class="mono">' + esc(initials(m.name)) + '</div><div class="info"><h4>' + esc(m.name) + '</h4><span>' + esc(m.role || "") + '</span></div></div>';
   }).join(""); revealObserve(); initTiltCards();
 }
 function renderProcess(p) {
   if (!p) return;
-  $("#processIntro").textContent = p.intro || "";
-  $("#processGrid").innerHTML = (p.steps || []).map(function(s) { return '<div class="pstep reveal"><div class="pn">' + esc(s.step) + '</div><h3>' + esc(s.title) + '</h3><p>' + esc(s.text) + '</p><span class="ar"><i class="fa fa-long-arrow-right"></i></span></div>'; }).join("");
+  var pi = $("#processIntro"); if (pi) pi.textContent = p.intro || "";
+  var pg = $("#processGrid"); if (pg) pg.innerHTML = (p.steps || []).map(function(s) { return '<div class="pstep reveal"><div class="pn">' + esc(s.step) + '</div><h3>' + esc(s.title) + '</h3><p>' + esc(s.text) + '</p><span class="ar"><i class="fa fa-long-arrow-right"></i></span></div>'; }).join("");
   revealObserve(); initTiltCards();
 }
 function renderFAQ(f) {
   if (!f) return;
-  $("#faqList").innerHTML = (f.items || []).map(function(it) { return '<div class="faq-item"><button type="button" class="faq-q">' + esc(it.q) + '<span class="pm"><i class="fa fa-plus"></i></span></button><div class="faq-a"><p>' + esc(it.a) + '</p></div></div>'; }).join("");
-  $("#faqList").onclick = function(e) {
-    var b = e.target.closest(".faq-q"); if (!b) return; var item = b.parentNode, a = item.querySelector(".faq-a"), open = item.classList.contains("open");
-    [].forEach.call(this.querySelectorAll(".faq-item"), function(x) { x.classList.remove("open"); x.querySelector(".faq-a").style.maxHeight = null; });
-    if (!open) { item.classList.add("open"); a.style.maxHeight = a.scrollHeight + "px"; }
-  };
+  var fl = $("#faqList");
+  if (fl) {
+    fl.innerHTML = (f.items || []).map(function(it) { return '<div class="faq-item"><button type="button" class="faq-q">' + esc(it.q) + '<span class="pm"><i class="fa fa-plus"></i></span></button><div class="faq-a"><p>' + esc(it.a) + '</p></div></div>'; }).join("");
+    fl.onclick = function(e) {
+      var b = e.target.closest(".faq-q"); if (!b) return; var item = b.parentNode, a = item.querySelector(".faq-a"), open = item.classList.contains("open");
+      [].forEach.call(this.querySelectorAll(".faq-item"), function(x) { x.classList.remove("open"); x.querySelector(".faq-a").style.maxHeight = null; });
+      if (!open) { item.classList.add("open"); a.style.maxHeight = a.scrollHeight + "px"; }
+    };
+  }
 }
 function renderProjects(list) {
   var grid = $("#projectGrid"), filters = $("#projectFilters");
+  if (!grid || !filters) return;
   var cats = ["All"]; list.forEach(function(p) { if (p.category && cats.indexOf(p.category) < 0) cats.push(p.category); });
   filters.innerHTML = cats.map(function(c, i) { return '<button class="' + (i === 0 ? "active" : "") + '" data-cat="' + esc(c) + '">' + esc(c) + '</button>'; }).join("");
   function draw(cat) {
@@ -1529,15 +1533,15 @@ function renderProjects(list) {
 
 function renderAchievements(a) {
   if (!a) return;
-  $("#achIntro").textContent = a.intro || "";
-  $("#timeline").innerHTML = (a.milestones || []).map(function(m) { return '<div class="tl"><div class="yr">' + esc(m.year) + '</div><h4>' + esc(m.title) + '</h4><p>' + esc(m.text) + '</p></div>'; }).join("");
-  $("#achHighlights").innerHTML = (a.highlights || []).map(function(h) { return '<div class="ach-hl reveal"><div class="ic"><i class="fa ' + esc(h.icon || "fa-trophy") + '"></i></div><div><h4>' + esc(h.title) + '</h4><p>' + esc(h.text) + '</p></div></div>'; }).join("");
+  var ai = $("#achIntro"); if (ai) ai.textContent = a.intro || "";
+  var tl = $("#timeline"); if (tl) tl.innerHTML = (a.milestones || []).map(function(m) { return '<div class="tl"><div class="yr">' + esc(m.year) + '</div><h4>' + esc(m.title) + '</h4><p>' + esc(m.text) + '</p></div>'; }).join("");
+  var ah = $("#achHighlights"); if (ah) ah.innerHTML = (a.highlights || []).map(function(h) { return '<div class="ach-hl reveal"><div class="ic"><i class="fa ' + esc(h.icon || "fa-trophy") + '"></i></div><div><h4>' + esc(h.title) + '</h4><p>' + esc(h.text) + '</p></div></div>'; }).join("");
   revealObserve(); initTiltCards();
 }
 function renderNews(n) {
   if (!n) return;
-  $("#newsIntro").textContent = n.intro || "";
-  $("#newsGrid").innerHTML = (n.posts || []).map(function(p, i) {
+  var ni = $("#newsIntro"); if (ni) ni.textContent = n.intro || "";
+  var ng = $("#newsGrid"); if (ng) ng.innerHTML = (n.posts || []).map(function(p, i) {
     var img = p.image ? '<div class="ph"><img src="' + encodeURI(p.image) + '" alt="' + esc(p.title) + '" onerror="this.onerror=null;this.src=\'' + encodeURI(DEFAULT_CONTENT.portfolio[i % 6].image) + '\'"></div>' : '';
     return '<div class="post reveal">' + img + '<div class="bd"><div class="meta"><span class="tag">' + esc(p.tag || "News") + '</span><span class="date">' + esc(p.date || "") + '</span></div><h4>' + esc(p.title) + '</h4><p>' + esc(p.text) + '</p></div></div>';
   }).join("");
@@ -1545,24 +1549,27 @@ function renderNews(n) {
 }
 function renderImpact(im) {
   if (!im) return;
-  $("#impactHeading").textContent = im.heading || "";
-  $("#impactBody").textContent = im.body || "";
-  if (im.stat) { $("#impactStatV").textContent = im.stat.value || ""; $("#impactStatL").textContent = im.stat.label || ""; }
-  $("#impactCards").innerHTML = (im.items || []).map(function(s) { return '<div class="card reveal"><div class="ic"><i class="fa ' + esc(s.icon || "fa-tint") + '"></i></div><h3>' + esc(s.title) + '</h3><p>' + esc(s.text) + '</p></div>'; }).join("");
+  var ih = $("#impactHeading"); if (ih) ih.textContent = im.heading || "";
+  var ib = $("#impactBody"); if (ib) ib.textContent = im.body || "";
+  if (im.stat) { var isv = $("#impactStatV"); if (isv) isv.textContent = im.stat.value || ""; var isl = $("#impactStatL"); if (isl) isl.textContent = im.stat.label || ""; }
+  var ic = $("#impactCards"); if (ic) ic.innerHTML = (im.items || []).map(function(s) { return '<div class="card reveal"><div class="ic"><i class="fa ' + esc(s.icon || "fa-tint") + '"></i></div><h3>' + esc(s.title) + '</h3><p>' + esc(s.text) + '</p></div>'; }).join("");
   revealObserve(); initTiltCards();
 }
 function renderCareers(c) {
   if (!c) return;
-  $("#careersIntro").textContent = c.intro || "";
-  var email = c.applyEmail || CURRENT.contact.email;
+  var ci = $("#careersIntro"); if (ci) ci.textContent = c.intro || "";
+  var email = c.applyEmail || (CURRENT.contact && CURRENT.contact.email) || "ui@umanginfra.com";
   var link = $("#applyEmailLink"); if (link) { link.href = "mailto:" + email; link.textContent = email; }
   var jobs = c.jobs || [];
-  $("#jobsList").innerHTML = jobs.map(function(j, i) {
-    return '<div class="job reveal"><div class="jt"><div class="chips"><span class="chip"><i class="fa fa-map-marker"></i> ' + esc(j.location || "Bihar") + '</span><span class="chip">' + esc(j.type || "Full-time") + '</span></div><h4>' + esc(j.title) + '</h4><p>' + esc(j.desc || "") + '</p></div><button type="button" class="btn btn-blue apply-btn" data-role="' + esc(j.title) + '">Apply Now <i class="fa fa-arrow-right"></i></button></div>';
-  }).join("");
+  var jl = $("#jobsList");
+  if (jl) {
+    jl.innerHTML = jobs.map(function(j, i) {
+      return '<div class="job reveal"><div class="jt"><div class="chips"><span class="chip"><i class="fa fa-map-marker"></i> ' + esc(j.location || "Bihar") + '</span><span class="chip">' + esc(j.type || "Full-time") + '</span></div><h4>' + esc(j.title) + '</h4><p>' + esc(j.desc || "") + '</p></div><button type="button" class="btn btn-blue apply-btn" data-role="' + esc(j.title) + '">Apply Now <i class="fa fa-arrow-right"></i></button></div>';
+    }).join("");
+    jl.onclick = function(e) { var b = e.target.closest(".apply-btn"); if (!b) return; var r = b.getAttribute("data-role"); var sel = $("#positionSelect"); if (sel) sel.value = r; var car = document.getElementById("careers"); if (car) { var ac = car.querySelector(".apply-card"); if (ac) ac.scrollIntoView({ behavior: "smooth", block: "center" }); } };
+  }
   var sel = $("#positionSelect");
   if (sel) { sel.innerHTML = '<option value="General Application">General Application</option>' + jobs.map(function(j) { return '<option value="' + esc(j.title) + '">' + esc(j.title) + '</option>'; }).join(""); }
-  $("#jobsList").onclick = function(e) { var b = e.target.closest(".apply-btn"); if (!b) return; var r = b.getAttribute("data-role"); if (sel) sel.value = r; document.getElementById("careers").querySelector(".apply-card").scrollIntoView({ behavior: "smooth", block: "center" }); };
   var af = $("#applyForm");
   if (af) af.onsubmit = function(e) { e.preventDefault(); submitForm(af, "New Job Application — " + (sel ? sel.value : "Careers"), $("#applyStatus")); };
   revealObserve(); initTiltCards();
@@ -1571,32 +1578,44 @@ function renderCareers(c) {
 function renderText(C) {
   CURRENT = C;
   document.title = C.company.name + " " + C.company.nameSuffix + " — Premier Government & Civil Contractors Since " + C.company.established;
-  $("#brandText").innerHTML = '<b>' + esc(C.company.name) + " " + esc(C.company.nameSuffix) + '</b><small>INFRA · SINCE ' + esc(C.company.established) + '</small>';
+  var bt = $("#brandText"); if (bt) bt.innerHTML = '<b>' + esc(C.company.name) + " " + esc(C.company.nameSuffix) + '</b><small>INFRA · SINCE ' + esc(C.company.established) + '</small>';
 
-  var hImg = $("#heroImg"); hImg.src = encodeURI(C.about.image); hImg.onerror = function() { this.onerror = null; this.src = "img/portfolio/1.jpg"; };
+  var hImg = $("#heroImg"); if (hImg) { hImg.src = encodeURI(C.about.image); hImg.onerror = function() { this.onerror = null; this.src = "img/portfolio/1.jpg"; }; }
 
-  var heroIdx = 0, dots = $("#heroDots"); dots.innerHTML = "";
-  C.hero.forEach(function(h, i) { var b = document.createElement("button"); b.className = i === 0 ? "active" : ""; b.setAttribute("aria-label", "Slide " + (i + 1)); b.addEventListener("click", function() { show(i); }); dots.appendChild(b); });
-  function show(i) { heroIdx = (i + C.hero.length) % C.hero.length; var h = C.hero[heroIdx]; $("#heroKicker").textContent = h.kicker; $("#heroText").textContent = h.text; [].forEach.call(dots.children, function(d, n) { d.className = n === heroIdx ? "active" : ""; }); }
+  var heroIdx = 0, dots = $("#heroDots");
+  if (dots) {
+    dots.innerHTML = "";
+    C.hero.forEach(function(h, i) { var b = document.createElement("button"); b.className = i === 0 ? "active" : ""; b.setAttribute("aria-label", "Slide " + (i + 1)); b.addEventListener("click", function() { show(i); }); dots.appendChild(b); });
+  }
+  function show(i) {
+    heroIdx = (i + C.hero.length) % C.hero.length;
+    var h = C.hero[heroIdx];
+    var hk = $("#heroKicker"); if (hk) hk.textContent = h.kicker;
+    var ht = $("#heroText"); if (ht) ht.textContent = h.text;
+    if (dots) { [].forEach.call(dots.children, function(d, n) { d.className = n === heroIdx ? "active" : ""; }); }
+  }
   show(0); if (C.hero.length > 1) setInterval(function() { show(heroIdx + 1); }, 6500);
 
   var since = parseInt(C.company.established, 10);
-  if (since) { var n = new Date().getFullYear() - since; $("#statYears").textContent = n + "+"; $("#aboutYears").textContent = n + "+"; }
+  if (since) { var n = new Date().getFullYear() - since; var sy = $("#statYears"); if (sy) sy.textContent = n + "+"; var ay = $("#aboutYears"); if (ay) ay.textContent = n + "+"; }
 
-  var aImg = $("#aboutImg"); aImg.src = encodeURI(C.about.image); aImg.alt = C.about.heading; aImg.onerror = function() { this.onerror = null; this.src = "img/about/2.jpg"; };
-  $("#aboutHeading").textContent = C.about.heading;
-  $("#aboutBody").textContent = C.about.body;
-  $("#aboutPoints").innerHTML = C.about.points.map(function(p) { return '<li><i class="fa fa-check-circle"></i><span>' + esc(p) + '</span></li>'; }).join("");
+  var aImg = $("#aboutImg"); if (aImg) { aImg.src = encodeURI(C.about.image); aImg.alt = C.about.heading; aImg.onerror = function() { this.onerror = null; this.src = "img/about/2.jpg"; }; }
+  var ah = $("#aboutHeading"); if (ah) ah.textContent = C.about.heading;
+  var ab = $("#aboutBody"); if (ab) ab.textContent = C.about.body;
+  var ap = $("#aboutPoints"); if (ap) ap.innerHTML = C.about.points.map(function(p) { return '<li><i class="fa fa-check-circle"></i><span>' + esc(p) + '</span></li>'; }).join("");
 
   renderCards(C.services.map(function(s, i) { return { icon: s.icon || ICONS[i % ICONS.length], title: s.title, text: s.text }; }));
 
-  $("#contactInfo").innerHTML =
-    '<div class="info-row"><div class="ic"><i class="fa fa-phone"></i></div><div><div class="lb">Call Us Direct</div><div class="vl">' + esc(C.contact.phone) + '</div><div class="lb" style="text-transform:none;letter-spacing:0;margin-top:6px;font-weight:600;color:var(--text-sub)">' + esc(C.contact.hours) + '</div></div></div>' +
-    '<div class="info-row"><div class="ic"><i class="fa fa-envelope"></i></div><div><div class="lb">Email Support</div><div class="vl"><a href="mailto:' + esc(C.contact.email) + '">' + esc(C.contact.email) + '</a></div></div></div>' +
-    '<div class="info-row"><div class="ic"><i class="fa fa-map-marker"></i></div><div><div class="lb">Visit Office</div><div class="vl" style="font-weight:600;font-size:1.05rem">' + esc(C.contact.address) + '</div></div></div>';
-  $("#footerContact").innerHTML = '<li>' + esc(C.contact.phone) + '</li><li><a href="mailto:' + esc(C.contact.email) + '">' + esc(C.contact.email) + '</a></li><li>' + esc(C.contact.address) + '</li>';
-  $("#contactForm").onsubmit = function(e) { e.preventDefault(); submitForm(e.target, "Website Enquiry — " + (e.target.subject.value || "General"), $("#contactStatus")); };
-  $("#year").textContent = new Date().getFullYear();
+  var ci = $("#contactInfo");
+  if (ci) {
+    ci.innerHTML =
+      '<div class="info-row"><div class="ic"><i class="fa fa-phone"></i></div><div><div class="lb">Call Us Direct</div><div class="vl">' + esc(C.contact.phone) + '</div><div class="lb" style="text-transform:none;letter-spacing:0;margin-top:6px;font-weight:600;color:var(--text-sub)">' + esc(C.contact.hours) + '</div></div></div>' +
+      '<div class="info-row"><div class="ic"><i class="fa fa-envelope"></i></div><div><div class="lb">Email Support</div><div class="vl"><a href="mailto:' + esc(C.contact.email) + '">' + esc(C.contact.email) + '</a></div></div></div>' +
+      '<div class="info-row"><div class="ic"><i class="fa fa-map-marker"></i></div><div><div class="lb">Visit Office</div><div class="vl" style="font-weight:600;font-size:1.05rem">' + esc(C.contact.address) + '</div></div></div>';
+  }
+  var fc = $("#footerContact"); if (fc) fc.innerHTML = '<li>' + esc(C.contact.phone) + '</li><li><a href="mailto:' + esc(C.contact.email) + '">' + esc(C.contact.email) + '</a></li><li>' + esc(C.contact.address) + '</li>';
+  var cf = $("#contactForm"); if (cf) cf.onsubmit = function(e) { e.preventDefault(); submitForm(e.target, "Website Enquiry — " + (e.target.subject.value || "General"), $("#contactStatus")); };
+  var yr = $("#year"); if (yr) yr.textContent = new Date().getFullYear();
   renderProcess(C.process); renderAchievements(C.achievements); renderNews(C.news); renderImpact(C.impact); renderCareers(C.careers); renderFAQ(C.faq);
   revealObserve(); initTiltCards();
 }
