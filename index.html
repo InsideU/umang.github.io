@@ -1208,6 +1208,68 @@ section { padding: 120px 0; position: relative; }
   .impact-head { grid-template-columns: 1fr; gap: 30px; }
   .job { flex-direction: column; align-items: flex-start; gap: 18px; }
 }
+
+/* Spline™ 3D Interactive Studio Overlay */
+.spline-ui-overlay {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 10;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.spline-badge, .spline-controls {
+  background: rgba(11, 23, 42, 0.75);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  border-radius: 999px;
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5), 0 0 15px rgba(0, 242, 255, 0.15);
+  pointer-events: auto;
+}
+.spline-logo-dot {
+  width: 10px; height: 10px;
+  background: #00f2ff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00f2ff;
+  animation: pulseNeon 2s infinite;
+}
+.spline-tip {
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.spline-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.spline-btn:hover {
+  background: #00f2ff;
+  color: #030712;
+  border-color: #00f2ff;
+  box-shadow: 0 0 12px #00f2ff;
+}
+@media (max-width: 768px) {
+  .spline-ui-overlay { bottom: 12px; left: 12px; right: 12px; }
+  .spline-tip { display: none; }
+}
 </style>
 </head>
 <body>
@@ -1235,6 +1297,19 @@ section { padding: 120px 0; position: relative; }
   <div class="hero-bg">
     <img id="heroImg" alt="Umang Infrastructure turnkey project" />
     <div id="hero3d-container"></div>
+    <div class="spline-ui-overlay">
+      <div class="spline-badge">
+        <span class="spline-logo-dot"></span>
+        <strong>Spline™ Retrofuturistic Glass Matrix</strong>
+        <span class="divider" style="opacity:0.3">|</span>
+        <span style="color:#00f2ff">Live WebGL Studio</span>
+      </div>
+      <div class="spline-controls">
+        <span class="spline-tip"><i class="fa fa-hand-pointer-o"></i> Drag to Orbit</span>
+        <span class="spline-tip"><i class="fa fa-arrows-v"></i> Scroll to Zoom</span>
+        <button type="button" class="spline-btn" id="splineResetBtn" title="Reset View"><i class="fa fa-refresh"></i> Reset</button>
+      </div>
+    </div>
   </div>
   
   <!-- Floating Live Badges -->
@@ -1529,8 +1604,8 @@ var DEFAULT_CONTENT = {
     { icon: "fa-cogs", title: "WTP & STP Facilities", text: "Turnkey construction of state-of-the-art Water Treatment Plants (WTP) and Sewage Treatment Plants (STP) with advanced environmental controls." },
     { icon: "fa-road", title: "Roads & Highways", text: "Heavy-duty highway paving, expressway corridors, bridge approaches, and durable road infrastructure engineered for heavy traffic." },
     { icon: "fa-building", title: "Building Construction", text: "Structural engineering and execution of government, institutional, residential, and commercial building complexes." },
-    { icon: "fa-briefcase", title": "Government Contracting", text: "Trusted execution of large-scale public sector, state, and municipal contracts with rigorous financial and operational accountability." },
-    { icon: "fa-globe", title": "Global Quality Standards", text": "Exacting ISO-grade reinforced construction methodologies, modern equipment, and a 100% on-time completion commitment." }
+    { icon: "fa-briefcase", title: "Government Contracting", text: "Trusted execution of large-scale public sector, state, and municipal contracts with rigorous financial and operational accountability." },
+    { icon: "fa-globe", title: "Global Quality Standards", text: "Exacting ISO-grade reinforced construction methodologies, modern equipment, and a 100% on-time completion commitment." }
   ],
   team: [
     { name: "Anil Kumar Singh", role: "Director", image: "img/team/01 - Anil Kumar Singh - Director.jpg" },
@@ -1669,7 +1744,7 @@ function renderProjects(list) {
   function draw(cat) {
     var l = cat === "All" ? list : list.filter(function(p) { return p.category === cat; });
     grid.innerHTML = l.map(function(p, i) {
-      return '<div class="project reveal"><img src="' + esc(p.image) + '" alt="' + esc(p.title) + '" onerror="this.onerror=null;this.src=\'' + esc(DEFAULT_CONTENT.portfolio[i % 6].image) + '\'"><span class="go"><i class="fa fa-arrow-right"></i></span><div class="ov"><span class="cat">' + esc(p.category || "Project") + '</span><h4>' + esc(p.title) + '</h4></div></div>';
+      return '<div class="project reveal"><img src="' + encodeURI(p.image) + '" alt="' + esc(p.title) + '" onerror="this.onerror=null;this.src=\'' + encodeURI(DEFAULT_CONTENT.portfolio[i % 6].image) + '\'"><span class="go"><i class="fa fa-arrow-right"></i></span><div class="ov"><span class="cat">' + esc(p.category || "Project") + '</span><h4>' + esc(p.title) + '</h4></div></div>';
     }).join(""); revealObserve(); initTiltCards();
   }
   draw("All");
@@ -1687,7 +1762,7 @@ function renderNews(n) {
   if (!n) return;
   $("#newsIntro").textContent = n.intro || "";
   $("#newsGrid").innerHTML = (n.posts || []).map(function(p, i) {
-    var img = p.image ? '<div class="ph"><img src="' + esc(p.image) + '" alt="' + esc(p.title) + '" onerror="this.onerror=null;this.src=\'' + esc(DEFAULT_CONTENT.portfolio[i % 6].image) + '\'"></div>' : '';
+    var img = p.image ? '<div class="ph"><img src="' + encodeURI(p.image) + '" alt="' + esc(p.title) + '" onerror="this.onerror=null;this.src=\'' + encodeURI(DEFAULT_CONTENT.portfolio[i % 6].image) + '\'"></div>' : '';
     return '<div class="post reveal">' + img + '<div class="bd"><div class="meta"><span class="tag">' + esc(p.tag || "News") + '</span><span class="date">' + esc(p.date || "") + '</span></div><h4>' + esc(p.title) + '</h4><p>' + esc(p.text) + '</p></div></div>';
   }).join("");
   revealObserve(); initTiltCards();
@@ -1722,7 +1797,7 @@ function renderText(C) {
   document.title = C.company.name + " " + C.company.nameSuffix + " — Premier Government & Civil Contractors Since " + C.company.established;
   $("#brandText").innerHTML = '<b>' + esc(C.company.name) + " " + esc(C.company.nameSuffix) + '</b><small>INFRA · SINCE ' + esc(C.company.established) + '</small>';
 
-  var hImg = $("#heroImg"); hImg.src = C.about.image; hImg.onerror = function() { this.onerror = null; this.src = "img/portfolio/1.jpg"; };
+  var hImg = $("#heroImg"); hImg.src = encodeURI(C.about.image); hImg.onerror = function() { this.onerror = null; this.src = "img/portfolio/1.jpg"; };
 
   var heroIdx = 0, dots = $("#heroDots"); dots.innerHTML = "";
   C.hero.forEach(function(h, i) { var b = document.createElement("button"); b.className = i === 0 ? "active" : ""; b.setAttribute("aria-label", "Slide " + (i + 1)); b.addEventListener("click", function() { show(i); }); dots.appendChild(b); });
@@ -1732,7 +1807,7 @@ function renderText(C) {
   var since = parseInt(C.company.established, 10);
   if (since) { var n = new Date().getFullYear() - since; $("#statYears").textContent = n + "+"; $("#aboutYears").textContent = n + "+"; }
 
-  var aImg = $("#aboutImg"); aImg.src = C.about.image; aImg.alt = C.about.heading; aImg.onerror = function() { this.onerror = null; this.src = "img/about/2.jpg"; };
+  var aImg = $("#aboutImg"); aImg.src = encodeURI(C.about.image); aImg.alt = C.about.heading; aImg.onerror = function() { this.onerror = null; this.src = "img/about/2.jpg"; };
   $("#aboutHeading").textContent = C.about.heading;
   $("#aboutBody").textContent = C.about.body;
   $("#aboutPoints").innerHTML = C.about.points.map(function(p) { return '<li><i class="fa fa-check-circle"></i><span>' + esc(p) + '</span></li>'; }).join("");
@@ -1793,7 +1868,7 @@ function initTiltCards() {
   });
 }
 
-/* ---- Three.js Live 3D Water & Engineering Wave Engine ---- */
+/* ---- Three.js Spline™ Retrofuturistic Glass Refraction & Interactive Studio Engine ---- */
 function initThreeJS() {
   var container = document.getElementById("hero3d-container");
   if (!container || !window.THREE) return;
@@ -1801,182 +1876,257 @@ function initThreeJS() {
     var width = window.innerWidth;
     var height = window.innerHeight;
     var scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x030712, 0.006);
+    scene.fog = new THREE.FogExp2(0x030712, 0.005);
     
-    var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
-    camera.position.set(0, -45, 55);
-    camera.lookAt(0, 5, 0);
+    var camera = new THREE.PerspectiveCamera(55, width / height, 0.1, 1000);
+    camera.position.set(0, -42, 50);
+    camera.lookAt(0, 4, 0);
 
-    var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(width, height);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.2;
     container.appendChild(renderer.domElement);
 
     var infraGroup = new THREE.Group();
     scene.add(infraGroup);
     infraGroup.rotation.x = -Math.PI / 2.3;
-    infraGroup.position.y = -8;
+    infraGroup.position.y = -6;
 
-    /* 1. Digital Terrain / Water Grid (Water Supply & WTP Base) */
-    var gridGeo = new THREE.PlaneGeometry(240, 180, 60, 45);
-    var gridMat = new THREE.MeshStandardMaterial({
-      color: 0x005588,
-      emissive: 0x001122,
+    /* 1. Spline Retrofuturistic Isometric Base / Podium */
+    var podiumGeo = new THREE.CylinderGeometry(58, 62, 3, 40);
+    var podiumMat = new THREE.MeshStandardMaterial({
+      color: 0x070e1b,
+      metalness: 0.9,
       roughness: 0.2,
-      metalness: 0.8,
-      transparent: true,
-      opacity: 0.45,
-      side: THREE.DoubleSide
+      emissive: 0x020813
     });
-    var wireMat = new THREE.MeshBasicMaterial({
-      color: 0x00f2ff,
+    var podium = new THREE.Mesh(podiumGeo, podiumMat);
+    podium.position.set(0, 0, -3);
+    podium.rotation.x = Math.PI / 2;
+    infraGroup.add(podium);
+
+    /* Glowing Neon Ring around Podium */
+    var ringGeoBase = new THREE.TorusGeometry(60, 0.5, 16, 100);
+    var ringMatBase = new THREE.MeshBasicMaterial({ color: 0x00f2ff, transparent: true, opacity: 0.8 });
+    var ringBase = new THREE.Mesh(ringGeoBase, ringMatBase);
+    ringBase.position.set(0, 0, -1.4);
+    infraGroup.add(ringBase);
+
+    /* 2. Retrofuturistic Cyber Grid Floor */
+    var gridGeo = new THREE.PlaneGeometry(260, 200, 50, 40);
+    var gridMat = new THREE.MeshBasicMaterial({
+      color: 0x005588,
       wireframe: true,
       transparent: true,
-      opacity: 0.22
+      opacity: 0.25
     });
     var gridMesh = new THREE.Mesh(gridGeo, gridMat);
-    var wireMesh = new THREE.Mesh(gridGeo.clone(), wireMat);
+    gridMesh.position.z = -12;
     infraGroup.add(gridMesh);
-    infraGroup.add(wireMesh);
 
-    /* 2. Architectural Skyscraper Complexes (Building Construction) */
-    var bMat = new THREE.MeshStandardMaterial({
-      color: 0x081e36,
-      emissive: 0x020813,
+    /* 3. Spline Frosted Glass Refraction Skyscraper Matrix */
+    // Using MeshPhysicalMaterial to emulate Spline's glowing glass refraction
+    var glassMat = new THREE.MeshPhysicalMaterial({
+      color: 0x0b1d33,
+      emissive: 0x001122,
       roughness: 0.1,
-      metalness: 0.9,
+      metalness: 0.1,
+      transmission: 0.85, // Real glass refraction
+      ior: 1.5,
+      thickness: 2.5,
       transparent: true,
-      opacity: 0.85
+      opacity: 0.9,
+      reflectivity: 0.9,
+      clearcoat: 1.0,
+      clearcoatRoughness: 0.1
     });
-    var bWireMat = new THREE.MeshBasicMaterial({ color: 0x00f2ff, wireframe: true, transparent: true, opacity: 0.45 });
-    
+    var glassWireMat = new THREE.MeshBasicMaterial({ color: 0x00f2ff, wireframe: true, transparent: true, opacity: 0.35 });
+
     var towers = [];
     var towerCoords = [
-      [-40, -30, 15], [-20, -50, 22], [10, -40, 30], [35, -25, 18], [55, -45, 25],
-      [-55, -10, 20], [-30, 0, 28], [5, -10, 35], [30, 5, 22], [50, -10, 16],
-      [-45, 20, 18], [-15, 30, 25], [20, 25, 30], [45, 30, 20], [0, -25, 40]
+      [-35, -25, 18], [-18, -45, 26], [12, -35, 32], [35, -20, 20], [50, -40, 28],
+      [-48, -8, 22], [-25, 5, 30], [8, -8, 38], [28, 8, 25], [45, -8, 18],
+      [-40, 22, 20], [-12, 28, 28], [22, 22, 34], [40, 28, 22], [0, -22, 45]
     ];
     towerCoords.forEach(function(pos) {
-      var w = 6 + Math.random() * 4;
-      var d = 6 + Math.random() * 4;
+      var w = 7 + Math.random() * 4;
+      var d = 7 + Math.random() * 4;
       var h = pos[2];
       var geo = new THREE.BoxGeometry(w, d, h);
-      var mesh = new THREE.Mesh(geo, bMat);
-      var wire = new THREE.Mesh(geo, bWireMat);
+      var mesh = new THREE.Mesh(geo, glassMat);
+      var wire = new THREE.Mesh(geo, glassWireMat);
       mesh.add(wire);
       mesh.position.set(pos[0], pos[1], h / 2);
       infraGroup.add(mesh);
       towers.push(mesh);
     });
 
-    /* 3. WTP & STP Cylindrical Treatment Reservoirs */
-    var cMat = new THREE.MeshStandardMaterial({
-      color: 0x0a3a60,
-      emissive: 0x001a33,
-      roughness: 0.2,
-      metalness: 0.8,
-      transparent: true,
-      opacity: 0.8
-    });
-    var cWireMat = new THREE.MeshBasicMaterial({ color: 0xf4c430, wireframe: true, transparent: true, opacity: 0.5 });
+    /* 4. Glowing Neon Core Tanks (WTP / STP Refraction Elements) */
+    var neonCyanMat = new THREE.MeshBasicMaterial({ color: 0x00f2ff, transparent: true, opacity: 0.85 });
+    var neonGoldMat = new THREE.MeshBasicMaterial({ color: 0xf4c430, transparent: true, opacity: 0.85 });
+    var neonPurpleMat = new THREE.MeshBasicMaterial({ color: 0xa855f7, transparent: true, opacity: 0.85 });
+    var neonMats = [neonCyanMat, neonGoldMat, neonPurpleMat];
+
     var cylCoords = [
-      [-25, -20, 12], [25, -20, 12], [-10, 15, 14], [35, 20, 10], [-45, -45, 10]
+      [-22, -18, 14], [22, -18, 14], [-8, 18, 16], [32, 18, 12], [-40, -40, 12]
     ];
-    cylCoords.forEach(function(pos) {
-      var r = 4 + Math.random() * 2;
+    cylCoords.forEach(function(pos, idx) {
+      var r = 4.5 + Math.random() * 2;
       var h = pos[2];
-      var geo = new THREE.CylinderGeometry(r, r, h, 16);
-      var mesh = new THREE.Mesh(geo, cMat);
-      var wire = new THREE.Mesh(geo, cWireMat);
-      mesh.add(wire);
+      var geo = new THREE.CylinderGeometry(r, r, h, 24);
+      var mat = neonMats[idx % neonMats.length];
+      var mesh = new THREE.Mesh(geo, mat);
       mesh.rotation.x = Math.PI / 2;
       mesh.position.set(pos[0], pos[1], h / 2);
       infraGroup.add(mesh);
     });
 
-    /* 4. Highway & Pipeline Telemetry Particle Streams (Roads & Water Flows) */
-    var pCount = 800;
+    /* 5. Floating Spline Geometric Orbs & Capsules (Retrofuturistic BG Elements) */
+    var floatingOrbs = [];
+    for (var i = 0; i < 16; i++) {
+      var r = 1.5 + Math.random() * 2.5;
+      var geoOrb = Math.random() > 0.5 ? new THREE.SphereGeometry(r, 24, 24) : new THREE.TorusGeometry(r, r * 0.3, 16, 32);
+      var matOrb = neonMats[i % neonMats.length];
+      var orb = new THREE.Mesh(geoOrb, matOrb);
+      orb.position.set((Math.random() - 0.5) * 120, (Math.random() - 0.5) * 100, 15 + Math.random() * 35);
+      orb.userData = {
+        speed: 0.02 + Math.random() * 0.03,
+        offset: Math.random() * Math.PI * 2,
+        baseZ: orb.position.z
+      };
+      infraGroup.add(orb);
+      floatingOrbs.push(orb);
+    }
+
+    /* 6. Telemetry Particle Streams */
+    var pCount = 900;
     var pGeo = new THREE.BufferGeometry();
     var pPos = new Float32Array(pCount * 3);
-    for (var i = 0; i < pCount * 3; i += 3) {
-      pPos[i] = (Math.random() - 0.5) * 200;
-      pPos[i + 1] = (Math.random() - 0.5) * 150;
-      pPos[i + 2] = Math.random() * 50;
+    for (var j = 0; j < pCount * 3; j += 3) {
+      pPos[j] = (Math.random() - 0.5) * 220;
+      pPos[j + 1] = (Math.random() - 0.5) * 160;
+      pPos[j + 2] = Math.random() * 60;
     }
     pGeo.setAttribute("position", new THREE.BufferAttribute(pPos, 3));
-    var pMat = new THREE.PointsMaterial({
-      color: 0xf4c430,
-      size: 1.1,
-      transparent: true,
-      opacity: 0.8
-    });
+    var pMat = new THREE.PointsMaterial({ color: 0x00f2ff, size: 1.2, transparent: true, opacity: 0.7 });
     var particles = new THREE.Points(pGeo, pMat);
     infraGroup.add(particles);
 
-    /* 5. Holographic Command Blueprint Rings */
+    /* 7. Holographic Blueprint Orbital Rings */
     var ringGroup = new THREE.Group();
-    ringGroup.position.set(0, 0, 45);
+    ringGroup.position.set(0, 0, 42);
     infraGroup.add(ringGroup);
 
-    var rGeo1 = new THREE.TorusGeometry(45, 0.3, 8, 80);
-    var rMat1 = new THREE.MeshBasicMaterial({ color: 0x00f2ff, wireframe: true, transparent: true, opacity: 0.25 });
+    var rGeo1 = new THREE.TorusGeometry(48, 0.4, 12, 100);
+    var rMat1 = new THREE.MeshBasicMaterial({ color: 0x00f2ff, wireframe: true, transparent: true, opacity: 0.35 });
     var ring1 = new THREE.Mesh(rGeo1, rMat1);
     ringGroup.add(ring1);
 
-    var rGeo2 = new THREE.TorusGeometry(38, 0.4, 8, 60);
-    var rMat2 = new THREE.MeshBasicMaterial({ color: 0xf4c430, wireframe: true, transparent: true, opacity: 0.3 });
+    var rGeo2 = new THREE.TorusGeometry(40, 0.5, 12, 80);
+    var rMat2 = new THREE.MeshBasicMaterial({ color: 0xf4c430, wireframe: true, transparent: true, opacity: 0.4 });
     var ring2 = new THREE.Mesh(rGeo2, rMat2);
-    ring2.rotation.x = 0.5;
+    ring2.rotation.x = 0.6;
     ringGroup.add(ring2);
 
-    /* Lighting */
-    var ambient = new THREE.AmbientLight(0xffffff, 0.75);
+    /* Spline Studio Lighting Setup */
+    var ambient = new THREE.AmbientLight(0xffffff, 0.85);
     scene.add(ambient);
     
-    var blueLight = new THREE.PointLight(0x00f2ff, 4, 250);
-    blueLight.position.set(0, 10, 60);
+    var blueLight = new THREE.PointLight(0x00f2ff, 5, 300);
+    blueLight.position.set(0, 20, 70);
     scene.add(blueLight);
 
-    var goldLight = new THREE.PointLight(0xf4c430, 3, 220);
-    goldLight.position.set(60, -30, 40);
+    var goldLight = new THREE.PointLight(0xf4c430, 4, 250);
+    goldLight.position.set(70, -40, 50);
     scene.add(goldLight);
 
-    /* Interactive Mouse Parallax */
-    var targetX = 0, targetY = 0;
-    window.addEventListener("mousemove", function(e) {
-      targetX = (e.clientX - width / 2) * 0.08;
-      targetY = (e.clientY - height / 2) * 0.08;
+    var purpleLight = new THREE.PointLight(0xa855f7, 4, 250);
+    purpleLight.position.set(-70, 30, 50);
+    scene.add(purpleLight);
+
+    /* Interactive Spline Controls: Mouse Drag Orbiting & Zooming */
+    var isDragging = false;
+    var previousMousePosition = { x: 0, y: 0 };
+    var targetRotX = -Math.PI / 2.3;
+    var targetRotY = 0;
+    var cameraDist = 50;
+
+    container.style.cursor = "grab";
+    container.addEventListener("mousedown", function(e) {
+      isDragging = true;
+      container.style.cursor = "grabbing";
+      previousMousePosition = { x: e.clientX, y: e.clientY };
     });
+    window.addEventListener("mousemove", function(e) {
+      if (isDragging) {
+        var deltaX = e.clientX - previousMousePosition.x;
+        var deltaY = e.clientY - previousMousePosition.y;
+        targetRotY += deltaX * 0.007;
+        targetRotX += deltaY * 0.007;
+        targetRotX = Math.max(-Math.PI * 0.8, Math.min(-0.2, targetRotX));
+        previousMousePosition = { x: e.clientX, y: e.clientY };
+      } else {
+        // Subtle hover parallax
+        var rect = container.getBoundingClientRect();
+        var hx = (e.clientX - rect.left) / rect.width * 2 - 1;
+        var hy = -(e.clientY - rect.top) / rect.height * 2 + 1;
+        targetRotY = hx * 0.2;
+        targetRotX = -Math.PI / 2.3 - hy * 0.15;
+      }
+    });
+    window.addEventListener("mouseup", function() {
+      isDragging = false;
+      if (container) container.style.cursor = "grab";
+    });
+    container.addEventListener("wheel", function(e) {
+      e.preventDefault();
+      cameraDist += e.deltaY * 0.03;
+      cameraDist = Math.max(25, Math.min(90, cameraDist));
+    }, { passive: false });
+
+    var resetBtn = document.getElementById("splineResetBtn");
+    if (resetBtn) {
+      resetBtn.addEventListener("click", function() {
+        targetRotX = -Math.PI / 2.3;
+        targetRotY = 0;
+        cameraDist = 50;
+      });
+    }
 
     var time = 0;
     function animate() {
       requestAnimationFrame(animate);
       time += 0.02;
 
-      /* Animate Wave Grid Vertices */
+      /* Animate Grid Floor Waves */
       var pos = gridGeo.attributes.position;
-      var wirePos = wireMesh.geometry.attributes.position;
-      for (var j = 0; j < pos.count; j++) {
-        var vx = pos.getX(j);
-        var vy = pos.getY(j);
-        var vz = Math.sin(vx * 0.08 + time) * 2.2 + Math.cos(vy * 0.08 + time * 0.7) * 2.2;
-        pos.setZ(j, vz);
-        wirePos.setZ(j, vz + 0.1);
+      for (var k = 0; k < pos.count; k++) {
+        var vx = pos.getX(k);
+        var vy = pos.getY(k);
+        pos.setZ(k, Math.sin(vx * 0.06 + time) * 2.5 + Math.cos(vy * 0.06 + time * 0.8) * 2.5);
       }
       pos.needsUpdate = true;
-      wirePos.needsUpdate = true;
 
-      /* Animate Command Rings & Towers */
-      ring1.rotation.z = time * 0.15;
-      ring2.rotation.y = time * 0.2;
-      ring2.rotation.z = -time * 0.1;
+      /* Animate Floating Spline Orbs */
+      floatingOrbs.forEach(function(orb) {
+        orb.position.z = orb.userData.baseZ + Math.sin(time * 2 + orb.userData.offset) * 4;
+        orb.rotation.x += orb.userData.speed;
+        orb.rotation.y += orb.userData.speed;
+      });
 
-      particles.rotation.z = -time * 0.05;
+      /* Animate Blueprint Rings & Particles */
+      ring1.rotation.z = time * 0.2;
+      ring2.rotation.y = time * 0.25;
+      ring2.rotation.z = -time * 0.15;
+      particles.rotation.z = -time * 0.04;
 
-      /* Camera Parallax Smoothing */
-      camera.position.x += (targetX - camera.position.x) * 0.04;
-      camera.position.y += (-45 + targetY * 0.4 - camera.position.y) * 0.04;
-      camera.lookAt(0, 5, 0);
+      /* Spring Damping Camera & Orbit Rotation */
+      infraGroup.rotation.x += (targetRotX - infraGroup.rotation.x) * 0.08;
+      infraGroup.rotation.y += (targetRotY - infraGroup.rotation.y) * 0.08;
+      camera.position.z += (cameraDist - camera.position.z) * 0.08;
+      camera.lookAt(0, 4, 0);
 
       renderer.render(scene, camera);
     }
@@ -2008,8 +2158,6 @@ $("#toTop").addEventListener("click", function() { window.scrollTo({ top: 0, beh
 function boot(C) {
   renderText(C);
   renderTeam(C.team); renderProjects(C.portfolio);
-  fetchFolder(FOLDERS.team).then(function(items) { if (items && items.length) renderTeam(items.map(function(it) { return { name: it.a, role: it.b, image: it.image }; })); }).catch(function() {});
-  fetchFolder(FOLDERS.projects).then(function(items) { if (items && items.length) renderProjects(items.map(function(it) { return { title: it.a, category: it.b, image: it.image }; })); }).catch(function() {});
   setTimeout(countObserve, 200);
   setTimeout(initThreeJS, 100);
 }
