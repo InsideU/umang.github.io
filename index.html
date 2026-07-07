@@ -2,300 +2,1211 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Umang Infrastructure — Water Infrastructure in Bihar Since 2006</title>
+<title>Umang Infrastructure — Premier Government & Civil Contractors Since 2006</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Umang Infrastructure designs and builds the water towers, reservoirs, treatment plants and supply networks Bihar relies on. Established 2006, Purnia, Bihar." />
-<meta property="og:title" content="Umang Infrastructure — Water Infrastructure in Bihar" />
-<meta property="og:description" content="Building the water towers, reservoirs and supply networks Bihar relies on. Established 2006." />
+<meta name="description" content="Umang Infrastructure is a leading government contractor delivering landmark turnkey projects across Water Supply, WTP, STP, Roads & Highways, and Building Construction. Established 2006." />
+<meta property="og:title" content="Umang Infrastructure — Premier Government & Civil Contractors" />
+<meta property="og:description" content="Turnkey infrastructure across Water Supply, WTP, STP, Roads & Highways, and Building Construction. Established 2006." />
 <meta property="og:type" content="website" />
+
+<!-- Google Fonts: Outfit, Plus Jakarta Sans, Syne -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Archivo:wght@600;700;800;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+<!-- FontAwesome Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<!-- Three.js WebGL Engine for Live 3D Animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 <link rel="icon" type="image/svg+xml" href="img/logo-mark.svg" />
 <link rel="apple-touch-icon" href="img/logo-mark.svg" />
+
 <style>
-:root{
-  --ink:#0d1c2e;--ink2:#16293f;--ink3:#22384f;
-  --blue:#0a66c2;--blue-h:#0b73da;--blue-deep:#063e7a;
-  --gold:#c89b3c;
-  --bg:#ffffff;--bg2:#eaf2fb;--bg3:#e1ecf8;
-  --sub:#56657a;--muted:#7c8aa0;--line:#e2e7ee;--line2:#d6dce6;
-  --radius:6px;--radius-lg:12px;
-  --maxw:1240px;--ease:cubic-bezier(.22,1,.36,1);
-  --shadow:0 14px 40px rgba(13,28,46,.1);--shadow-lg:0 30px 70px rgba(13,28,46,.18);
-  --sans:"Inter",-apple-system,BlinkMacSystemFont,system-ui,"Helvetica Neue",Arial,sans-serif;
-  --display:"Archivo","Inter",system-ui,sans-serif;
+:root {
+  --bg-void: #030712;
+  --bg-dark: #070e1b;
+  --bg-navy: #0b172a;
+  --bg-card: rgba(15, 28, 48, 0.65);
+  --bg-card-hover: rgba(22, 40, 68, 0.85);
+  --bg-glass: rgba(255, 255, 255, 0.04);
+  
+  --cyan: #00f2ff;
+  --cyan-glow: rgba(0, 242, 255, 0.4);
+  --cyan-deep: #0088cc;
+  
+  --gold: #f4c430;
+  --gold-glow: rgba(244, 196, 48, 0.35);
+  
+  --blue: #0a66c2;
+  --blue-h: #0080ff;
+  --blue-deep: #063e7a;
+  
+  --text-main: #f0f4f8;
+  --text-sub: #a0aec0;
+  --text-muted: #64748b;
+  
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(0, 242, 255, 0.4);
+  --border-gold: rgba(244, 196, 48, 0.4);
+  
+  --radius: 8px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  
+  --maxw: 1260px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 30px 70px rgba(0, 0, 0, 0.6);
+  --shadow-cyan: 0 0 35px rgba(0, 242, 255, 0.2);
+  
+  --sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --display: "Outfit", "Syne", system-ui, sans-serif;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3,h4{font-family:var(--display);color:var(--ink);line-height:1.08;margin:0 0 .4em;font-weight:800;letter-spacing:-.02em}
-p{margin:0 0 1em;color:var(--sub)}a{color:var(--blue);text-decoration:none}img{max-width:100%;display:block}
-.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 28px}
-.eyebrow{display:inline-flex;align-items:center;gap:11px;font-family:var(--sans);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;font-size:.74rem;color:var(--blue)}
-.eyebrow::before{content:"";width:30px;height:2px;background:var(--gold)}
-.eyebrow.light{color:#fff}.eyebrow.light::before{background:var(--gold)}
-.btn{display:inline-flex;align-items:center;gap:.6rem;padding:15px 30px;font-weight:600;font-family:var(--sans);font-size:.95rem;cursor:pointer;border:2px solid transparent;border-radius:999px;transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s,box-shadow .25s;letter-spacing:.2px}
-.btn i{transition:transform .25s var(--ease)}.btn:hover i{transform:translateX(4px)}
-.btn-blue{background:var(--blue);color:#fff;box-shadow:0 12px 28px rgba(10,102,194,.32)}
-.btn-blue:hover{background:var(--blue-h);transform:translateY(-3px);box-shadow:0 18px 36px rgba(10,102,194,.4)}
-.btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
-.btn-line:hover{background:#fff;color:var(--ink);border-color:#fff;transform:translateY(-3px)}
-.btn-dark{background:var(--ink);color:#fff}.btn-dark:hover{background:var(--ink2);transform:translateY(-3px)}
 
-/* Header */
-.hdr{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,box-shadow .3s,padding .3s;padding:20px 0}
-.hdr.scrolled{background:#fff;box-shadow:0 6px 24px rgba(13,28,46,.1);padding:12px 0}
-.hdr-in{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:11px}
-.brand .logo-mark{width:42px;height:42px;object-fit:contain;display:block;background:#fff;border-radius:9px;padding:4px}
-.brand .bt b{font-family:var(--display);font-weight:800;font-size:1.12rem;letter-spacing:-.02em;display:block;line-height:1;color:#fff;transition:color .3s}
-.brand .bt small{font-family:var(--sans);font-weight:600;font-size:.58rem;letter-spacing:3px;color:var(--gold);display:block;margin-top:3px}
-.hdr.scrolled .brand .bt b{color:var(--ink)}
-.nav-links{display:flex;gap:4px;list-style:none;margin:0;padding:0;align-items:center}
-.nav-links a{color:rgba(255,255,255,.9);font-weight:500;font-size:.92rem;padding:9px 15px;border-radius:6px;transition:color .2s,background .2s}
-.hdr.scrolled .nav-links a{color:var(--ink2)}
-.nav-links a:hover{color:var(--blue)}.hdr.scrolled .nav-links a:hover{background:var(--bg2)}
-.nav-cta{margin-left:10px;background:var(--blue);color:#fff!important;padding:10px 22px!important;border-radius:999px!important;font-weight:600}
-.nav-cta:hover{background:var(--blue-h)}
-.nav-toggle{display:none;background:none;border:0;cursor:pointer;width:44px;height:44px}
-.nav-toggle span{display:block;width:24px;height:2px;background:#fff;margin:5px auto;transition:.3s}
-.hdr.scrolled .nav-toggle span{background:var(--ink)}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--text-main);
+  background: var(--bg-void);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(0, 242, 255, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(10, 102, 194, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(244, 196, 48, 0.03) 0%, transparent 60%);
+  background-attachment: fixed;
+}
 
-/* Hero */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0;background:#0d1c2e}
-.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.55}
-.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(8,18,30,.94) 0%,rgba(8,18,30,.8) 42%,rgba(8,18,30,.4) 100%)}
-.hero-in{position:relative;z-index:2;width:100%;padding:120px 0 0}
-.hero .eyebrow{margin-bottom:22px}
-.hero h1{color:#fff;font-size:clamp(2.6rem,6vw,5.1rem);font-weight:900;letter-spacing:-.03em;max-width:16ch;margin-bottom:20px}
-.hero h1 em{font-style:normal;color:#7fb4ee}
-.hero-sub{color:rgba(255,255,255,.86);font-size:clamp(1.05rem,1.7vw,1.32rem);max-width:54ch;font-weight:400}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-.hero-stats{display:flex;gap:0;margin-top:64px;border-top:1px solid rgba(255,255,255,.18);flex-wrap:wrap;max-width:760px}
-.hero-stats .s{padding:24px 40px 6px 0;margin-right:40px}
-.hero-stats .s strong{font-family:var(--display);font-size:2.6rem;font-weight:800;display:block;line-height:1;color:#fff}
-.hero-stats .s span{font-size:.82rem;letter-spacing:.5px;color:rgba(255,255,255,.66)}
-.hero-dots{position:absolute;left:28px;bottom:30px;z-index:3;display:flex;gap:9px}
-.hero-dots button{width:10px;height:10px;border-radius:50%;border:0;background:rgba(255,255,255,.4);cursor:pointer;transition:.3s;padding:0}
-.hero-dots button.active{background:var(--gold);width:28px;border-radius:99px}
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--text-main);
+  line-height: 1.12;
+  margin: 0 0 0.4em;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
 
-/* Trust strip */
-.trust{background:var(--ink);color:rgba(255,255,255,.78)}
-.trust .container{display:flex;flex-wrap:wrap;gap:14px 44px;align-items:center;justify-content:center;padding:22px 28px;font-size:.92rem;font-weight:500}
-.trust i{color:var(--gold);margin-right:9px}
+p { margin: 0 0 1em; color: var(--text-sub); font-size: 1.05rem; }
+a { color: var(--cyan); text-decoration: none; transition: color 0.2s; }
+a:hover { color: #fff; }
+img { max-width: 100%; display: block; }
+.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
 
-section{padding:108px 0}
-.sec-head{max-width:720px;margin-bottom:54px}
-.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
-.sec-head.center .eyebrow{justify-content:center}
-.sec-head h2{font-size:clamp(2rem,4vw,3.1rem);margin-top:16px}
-.sec-head p{font-size:1.12rem;color:var(--sub);margin-top:6px}
-.bg2{background:var(--bg2)}
+/* Eyebrows & Gradient Text */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--sans);
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--cyan);
+  background: rgba(0, 242, 255, 0.08);
+  padding: 6px 14px;
+  border-radius: 99px;
+  border: 1px solid rgba(0, 242, 255, 0.2);
+  margin-bottom: 16px;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+}
+.eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 10px var(--cyan);
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
 
-/* About */
-.about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
-.about-media{position:relative}
-.about-media .main{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
-.about-media .main img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3.4;transition:transform 1s var(--ease)}
-.about-media:hover .main img{transform:scale(1.04)}
-.about-media .badge{position:absolute;right:-18px;bottom:-18px;background:var(--blue);color:#fff;padding:22px 26px;border-radius:var(--radius-lg);box-shadow:var(--shadow);text-align:center}
-.about-media .badge strong{font-family:var(--display);font-size:2.4rem;font-weight:800;display:block;line-height:1}
-.about-media .badge span{font-size:.72rem;letter-spacing:1px;text-transform:uppercase;opacity:.9}
-.about-body h2{font-size:clamp(1.9rem,3.4vw,2.7rem)}
-.about-body .lead{font-size:1.16rem;color:var(--ink2);margin:14px 0 22px}
-.checklist{list-style:none;padding:0;margin:0 0 30px;display:grid;grid-template-columns:1fr 1fr;gap:12px 26px}
-.checklist li{display:flex;gap:12px;align-items:flex-start;color:var(--ink2);font-weight:500;font-size:.98rem}
-.checklist i{color:var(--blue);margin-top:5px}
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, var(--cyan) 50%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
 
-/* Capabilities cards */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:38px 32px;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s;position:relative;overflow:hidden}
-.card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
-.card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:transparent}
-.card:hover::before{transform:scaleX(1)}
-.card .ic{width:62px;height:62px;border-radius:12px;display:grid;place-items:center;font-size:1.5rem;color:var(--blue);background:var(--bg3);margin-bottom:22px;transition:.3s}
-.card:hover .ic{background:var(--blue);color:#fff}
-.card h3{font-size:1.3rem;font-weight:700;margin-bottom:8px}.card p{margin:0;font-size:.98rem}
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 16px 34px;
+  font-weight: 700;
+  font-family: var(--sans);
+  font-size: 0.98rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  transition: all 0.3s var(--ease);
+  letter-spacing: 0.3px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.btn i { transition: transform 0.3s var(--ease); }
+.btn:hover i { transform: translateX(5px); }
+.btn-blue {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--cyan-deep) 100%);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(10, 102, 194, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 242, 255, 0.3);
+}
+.btn-blue:hover {
+  background: linear-gradient(135deg, var(--cyan-deep) 0%, var(--cyan) 100%);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0, 242, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  border-color: var(--cyan);
+}
+.btn-line {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+}
+.btn-line:hover {
+  background: rgba(0, 242, 255, 0.15);
+  color: #fff;
+  border-color: var(--cyan);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 242, 255, 0.25);
+}
+.btn-dark {
+  background: rgba(15, 28, 48, 0.8);
+  color: #fff;
+  border: 1px solid var(--border-glass);
+}
+.btn-dark:hover {
+  background: var(--blue);
+  transform: translateY(-3px);
+  border-color: var(--cyan);
+}
 
-/* Parallax stats band */
-.band{position:relative;color:#fff;text-align:center;padding:96px 0;background:var(--ink)}
-.band-bg{position:absolute;inset:0;background-image:url("img/portfolio/1.jpg");background-size:cover;background-position:center;background-attachment:fixed;opacity:.22}
-.band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,28,46,.86),rgba(6,40,80,.78))}
-.band .container{position:relative;z-index:2}
-.band .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
-.band .st strong{font-family:var(--display);font-size:clamp(2.8rem,5vw,4rem);font-weight:800;display:block;line-height:1;color:#fff}
-.band .st span{color:rgba(255,255,255,.74);font-size:.94rem;letter-spacing:.4px;margin-top:10px;display:block}
-.band .st .bar{width:40px;height:3px;background:var(--gold);margin:14px auto 0}
+/* Header / Navbar */
+.hdr {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  transition: all 0.4s var(--ease);
+  padding: 24px 0;
+}
+.hdr.scrolled {
+  background: rgba(5, 11, 20, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 242, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 242, 255, 0.05);
+  padding: 14px 0;
+}
+.hdr-in {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.brand .logo-mark {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  display: block;
+  background: linear-gradient(135deg, #ffffff 0%, #d0e8ff 100%);
+  border-radius: 12px;
+  padding: 5px;
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+  transition: transform 0.3s var(--ease);
+}
+.brand:hover .logo-mark {
+  transform: scale(1.08) rotate(-5deg);
+}
+.brand .bt b {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  display: block;
+  line-height: 1;
+  color: #fff;
+}
+.brand .bt small {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.62rem;
+  letter-spacing: 3.5px;
+  color: var(--cyan);
+  display: block;
+  margin-top: 4px;
+}
+.nav-links {
+  display: flex;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+  align-items: center;
+}
+.nav-links a {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  font-size: 0.94rem;
+  padding: 10px 18px;
+  border-radius: 999px;
+  transition: all 0.25s;
+}
+.nav-links a:hover {
+  color: var(--cyan);
+  background: rgba(0, 242, 255, 0.1);
+}
+.nav-cta {
+  margin-left: 8px;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--cyan-deep) 100%) !important;
+  color: #fff !important;
+  padding: 10px 24px !important;
+  border-radius: 999px !important;
+  font-weight: 700;
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.25);
+}
+.nav-cta:hover {
+  background: linear-gradient(135deg, var(--cyan-deep) 0%, var(--cyan) 100%) !important;
+  transform: scale(1.05);
+}
+.nav-toggle {
+  display: none;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  border-radius: 10px;
+  cursor: pointer;
+  width: 48px; height: 48px;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  margin: 5px auto;
+  transition: 0.3s;
+}
 
-/* Projects gallery */
-.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
-.filters button{border:1px solid var(--line2);background:#fff;color:var(--sub);padding:9px 20px;border-radius:var(--radius);cursor:pointer;font-family:var(--sans);font-weight:600;font-size:.88rem;transition:.25s}
-.filters button.active,.filters button:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.project{position:relative;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3.3;background:var(--ink)}
-.project img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
-.project:hover img{transform:scale(1.08)}
-.project .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:26px;color:#fff;background:linear-gradient(0deg,rgba(8,18,30,.92) 4%,rgba(8,18,30,.05) 56%)}
-.project .ov .cat{font-size:.74rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
-.project .ov h4{color:#fff;margin:6px 0 0;font-size:1.32rem;font-weight:700;transform:translateY(6px);transition:transform .4s var(--ease)}
-.project:hover .ov h4{transform:none}
-.project .go{position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.16);backdrop-filter:blur(4px);display:grid;place-items:center;color:#fff;opacity:0;transform:translateY(-6px);transition:.35s}
-.project:hover .go{opacity:1;transform:none}
+/* Hero Section with 3D WebGL Canvas */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+  padding-top: 80px;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(circle at center, #0a1a30 0%, #030712 100%);
+}
+.hero-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+  mix-blend-mode: luminosity;
+}
+#hero3d-container {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: auto;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: 
+    linear-gradient(90deg, rgba(3, 7, 18, 0.95) 0%, rgba(3, 7, 18, 0.75) 50%, rgba(3, 7, 18, 0.3) 100%),
+    linear-gradient(0deg, rgba(3, 7, 18, 1) 0%, transparent 30%);
+  pointer-events: none;
+}
+.hero-in {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 80px 0;
+}
+.hero h1 {
+  font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  max-width: 15ch;
+  margin-bottom: 24px;
+  line-height: 1.05;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--cyan);
+  text-shadow: 0 0 30px rgba(0, 242, 255, 0.5);
+}
+.hero-sub {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  max-width: 56ch;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 38px;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+.hero-stats {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 40px;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+.hero-stats .s {
+  padding: 10px 48px 10px 0;
+  margin-right: 48px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+.hero-stats .s:last-child { border-right: none; }
+.hero-stats .s strong {
+  font-family: var(--display);
+  font-size: 3rem;
+  font-weight: 900;
+  display: block;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+}
+.hero-stats .s span {
+  font-size: 0.88rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-sub);
+  margin-top: 8px;
+  display: block;
+  font-weight: 600;
+}
+.hero-dots {
+  position: absolute;
+  left: 32px;
+  bottom: 40px;
+  z-index: 4;
+  display: flex;
+  gap: 10px;
+}
+.hero-dots button {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.4s var(--ease);
+  padding: 0;
+}
+.hero-dots button.active {
+  background: var(--cyan);
+  width: 36px;
+  border-radius: 99px;
+  box-shadow: 0 0 15px var(--cyan);
+}
 
-/* Team */
-.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.member{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s}
-.member:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
-.member .ph{aspect-ratio:1/1;overflow:hidden;background:var(--bg3);position:relative}
-.member .ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(1.02);transition:filter .5s var(--ease),transform .7s var(--ease)}
-.member:hover .ph img{filter:grayscale(0);transform:scale(1.05)}
-.member .info{padding:20px;text-align:center}
-.member .info h4{margin:0;font-size:1.14rem;font-weight:700}
-.member .info span{color:var(--blue);font-weight:600;font-size:.86rem}
-.member .info .ml{margin-top:12px;display:flex;gap:8px;justify-content:center}
-.member .info .ml a{width:34px;height:34px;border-radius:50%;background:var(--bg2);color:var(--sub);display:grid;place-items:center;transition:.25s}
-.member .info .ml a:hover{background:var(--blue);color:#fff}
+/* Floating Live Badges in Hero */
+.floating-badge {
+  position: absolute;
+  z-index: 3;
+  background: rgba(11, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  padding: 12px 20px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px rgba(0, 242, 255, 0.15);
+  pointer-events: none;
+  animation: float-badge 6s ease-in-out infinite;
+}
+.floating-badge i { color: var(--cyan); font-size: 1.1rem; }
+.floating-badge strong { color: var(--gold); }
+.badge-1 { top: 22%; right: 8%; animation-delay: 0s; }
+.badge-2 { top: 55%; right: 12%; animation-delay: -2s; }
+@keyframes float-badge {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1.5deg); }
+}
 
-/* CTA */
-.cta{position:relative;color:#fff;text-align:center;padding:104px 0;background:var(--ink)}
-.cta-bg{position:absolute;inset:0;background-image:url("img/portfolio/3.jpg");background-size:cover;background-position:center;opacity:.2}
-.cta::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(13,28,46,.92),rgba(6,62,122,.82))}
-.cta .container{position:relative;z-index:2}
-.cta h2{color:#fff;font-size:clamp(2rem,4vw,3rem);max-width:20ch;margin:14px auto 0}
-.cta p{color:rgba(255,255,255,.84);max-width:52ch;margin:16px auto 28px;font-size:1.14rem}
+/* Trust Strip */
+.trust {
+  background: var(--bg-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  z-index: 10;
+}
+.trust .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 32px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+.trust i {
+  color: var(--cyan);
+  margin-right: 10px;
+  font-size: 1.1rem;
+  filter: drop-shadow(0 0 8px var(--cyan));
+}
 
-/* Contact */
-.contact-grid{display:grid;grid-template-columns:1fr 1.12fr;gap:56px}
-.info-row{display:flex;gap:18px;align-items:flex-start;padding:24px 0;border-bottom:1px solid var(--line)}
-.info-row:first-child{padding-top:0}
-.info-row .ic{flex:0 0 52px;height:52px;border-radius:12px;display:grid;place-items:center;background:var(--bg2);color:var(--blue);font-size:1.2rem}
-.info-row .lb{font-size:.76rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:600}
-.info-row .vl{font-size:1.1rem;color:var(--ink);font-weight:600;margin-top:2px}
-.info-row .vl a{color:var(--ink)}
-.form{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:38px;box-shadow:var(--shadow)}
-.form .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.field{margin-bottom:16px}.field label{display:block;font-weight:600;font-size:.82rem;margin-bottom:7px;color:var(--ink2)}
-.field input,.field textarea{width:100%;padding:14px 16px;border:1px solid var(--line2);border-radius:var(--radius);font:inherit;font-size:1rem;color:var(--ink);background:var(--bg2);transition:border .2s,box-shadow .2s}
-.field input:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(10,102,194,.15);background:#fff}
+section { padding: 120px 0; position: relative; }
+.sec-head { max-width: 760px; margin-bottom: 64px; }
+.sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.sec-head.center .eyebrow { justify-content: center; }
+.sec-head h2 { font-size: clamp(2.2rem, 4.5vw, 3.4rem); margin-top: 10px; }
+.sec-head p { font-size: 1.15rem; color: var(--text-sub); margin-top: 12px; }
+.bg2 { background: var(--bg-dark); }
 
-/* Process */
-.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.pstep{position:relative;padding:34px 28px;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
-.pstep:hover{box-shadow:var(--shadow);transform:translateY(-5px);border-color:transparent}
-.pstep .pn{font-family:var(--display);font-size:2.6rem;font-weight:800;color:var(--blue);opacity:.22;line-height:1}
-.pstep h3{font-size:1.18rem;margin:12px 0 6px;font-weight:700}
-.pstep p{margin:0;font-size:.95rem}
-.pstep .ar{position:absolute;top:46px;right:-12px;color:var(--line2);z-index:2;font-size:1rem;background:var(--bg);padding:2px}
-.pstep:last-child .ar{display:none}
+/* About Section */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+.about-media { position: relative; }
+.about-media .main {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(0, 242, 255, 0.1);
+  border: 1px solid var(--border-glass);
+  position: relative;
+}
+.about-media .main img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4/3.4;
+  transition: transform 1s var(--ease);
+}
+.about-media:hover .main img { transform: scale(1.05); }
+.about-media .badge {
+  position: absolute;
+  right: -24px;
+  bottom: -24px;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--cyan-deep) 100%);
+  color: #fff;
+  padding: 28px 34px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(0, 242, 255, 0.3);
+  border: 1px solid rgba(0, 242, 255, 0.4);
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+.about-media .badge strong {
+  font-family: var(--display);
+  font-size: 2.8rem;
+  font-weight: 900;
+  display: block;
+  line-height: 1;
+  color: var(--cyan);
+  text-shadow: 0 0 15px rgba(0, 242, 255, 0.5);
+}
+.about-media .badge span {
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 4px;
+  display: block;
+}
+.about-body h2 { font-size: clamp(2rem, 3.8vw, 3rem); }
+.about-body .lead { font-size: 1.2rem; color: var(--text-main); margin: 18px 0 28px; line-height: 1.7; }
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 38px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 28px;
+}
+.checklist li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.checklist i {
+  color: var(--cyan);
+  margin-top: 4px;
+  font-size: 1.2rem;
+  filter: drop-shadow(0 0 8px var(--cyan));
+}
 
-/* FAQ */
-.faq{max-width:840px;margin:0 auto}
-.faq-item{border-bottom:1px solid var(--line2)}
-.faq-q{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:26px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;font-family:var(--display);font-weight:700;font-size:1.16rem;color:var(--ink)}
-.faq-q .pm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center;color:var(--blue);transition:.3s;font-size:.9rem}
-.faq-item.open .faq-q .pm{background:var(--blue);color:#fff;border-color:var(--blue);transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
-.faq-a p{margin:0;padding:0 50px 24px 0;color:var(--sub);font-size:1.02rem}
+/* Glassmorphism 3D Tilt Cards */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.card, .project, .member, .job, .pstep, .ach-hl, .post, .impact-stat, .apply-card, .form {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  padding: 40px 34px;
+  transition: all 0.4s var(--ease);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--shadow);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+/* Dynamic Glare Spotlight on Cards */
+.card::after, .project::after, .member::after, .job::after, .pstep::after, .ach-hl::after, .post::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(450px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 242, 255, 0.12), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 5;
+}
+.card:hover::after, .project:hover::after, .member:hover::after, .job:hover::after, .pstep:hover::after, .ach-hl:hover::after, .post:hover::after {
+  opacity: 1;
+}
 
-/* Team (no photos) */
-.member .mono{aspect-ratio:1/1;display:grid;place-items:center;background:linear-gradient(140deg,#eaf2fb,#d8e6f8);color:var(--blue-deep);font-family:var(--display);font-weight:800;font-size:2.6rem;letter-spacing:.01em}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--cyan), var(--gold));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease);
+  z-index: 6;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg), var(--shadow-cyan);
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+}
+.card:hover::before { transform: scaleX(1); }
+.card .ic {
+  width: 68px; height: 68px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-size: 1.8rem;
+  color: var(--cyan);
+  background: rgba(0, 242, 255, 0.08);
+  border: 1px solid rgba(0, 242, 255, 0.2);
+  margin-bottom: 26px;
+  transition: all 0.3s;
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+}
+.card:hover .ic {
+  background: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 100%);
+  color: #fff;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 30px rgba(0, 242, 255, 0.5);
+}
+.card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; color: #fff; }
+.card p { margin: 0; font-size: 1rem; color: var(--text-sub); line-height: 1.65; }
 
-/* Achievements */
-.ach-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-.timeline{position:relative;padding-left:34px}
-.timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--line2)}
-.tl{position:relative;padding-bottom:30px}
-.tl:last-child{padding-bottom:0}
-.tl::before{content:"";position:absolute;left:-34px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--blue)}
-.tl .yr{font-family:var(--display);font-weight:800;color:var(--blue);font-size:1.1rem;letter-spacing:0}
-.tl h4{margin:2px 0 4px;font-size:1.18rem;font-weight:700}
-.tl p{margin:0;font-size:.96rem}
-.ach-side{display:grid;gap:16px}
-.ach-hl{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:22px 24px;transition:.3s}
-.ach-hl:hover{box-shadow:var(--shadow);border-color:transparent;transform:translateX(4px)}
-.ach-hl .ic{flex:0 0 50px;height:50px;border-radius:12px;display:grid;place-items:center;background:var(--bg3);color:var(--blue);font-size:1.3rem}
-.ach-hl h4{margin:0 0 3px;font-size:1.1rem;font-weight:700}.ach-hl p{margin:0;font-size:.94rem}
+/* Parallax Stats Band */
+.band {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 110px 0;
+  background: var(--bg-void);
+  overflow: hidden;
+}
+.band-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("img/portfolio/1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.15;
+  filter: contrast(1.2) brightness(0.8);
+}
+.band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3, 7, 18, 0.9), rgba(11, 23, 42, 0.85));
+}
+.band .container { position: relative; z-index: 2; }
+.band .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.band .st {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  padding: 34px 20px;
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s var(--ease);
+}
+.band .st:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: 0 10px 30px rgba(244, 196, 48, 0.15);
+}
+.band .st strong {
+  font-family: var(--display);
+  font-size: clamp(3rem, 5.5vw, 4.5rem);
+  font-weight: 900;
+  display: block;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 0 25px rgba(0, 242, 255, 0.4);
+}
+.band .st span {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  margin-top: 12px;
+  display: block;
+  font-weight: 600;
+}
+.band .st .bar {
+  width: 50px; height: 4px;
+  background: linear-gradient(90deg, var(--cyan), var(--gold));
+  margin: 18px auto 0;
+  border-radius: 99px;
+  box-shadow: 0 0 10px var(--gold);
+}
 
-/* News & Events */
-.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.post{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s}
-.post:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
-.post .ph{aspect-ratio:16/10;overflow:hidden;background:var(--bg3)}
-.post .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
-.post:hover .ph img{transform:scale(1.06)}
-.post .bd{padding:24px 26px 28px}
-.post .meta{display:flex;gap:10px;align-items:center;margin-bottom:10px}
-.post .tag{font-size:.7rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#fff;background:var(--blue);padding:4px 10px;border-radius:99px}
-.post .date{font-size:.84rem;color:var(--muted);font-weight:600}
-.post h4{font-size:1.2rem;font-weight:700;margin:0 0 6px}.post p{margin:0;font-size:.96rem}
-@media(max-width:980px){.ach-grid{grid-template-columns:1fr;gap:40px}.news-grid{grid-template-columns:repeat(2,1fr)}.process-grid{grid-template-columns:repeat(2,1fr)}.pstep .ar{display:none}}
-@media(max-width:560px){.process-grid{grid-template-columns:1fr}}
-@media(max-width:680px){.news-grid{grid-template-columns:1fr}}
+/* Projects Gallery */
+.filters { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 44px; justify-content: center; }
+.filters button {
+  border: 1px solid var(--border-glass);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-sub);
+  padding: 10px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.3s var(--ease);
+  backdrop-filter: blur(10px);
+}
+.filters button.active, .filters button:hover {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--cyan-deep) 100%);
+  color: #fff;
+  border-color: var(--cyan);
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+  transform: translateY(-2px);
+}
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.project {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  aspect-ratio: 4/3.4;
+  background: var(--bg-navy);
+  padding: 0;
+  border: 1px solid var(--border-glass);
+}
+.project img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+.project:hover img { transform: scale(1.1); }
+.project .ov {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  color: #fff;
+  background: linear-gradient(0deg, rgba(3, 7, 18, 0.95) 10%, rgba(3, 7, 18, 0.4) 50%, transparent 100%);
+  z-index: 4;
+}
+.project .ov .cat {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-shadow: 0 0 10px rgba(244, 196, 48, 0.5);
+}
+.project .ov h4 {
+  color: #fff;
+  margin: 8px 0 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  transform: translateY(8px);
+  transition: transform 0.4s var(--ease);
+}
+.project:hover .ov h4 { transform: none; }
+.project .go {
+  position: absolute;
+  top: 22px; right: 22px;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 242, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--cyan);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateY(-10px) rotate(-45deg);
+  transition: all 0.4s var(--ease);
+  z-index: 5;
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+}
+.project:hover .go { opacity: 1; transform: none; background: var(--cyan); color: #000; }
 
-/* Impact / NGO */
-.impact{background:linear-gradient(180deg,#eaf2fb,#f4f6f9)}
-.impact-head{display:grid;grid-template-columns:1.5fr .8fr;gap:40px;align-items:center;margin-bottom:50px}
-.impact-head h2{font-size:clamp(1.9rem,3.6vw,2.8rem);margin-top:16px}
-.impact-head .lead{font-size:1.12rem;color:var(--ink2);margin:0}
-.impact-stat{text-align:center;background:var(--blue);color:#fff;border-radius:var(--radius-lg);padding:30px 24px;box-shadow:var(--shadow)}
-.impact-stat strong{font-family:var(--display);font-size:3rem;font-weight:800;display:block;line-height:1}
-.impact-stat span{font-size:.86rem;letter-spacing:.4px;opacity:.9;margin-top:8px;display:block}
-.impact .card .ic{color:#fff;background:linear-gradient(135deg,#0a66c2,#063e7a)}
-.impact .card:hover .ic{background:var(--gold)}
+/* Team Section */
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.member {
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+}
+.member .ph {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background: var(--bg-navy);
+  position: relative;
+}
+.member .ph img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+.member:hover .ph img { transform: scale(1.08); }
+.member .mono {
+  aspect-ratio: 1/1;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(0, 242, 255, 0.1), rgba(10, 102, 194, 0.25));
+  color: var(--cyan);
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 3rem;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+}
+.member .info { padding: 26px 20px; }
+.member .info h4 { margin: 0; font-size: 1.25rem; font-weight: 800; color: #fff; }
+.member .info span { color: var(--gold); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.5px; }
+.member .info .ml { margin-top: 16px; display: flex; gap: 10px; justify-content: center; }
+.member .info .ml a {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  color: var(--text-sub);
+  display: grid;
+  place-items: center;
+  transition: all 0.3s;
+}
+.member .info .ml a:hover {
+  background: var(--cyan);
+  color: #000;
+  border-color: var(--cyan);
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px var(--cyan);
+}
 
-/* Careers */
-.careers-note{max-width:62ch;margin:0 auto 40px;text-align:center}
-.jobs{display:grid;grid-template-columns:1fr;gap:16px;max-width:920px;margin:0 auto 50px}
-.job{display:flex;justify-content:space-between;gap:24px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px 30px;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
-.job:hover{box-shadow:var(--shadow);border-color:transparent;transform:translateY(-3px)}
-.job .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
-.chip{font-size:.72rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--blue);background:var(--bg3);padding:5px 11px;border-radius:99px}
-.job h4{margin:0 0 6px;font-size:1.22rem;font-weight:700}
-.job p{margin:0;color:var(--sub);font-size:.95rem;max-width:62ch}
-.job .apply-btn{flex:0 0 auto}
-.apply-card{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:38px;box-shadow:var(--shadow)}
-.apply-card h3{font-size:1.5rem;margin-bottom:6px}
-.apply-card .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.apply-card .field select{width:100%;padding:14px 16px;border:1px solid var(--line2);border-radius:var(--radius);font:inherit;font-size:1rem;color:var(--ink);background:var(--bg2)}
-.fstatus{margin-top:14px;font-size:.95rem;font-weight:600;display:none}
-.fstatus.show{display:block}.fstatus.ok{color:#1a7f37}.fstatus.err{color:#c0392b}
-@media(max-width:760px){.impact-head{grid-template-columns:1fr}.job{flex-direction:column;align-items:flex-start;gap:16px}.apply-card .row{grid-template-columns:1fr}}
+/* CTA Section */
+.cta {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 120px 0;
+  background: var(--bg-void);
+  overflow: hidden;
+}
+.cta-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("img/portfolio/3.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+  filter: contrast(1.2);
+}
+.cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(3, 7, 18, 0.95), rgba(6, 30, 60, 0.88));
+}
+.cta .container { position: relative; z-index: 2; }
+.cta h2 { font-size: clamp(2.4rem, 4.5vw, 3.6rem); max-width: 22ch; margin: 16px auto 0; }
+.cta p { color: rgba(255, 255, 255, 0.85); max-width: 54ch; margin: 20px auto 36px; font-size: 1.2rem; }
+
+/* Contact & Forms */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 64px; }
+.info-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.info-row:first-child { padding-top: 0; }
+.info-row .ic {
+  flex: 0 0 58px; height: 58px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 242, 255, 0.08);
+  border: 1px solid rgba(0, 242, 255, 0.2);
+  color: var(--cyan);
+  font-size: 1.4rem;
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.15);
+}
+.info-row .lb { font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+.info-row .vl { font-size: 1.15rem; color: #fff; font-weight: 700; margin-top: 4px; }
+.info-row .vl a { color: #fff; }
+.info-row .vl a:hover { color: var(--cyan); }
+
+.form, .apply-card {
+  padding: 44px;
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(0, 242, 255, 0.05);
+}
+.form .row, .apply-card .row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.field { margin-bottom: 20px; }
+.field label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.86rem;
+  margin-bottom: 8px;
+  color: var(--text-main);
+  letter-spacing: 0.5px;
+}
+.field input, .field textarea, .field select {
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius);
+  font: inherit;
+  font-size: 1rem;
+  color: #fff;
+  background: rgba(3, 7, 18, 0.6);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+}
+.field input:focus, .field textarea:focus, .field select:focus {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0, 242, 255, 0.2), 0 0 20px rgba(0, 242, 255, 0.2);
+  background: rgba(11, 23, 42, 0.9);
+}
+.field select option { background: var(--bg-dark); color: #fff; }
+
+/* Process Section */
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.pstep { padding: 38px 30px; }
+.pstep .pn {
+  font-family: var(--display);
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--cyan);
+  opacity: 0.35;
+  line-height: 1;
+  text-shadow: 0 0 20px var(--cyan);
+}
+.pstep h3 { font-size: 1.3rem; margin: 16px 0 10px; font-weight: 800; color: #fff; }
+.pstep p { margin: 0; font-size: 0.98rem; color: var(--text-sub); }
+.pstep .ar {
+  position: absolute;
+  top: 48px; right: -14px;
+  color: var(--cyan);
+  z-index: 5;
+  font-size: 1.2rem;
+  background: var(--bg-void);
+  padding: 4px;
+  border-radius: 50%;
+  border: 1px solid var(--cyan);
+  box-shadow: 0 0 10px var(--cyan);
+}
+.pstep:last-child .ar { display: none; }
+
+/* Achievements / Timeline */
+.ach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.timeline { position: relative; padding-left: 40px; }
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 11px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--cyan), var(--gold));
+  box-shadow: 0 0 10px var(--cyan);
+}
+.tl { position: relative; padding-bottom: 38px; }
+.tl:last-child { padding-bottom: 0; }
+.tl::before {
+  content: "";
+  position: absolute;
+  left: -40px; top: 4px;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--bg-void);
+  border: 3px solid var(--cyan);
+  box-shadow: 0 0 15px var(--cyan);
+}
+.tl .yr { font-family: var(--display); font-weight: 900; color: var(--gold); font-size: 1.2rem; text-shadow: 0 0 10px rgba(244, 196, 48, 0.4); }
+.tl h4 { margin: 4px 0 8px; font-size: 1.3rem; font-weight: 800; color: #fff; }
+.tl p { margin: 0; font-size: 1rem; color: var(--text-sub); }
+.ach-side { display: grid; gap: 20px; }
+.ach-hl { display: flex; gap: 20px; align-items: flex-start; padding: 26px; }
+.ach-hl .ic {
+  flex: 0 0 58px; height: 58px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: rgba(244, 196, 48, 0.1);
+  border: 1px solid rgba(244, 196, 48, 0.3);
+  color: var(--gold);
+  font-size: 1.5rem;
+  box-shadow: 0 0 20px rgba(244, 196, 48, 0.2);
+}
+.ach-hl h4 { margin: 0 0 4px; font-size: 1.2rem; font-weight: 800; color: #fff; }
+.ach-hl p { margin: 0; font-size: 0.98rem; color: var(--text-sub); }
+
+/* News Section */
+.news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.post { padding: 0; }
+.post .ph { aspect-ratio: 16/10; overflow: hidden; background: var(--bg-navy); position: relative; }
+.post .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease); }
+.post:hover .ph img { transform: scale(1.1); }
+.post .bd { padding: 28px 28px 32px; }
+.post .meta { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+.post .tag { font-size: 0.72rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #000; background: var(--cyan); padding: 5px 12px; border-radius: 99px; box-shadow: 0 0 10px var(--cyan); }
+.post .date { font-size: 0.88rem; color: var(--text-muted); font-weight: 700; }
+.post h4 { font-size: 1.3rem; font-weight: 800; margin: 0 0 10px; color: #fff; }
+.post p { margin: 0; font-size: 1rem; color: var(--text-sub); }
+
+/* Social Impact Section */
+.impact { background: radial-gradient(circle at 50% 50%, var(--bg-navy) 0%, var(--bg-void) 100%); border-top: 1px solid rgba(255,255,255,0.08); }
+.impact-head { display: grid; grid-template-columns: 1.6fr 0.8fr; gap: 50px; align-items: center; margin-bottom: 60px; }
+.impact-head h2 { font-size: clamp(2.2rem, 4vw, 3.2rem); margin-top: 10px; }
+.impact-head .lead { font-size: 1.2rem; color: var(--text-sub); margin: 0; line-height: 1.7; }
+.impact-stat {
+  text-align: center;
+  background: linear-gradient(135deg, rgba(0, 242, 255, 0.15) 0%, rgba(10, 102, 194, 0.3) 100%);
+  border: 1px solid var(--cyan);
+  border-radius: var(--radius-xl);
+  padding: 38px 28px;
+  box-shadow: 0 0 40px rgba(0, 242, 255, 0.2);
+}
+.impact-stat strong { font-family: var(--display); font-size: 3.6rem; font-weight: 900; display: block; line-height: 1; color: var(--cyan); text-shadow: 0 0 20px var(--cyan); }
+.impact-stat span { font-size: 0.95rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; color: #fff; margin-top: 10px; display: block; }
+
+/* Careers Section */
+.careers-note { max-width: 66ch; margin: 0 auto 44px; text-align: center; font-size: 1.15rem; }
+.jobs { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 960px; margin: 0 auto 60px; }
+.job { display: flex; justify-content: space-between; gap: 28px; align-items: center; padding: 32px 36px; }
+.job .chips { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+.chip { font-size: 0.76rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--cyan); background: rgba(0, 242, 255, 0.1); padding: 6px 14px; border-radius: 99px; border: 1px solid rgba(0, 242, 255, 0.2); }
+.job h4 { margin: 0 0 8px; font-size: 1.35rem; font-weight: 800; color: #fff; }
+.job p { margin: 0; color: var(--text-sub); font-size: 1rem; max-width: 65ch; }
+.job .apply-btn { flex: 0 0 auto; }
+.apply-card { max-width: 800px; margin: 0 auto; }
+.apply-card h3 { font-size: 1.8rem; margin-bottom: 8px; color: #fff; }
+.fstatus { margin-top: 18px; font-size: 1rem; font-weight: 700; display: none; padding: 12px 18px; border-radius: var(--radius); text-align: center; }
+.fstatus.show { display: block; }
+.fstatus.ok { background: rgba(26, 127, 55, 0.2); border: 1px solid #2ea043; color: #3fb950; }
+.fstatus.err { background: rgba(192, 57, 43, 0.2); border: 1px solid #e74c3c; color: #ff6b6b; }
+
+/* FAQ Accordion */
+.faq { max-width: 880px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+.faq-q {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 28px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #fff;
+  transition: color 0.3s;
+}
+.faq-q:hover { color: var(--cyan); }
+.faq-q .pm {
+  flex: 0 0 auto;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-glass);
+  background: rgba(255, 255, 255, 0.04);
+  display: grid;
+  place-items: center;
+  color: var(--cyan);
+  transition: all 0.3s var(--ease);
+  font-size: 1rem;
+}
+.faq-item.open .faq-q .pm {
+  background: var(--cyan);
+  color: #000;
+  border-color: var(--cyan);
+  transform: rotate(45deg);
+  box-shadow: 0 0 15px var(--cyan);
+}
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); }
+.faq-a p { margin: 0; padding: 0 50px 28px 0; color: var(--text-sub); font-size: 1.08rem; line-height: 1.7; }
 
 /* Footer */
-.footer{background:#0a1626;color:rgba(255,255,255,.66);padding:72px 0 0}
-.footer h4{color:#fff;font-size:.82rem;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;font-family:var(--sans);font-weight:700}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:44px}
-.footer .brand{margin-bottom:16px}
-.footer p{color:rgba(255,255,255,.58)}.footer a{color:rgba(255,255,255,.6)}.footer a:hover{color:var(--gold)}
-.footer ul{list-style:none;padding:0;margin:0}.footer ul li{margin-bottom:11px}
-.footer .socials{display:flex;gap:10px;margin-top:18px}
-.footer .socials a{width:40px;height:40px;border-radius:8px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:#fff;transition:.25s}
-.footer .socials a:hover{background:var(--blue);transform:translateY(-3px)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:54px;padding:24px 0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.86rem;color:rgba(255,255,255,.5)}
-
-.to-top{position:fixed;right:24px;bottom:24px;width:48px;height:48px;border-radius:10px;background:var(--blue);color:#fff;border:0;cursor:pointer;display:grid;place-items:center;opacity:0;pointer-events:none;transition:.3s;box-shadow:var(--shadow);z-index:90}
-.to-top.show{opacity:1;pointer-events:auto}.to-top:hover{background:var(--blue-h);transform:translateY(-3px)}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}.reveal.in{opacity:1;transform:none}
-
-@media(max-width:980px){
-  .about-grid,.contact-grid{grid-template-columns:1fr;gap:44px}
-  .about-media{max-width:560px}
-  .cards,.team-grid,.gallery{grid-template-columns:repeat(2,1fr)}
-  .band .grid{grid-template-columns:repeat(2,1fr);gap:40px 20px}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .band-bg{background-attachment:scroll}
+.footer { background: #02060d; color: rgba(255, 255, 255, 0.7); padding: 80px 0 0; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+.footer h4 { color: #fff; font-size: 0.88rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 22px; font-family: var(--sans); font-weight: 800; color: var(--gold); }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 50px; }
+.footer .brand { margin-bottom: 18px; }
+.footer p { color: rgba(255, 255, 255, 0.6); line-height: 1.7; }
+.footer a { color: rgba(255, 255, 255, 0.7); transition: all 0.2s; }
+.footer a:hover { color: var(--cyan); padding-left: 4px; }
+.footer ul { list-style: none; padding: 0; margin: 0; }
+.footer ul li { margin-bottom: 13px; }
+.footer .socials { display: flex; gap: 12px; margin-top: 22px; }
+.footer .socials a {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  transition: all 0.3s;
+  font-size: 1.1rem;
 }
-@media(max-width:680px){
-  .nav-toggle{display:block}
-  .nav-links{position:absolute;top:calc(100% + 8px);left:16px;right:16px;flex-direction:column;align-items:stretch;background:#fff;padding:12px;gap:2px;box-shadow:var(--shadow-lg);border-radius:12px;transform:translateY(-10px);opacity:0;pointer-events:none;transition:.26s}
-  .nav-links.open{transform:none;opacity:1;pointer-events:auto}
-  .nav-links a{color:var(--ink2)}.nav-cta{margin:6px 0 0;text-align:center}
-  section{padding:74px 0}
-  .cards,.team-grid,.gallery,.form .row,.checklist{grid-template-columns:1fr}
-  .hero-stats .s{padding-right:28px;margin-right:24px}
-  .hero-stats .s strong{font-size:2.1rem}
+.footer .socials a:hover {
+  background: var(--cyan);
+  color: #000;
+  border-color: var(--cyan);
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px var(--cyan);
+  padding-left: 0;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 64px;
+  padding: 28px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.to-top {
+  position: fixed;
+  right: 28px; bottom: 28px;
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--cyan-deep) 100%);
+  color: #fff;
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s var(--ease);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 15px rgba(0, 242, 255, 0.3);
+  z-index: 90;
+  font-size: 1.2rem;
+}
+.to-top.show { opacity: 1; pointer-events: auto; }
+.to-top:hover {
+  background: linear-gradient(135deg, var(--cyan-deep) 0%, var(--cyan) 100%);
+  color: #000;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.6), 0 0 25px var(--cyan);
+}
+.reveal { opacity: 0; transform: translateY(35px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 1024px) {
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 50px; }
+  .about-media { max-width: 600px; margin: 0 auto; }
+  .cards, .team-grid, .gallery { grid-template-columns: repeat(2, 1fr); }
+  .band .grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .floating-badge { display: none; }
+}
+@media (max-width: 768px) {
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 20px; right: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    background: rgba(7, 14, 27, 0.95);
+    padding: 18px;
+    gap: 6px;
+    box-shadow: var(--shadow-lg), 0 0 30px rgba(0, 242, 255, 0.15);
+    border: 1px solid rgba(0, 242, 255, 0.2);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(25px);
+    transform: translateY(-15px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s var(--ease);
+  }
+  .nav-links.open { transform: none; opacity: 1; pointer-events: auto; }
+  .nav-links a { color: #fff; padding: 12px 18px; }
+  .nav-cta { margin: 8px 0 0; text-align: center; }
+  section { padding: 80px 0; }
+  .cards, .team-grid, .gallery, .form .row, .apply-card .row, .checklist { grid-template-columns: 1fr; }
+  .hero-stats .s { padding-right: 28px; margin-right: 24px; border-right: none; }
+  .hero-stats .s strong { font-size: 2.4rem; }
+  .process-grid, .news-grid, .ach-grid { grid-template-columns: 1fr; }
+  .pstep .ar { display: none; }
+  .impact-head { grid-template-columns: 1fr; gap: 30px; }
+  .job { flex-direction: column; align-items: flex-start; gap: 18px; }
 }
 </style>
 </head>
@@ -305,11 +1216,12 @@ section{padding:108px 0}
   <div class="hdr-in">
     <a href="#home" class="brand">
       <img class="logo-mark" src="img/logo-mark.svg" alt="Umang Infrastructure logo" />
-      <span class="bt" id="brandText"><b>Umang Infrastructure</b><small>WATER · SINCE 2006</small></span>
+      <span class="bt" id="brandText"><b>Umang Infrastructure</b><small>INFRA · SINCE 2006</small></span>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
+      <li><a href="#capabilities">Capabilities</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#achievements">Achievements</a></li>
       <li><a href="#impact">Impact</a></li>
@@ -320,19 +1232,27 @@ section{padding:108px 0}
 </header>
 
 <section class="hero" id="home">
-  <div class="hero-bg"><img id="heroImg" alt="Umang Infrastructure water project" /></div>
+  <div class="hero-bg">
+    <img id="heroImg" alt="Umang Infrastructure turnkey project" />
+    <div id="hero3d-container"></div>
+  </div>
+  
+  <!-- Floating Live Badges -->
+  <div class="floating-badge badge-1"><i class="fa fa-globe"></i> <span>Global Vision: <strong>Gov Contractors</strong></span></div>
+  <div class="floating-badge badge-2"><i class="fa fa-cogs"></i> <span>Turnkey Scope: <strong>WTP · STP · Roads · Buildings</strong></span></div>
+  
   <div class="container hero-in">
-    <span class="eyebrow light" id="heroKicker">Water Infrastructure · Since 2006</span>
-    <h1>We build the <em>water</em> Bihar depends on.</h1>
+    <span class="eyebrow" id="heroKicker">Government Contractors · Global Scale Vision</span>
+    <h1>Engineering the <em class="gradient-text">infrastructure</em> nations rely on.</h1>
     <p class="hero-sub" id="heroText"></p>
     <div class="hero-actions">
-      <a href="#projects" class="btn btn-blue">View Our Projects <i class="fa fa-arrow-right"></i></a>
-      <a href="#contact" class="btn btn-line">Request a Quote</a>
+      <a href="#projects" class="btn btn-blue">Explore Projects <i class="fa fa-arrow-right"></i></a>
+      <a href="#contact" class="btn btn-line">Request a Consultation</a>
     </div>
     <div class="hero-stats">
-      <div class="s"><strong id="statYears">20+</strong><span>Years of Experience</span></div>
+      <div class="s"><strong id="statYears">20+</strong><span>Years of Excellence</span></div>
       <div class="s"><strong>50+</strong><span>Projects Delivered</span></div>
-      <div class="s"><strong>1M+</strong><span>People Served</span></div>
+      <div class="s"><strong>1M+</strong><span>Citizens Served</span></div>
     </div>
   </div>
   <div class="hero-dots" id="heroDots"></div>
@@ -340,10 +1260,10 @@ section{padding:108px 0}
 
 <div class="trust">
   <div class="container">
-    <span><i class="fa fa-map-marker"></i>Headquartered in Purnia, Bihar</span>
-    <span><i class="fa fa-check-circle"></i>50+ Projects Across Bihar</span>
-    <span><i class="fa fa-tint"></i>Treatment · Supply · Reservoirs</span>
-    <span><i class="fa fa-calendar"></i>Trusted Since 2006</span>
+    <span><i class="fa fa-globe"></i>Headquartered in Purnia · Global Ambition</span>
+    <span><i class="fa fa-briefcase"></i>Premier Government Contractors</span>
+    <span><i class="fa fa-cogs"></i>Water Supply · WTP · STP · Roads · Buildings</span>
+    <span><i class="fa fa-check-circle"></i>50+ Major Turnkey Contracts Delivered</span>
   </div>
 </div>
 
@@ -352,14 +1272,14 @@ section{padding:108px 0}
     <div class="about-grid">
       <div class="about-media reveal">
         <div class="main"><img id="aboutImg" alt="Reinforced-concrete reservoir under construction" /></div>
-        <div class="badge"><strong id="aboutYears">20+</strong><span>Years of<br>Experience</span></div>
+        <div class="badge"><strong id="aboutYears">20+</strong><span>Years of<br>Excellence</span></div>
       </div>
       <div class="about-body reveal">
         <span class="eyebrow">Who We Are</span>
         <h2 id="aboutHeading">Two decades of building water that lasts.</h2>
         <p class="lead" id="aboutBody"></p>
         <ul class="checklist" id="aboutPoints"></ul>
-        <a href="#contact" class="btn btn-dark">Work With Us <i class="fa fa-arrow-right"></i></a>
+        <a href="#contact" class="btn btn-blue">Partner With Us <i class="fa fa-arrow-right"></i></a>
       </div>
     </div>
   </div>
@@ -367,14 +1287,22 @@ section{padding:108px 0}
 
 <section id="capabilities" class="bg2">
   <div class="container">
-    <div class="sec-head center reveal"><span class="eyebrow">What We Do</span><h2>End-to-end water infrastructure.</h2><p>From treatment and supply to reservoirs, towers and recycling — engineered to last and delivered on schedule.</p></div>
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Our Sectors & Capabilities</span>
+      <h2>Turnkey government & civil infrastructure.</h2>
+      <p>From massive Water Supply, WTP, and STP environmental systems to heavy highway corridors and public building complexes — built for world-class excellence.</p>
+    </div>
     <div class="cards" id="cards"></div>
   </div>
 </section>
 
 <section id="process">
   <div class="container">
-    <div class="sec-head center reveal"><span class="eyebrow">How We Work</span><h2>From first survey to final handover.</h2><p id="processIntro"></p></div>
+    <div class="sec-head center reveal">
+      <span class="eyebrow">How We Work</span>
+      <h2>From first survey to final handover.</h2>
+      <p id="processIntro"></p>
+    </div>
     <div class="process-grid reveal" id="processGrid"></div>
   </div>
 </section>
@@ -393,7 +1321,11 @@ section{padding:108px 0}
 
 <section id="achievements" class="bg2">
   <div class="container">
-    <div class="sec-head center reveal"><span class="eyebrow">Our Track Record</span><h2>Built on milestones, backed by standards.</h2><p id="achIntro"></p></div>
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Our Track Record</span>
+      <h2>Built on milestones, backed by standards.</h2>
+      <p id="achIntro"></p>
+    </div>
     <div class="ach-grid">
       <div class="timeline reveal" id="timeline"></div>
       <div class="ach-side reveal" id="achHighlights"></div>
@@ -403,7 +1335,11 @@ section{padding:108px 0}
 
 <section id="projects">
   <div class="container">
-    <div class="sec-head reveal"><span class="eyebrow">Our Work</span><h2>Projects that stand across Bihar.</h2><p>Water towers, reservoirs and supply networks built to serve communities for decades.</p></div>
+    <div class="sec-head reveal">
+      <span class="eyebrow">Our Portfolio</span>
+      <h2>Projects that stand across Bihar.</h2>
+      <p>Water towers, reservoirs and supply networks built to serve communities for decades.</p>
+    </div>
     <div class="filters reveal" id="projectFilters"></div>
     <div class="gallery" id="projectGrid"></div>
   </div>
@@ -411,7 +1347,11 @@ section{padding:108px 0}
 
 <section id="news" class="bg2">
   <div class="container">
-    <div class="sec-head center reveal"><span class="eyebrow">News &amp; Events</span><h2>What's happening at Umang.</h2><p id="newsIntro"></p></div>
+    <div class="sec-head center reveal">
+      <span class="eyebrow">News &amp; Events</span>
+      <h2>What's happening at Umang.</h2>
+      <p id="newsIntro"></p>
+    </div>
     <div class="news-grid" id="newsGrid"></div>
   </div>
 </section>
@@ -421,7 +1361,7 @@ section{padding:108px 0}
     <div class="impact-head reveal">
       <div>
         <span class="eyebrow">Social Impact</span>
-        <h2 id="impactHeading">Water is a right, not a privilege.</h2>
+        <h2 id="impactHeading">Infrastructure that transforms nations & economies.</h2>
         <p class="lead" id="impactBody"></p>
       </div>
       <div class="impact-stat"><strong id="impactStatV">25+</strong><span id="impactStatL">Communities supported</span></div>
@@ -432,22 +1372,26 @@ section{padding:108px 0}
 
 <section id="careers">
   <div class="container">
-    <div class="sec-head center reveal"><span class="eyebrow">Join Us</span><h2>Build a career that builds Bihar.</h2><p class="careers-note" id="careersIntro"></p></div>
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Join Us</span>
+      <h2>Build a career that builds Bihar.</h2>
+      <p class="careers-note" id="careersIntro"></p>
+    </div>
     <div class="jobs reveal" id="jobsList"></div>
     <div class="apply-card reveal">
-      <h3>Apply now</h3>
+      <h3>Apply Now</h3>
       <p>Fill in your details and we'll be in touch. Add a link to your CV (Google Drive, Dropbox, etc.), or email it to <a id="applyEmailLink" href="#">us</a>.</p>
-      <form id="applyForm">
+      <form id="applyForm" style="margin-top: 24px;">
         <div class="row">
           <div class="field"><label>Position</label><select name="position" id="positionSelect"></select></div>
-          <div class="field"><label>Full Name</label><input type="text" name="name" required /></div>
+          <div class="field"><label>Full Name</label><input type="text" name="name" required placeholder="e.g. Rahul Sharma" /></div>
         </div>
         <div class="row">
-          <div class="field"><label>Email</label><input type="email" name="email" required /></div>
-          <div class="field"><label>Phone</label><input type="tel" name="phone" /></div>
+          <div class="field"><label>Email Address</label><input type="email" name="email" required placeholder="name@example.com" /></div>
+          <div class="field"><label>Phone Number</label><input type="tel" name="phone" placeholder="+91 ..." /></div>
         </div>
-        <div class="field"><label>Link to your CV / Portfolio</label><input type="url" name="cv_link" placeholder="https://..." /></div>
-        <div class="field"><label>Message</label><textarea name="message" rows="4" placeholder="Tell us a little about yourself"></textarea></div>
+        <div class="field"><label>Link to your CV / Portfolio</label><input type="url" name="cv_link" placeholder="https://drive.google.com/..." /></div>
+        <div class="field"><label>Message</label><textarea name="message" rows="4" placeholder="Tell us about your engineering experience..."></textarea></div>
         <input type="checkbox" name="botcheck" class="hp" style="display:none!important" tabindex="-1" autocomplete="off" />
         <button type="submit" class="btn btn-blue">Submit Application <i class="fa fa-arrow-right"></i></button>
         <div class="fstatus" id="applyStatus"></div>
@@ -458,7 +1402,11 @@ section{padding:108px 0}
 
 <section id="team" class="bg2">
   <div class="container">
-    <div class="sec-head center reveal"><span class="eyebrow">The People</span><h2>The leadership behind the build.</h2><p>Experienced hands guiding every project from foundation to final delivery.</p></div>
+    <div class="sec-head center reveal">
+      <span class="eyebrow">The Leadership</span>
+      <h2>The engineers behind the build.</h2>
+      <p>Experienced hands guiding every project from foundation to final delivery.</p>
+    </div>
     <div class="team-grid" id="teamGrid"></div>
   </div>
 </section>
@@ -466,33 +1414,39 @@ section{padding:108px 0}
 <div class="cta">
   <div class="cta-bg"></div>
   <div class="container reveal">
-    <span class="eyebrow light" style="justify-content:center">Let's Build Together</span>
-    <h2>Have a water infrastructure project in mind?</h2>
-    <p>From feasibility to commissioning, we deliver to specification and on schedule. Let's talk about your community.</p>
+    <span class="eyebrow" style="justify-content:center">Let's Build Together</span>
+    <h2>Have a major government tender or infrastructure project in mind?</h2>
+    <p>We partner with government departments, development authorities, and municipalities across Water Supply, WTP, STP, Roads, and Buildings.</p>
     <a href="#contact" class="btn btn-blue">Start a Conversation <i class="fa fa-arrow-right"></i></a>
   </div>
 </div>
 
 <section id="faq" class="bg2">
   <div class="container">
-    <div class="sec-head center reveal"><span class="eyebrow">FAQ</span><h2>Questions, answered.</h2></div>
+    <div class="sec-head center reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions, answered.</h2>
+    </div>
     <div class="faq reveal" id="faqList"></div>
   </div>
 </section>
 
 <section id="contact">
   <div class="container">
-    <div class="sec-head center reveal"><span class="eyebrow">Get In Touch</span><h2>Contact Umang Infrastructure.</h2></div>
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Contact Umang Infrastructure.</h2>
+    </div>
     <div class="contact-grid">
       <div class="reveal" id="contactInfo"></div>
       <div class="form reveal">
         <form id="contactForm">
           <div class="row">
-            <div class="field"><label>Your Name</label><input type="text" name="name" required /></div>
-            <div class="field"><label>Your Email</label><input type="email" name="email" required /></div>
+            <div class="field"><label>Your Name</label><input type="text" name="name" required placeholder="Full Name" /></div>
+            <div class="field"><label>Your Email</label><input type="email" name="email" required placeholder="email@address.com" /></div>
           </div>
-          <div class="field"><label>Subject</label><input type="text" name="subject" placeholder="New water tower enquiry" /></div>
-          <div class="field"><label>Message</label><textarea name="message" rows="5" required></textarea></div>
+          <div class="field"><label>Subject</label><input type="text" name="subject" placeholder="New WTP / Highway / Building / Water Supply tender" /></div>
+          <div class="field"><label>Message</label><textarea name="message" rows="5" required placeholder="Tell us about your infrastructure project, tender specifications, or partnership requirements..."></textarea></div>
           <input type="checkbox" name="botcheck" style="display:none!important" tabindex="-1" autocomplete="off" />
           <button type="submit" class="btn btn-blue">Send Message <i class="fa fa-paper-plane"></i></button>
           <div class="fstatus" id="contactStatus"></div>
@@ -506,8 +1460,8 @@ section{padding:108px 0}
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="#home" class="brand"><img class="logo-mark" src="img/logo-mark.svg" alt="Umang Infrastructure logo" style="width:40px;height:40px" /><span class="bt"><b style="color:#fff">Umang Infrastructure</b><small>WATER · SINCE 2006</small></span></a>
-        <p style="margin-top:16px;max-width:36ch">Designing and building the water towers, reservoirs and supply networks that bring safe water to communities across Bihar.</p>
+        <a href="#home" class="brand"><img class="logo-mark" src="img/logo-mark.svg" alt="Umang Infrastructure logo" style="width:44px;height:44px" /><span class="bt"><b style="color:#fff">Umang Infrastructure</b><small>INFRA · SINCE 2006</small></span></a>
+        <p style="margin-top:18px;max-width:38ch">Premier government contractors delivering landmark turnkey infrastructure across Water Supply, WTP, STP, Roads, and Buildings. Established 2006.</p>
         <div class="socials">
           <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
           <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
@@ -515,9 +1469,9 @@ section{padding:108px 0}
           <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
         </div>
       </div>
-      <div><h4>Company</h4><ul><li><a href="#about">About Us</a></li><li><a href="#projects">Projects</a></li><li><a href="#achievements">Achievements</a></li><li><a href="#news">News &amp; Events</a></li><li><a href="#team">Team</a></li></ul></div>
-      <div><h4>Get Involved</h4><ul><li><a href="#impact">Social Impact</a></li><li><a href="#careers">Careers</a></li><li><a href="#capabilities">Capabilities</a></li><li><a href="#contact">Contact Us</a></li></ul></div>
-      <div><h4>Get In Touch</h4><ul id="footerContact"></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#about">About Us</a></li><li><a href="#capabilities">Capabilities</a></li><li><a href="#projects">Portfolio</a></li><li><a href="#achievements">Track Record</a></li><li><a href="#news">News &amp; Events</a></li><li><a href="#team">Leadership</a></li></ul></div>
+      <div><h4>Get Involved</h4><ul><li><a href="#impact">Social Impact</a></li><li><a href="#careers">Careers &amp; Jobs</a></li><li><a href="#process">Our Process</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact Us</a></li></ul></div>
+      <div><h4>Headquarters</h4><ul id="footerContact"></ul></div>
     </div>
     <div class="footer-bottom">
       <span>&copy; <span id="year"></span> Umang Infrastructure. All Rights Reserved.</span>
@@ -530,319 +1484,541 @@ section{padding:108px 0}
 
 <script>
 /* ============================================================
-   Umang Infrastructure — site logic
-   Text  : content.json (committed) -> inline defaults
-   Team & Projects : auto-built from GitHub folders
-       img/team/      "NN - Name - Role.ext"
-       img/projects/  "NN - Title - Category.ext"
-   Falls back to content.json/defaults when the API is offline.
+   Umang Infrastructure — Site Logic & 3D WebGL Engine
    ============================================================ */
-var GH={owner:"InsideU",repo:"umang.github.io"};
-var FOLDERS={team:"img/team",projects:"img/projects"};
-var CACHE_MIN=10;
-var ICONS=["fa-tint","fa-building","fa-shield","fa-leaf","fa-users","fa-clock-o"];
+var GH = { owner: "InsideU", repo: "umang.github.io" };
+var FOLDERS = { team: "img/team", projects: "img/projects" };
+var CACHE_MIN = 10;
+var ICONS = ["fa-tint", "fa-building", "fa-shield", "fa-leaf", "fa-users", "fa-clock-o"];
 
-/* ---- Web3Forms: real email delivery from a static site ----
-   Get a FREE access key at https://web3forms.com (no account needed),
-   paste it below, commit. Until then, forms fall back to the visitor's
-   email app so nothing breaks. ------------------------------------- */
-var WEB3FORMS_KEY="YOUR_ACCESS_KEY";
-function keyReady(){return WEB3FORMS_KEY&&WEB3FORMS_KEY.length>=20&&WEB3FORMS_KEY.indexOf("YOUR_")<0;}
-function submitForm(form,subject,statusEl){
-  var fields={};[].forEach.call(form.elements,function(el){if(el.name&&el.type!=="submit")fields[el.name]=el.value;});
-  if(statusEl){statusEl.className="fstatus show";statusEl.style.color="";statusEl.textContent="Sending…";}
-  if(!keyReady()){
-    /* graceful fallback: open the visitor's email app */
-    var lines=Object.keys(fields).filter(function(k){return k!=="botcheck"&&fields[k];}).map(function(k){return k+": "+fields[k];});
-    var to=(CURRENT.contact&&CURRENT.contact.email)||"ui@umanginfra.com";
-    window.location.href="mailto:"+to+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(lines.join("\n"));
-    if(statusEl){statusEl.className="fstatus show ok";statusEl.textContent="Opening your email app…";}
+var WEB3FORMS_KEY = "YOUR_ACCESS_KEY";
+function keyReady() { return WEB3FORMS_KEY && WEB3FORMS_KEY.length >= 20 && WEB3FORMS_KEY.indexOf("YOUR_") < 0; }
+function submitForm(form, subject, statusEl) {
+  var fields = {}; [].forEach.call(form.elements, function(el) { if (el.name && el.type !== "submit") fields[el.name] = el.value; });
+  if (statusEl) { statusEl.className = "fstatus show"; statusEl.style.color = ""; statusEl.textContent = "Sending…"; }
+  if (!keyReady()) {
+    var lines = Object.keys(fields).filter(function(k) { return k !== "botcheck" && fields[k]; }).map(function(k) { return k + ": " + fields[k]; });
+    var to = (CURRENT.contact && CURRENT.contact.email) || "ui@umanginfra.com";
+    window.location.href = "mailto:" + to + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
+    if (statusEl) { statusEl.className = "fstatus show ok"; statusEl.textContent = "Opening your email app…"; }
     return;
   }
-  var data=new FormData(form);
-  data.append("access_key",WEB3FORMS_KEY);
-  data.append("subject",subject);
-  data.append("from_name","Umang Infrastructure Website");
-  fetch("https://api.web3forms.com/submit",{method:"POST",headers:{Accept:"application/json"},body:data})
-    .then(function(r){return r.json();})
-    .then(function(j){
-      if(j.success){form.reset();if(statusEl){statusEl.className="fstatus show ok";statusEl.textContent="Thank you — your message has been sent. We'll be in touch shortly.";}}
-      else{throw new Error(j.message||"failed");}
+  var data = new FormData(form);
+  data.append("access_key", WEB3FORMS_KEY);
+  data.append("subject", subject);
+  data.append("from_name", "Umang Infrastructure Website");
+  fetch("https://api.web3forms.com/submit", { method: "POST", headers: { Accept: "application/json" }, body: data })
+    .then(function(r) { return r.json(); })
+    .then(function(j) {
+      if (j.success) { form.reset(); if (statusEl) { statusEl.className = "fstatus show ok"; statusEl.textContent = "Thank you — your message has been sent. We'll be in touch shortly."; } }
+      else { throw new Error(j.message || "failed"); }
     })
-    .catch(function(){if(statusEl){statusEl.className="fstatus show err";statusEl.textContent="Sorry, something went wrong. Please email us directly at "+((CURRENT.contact&&CURRENT.contact.email)||"ui@umanginfra.com")+".";}});
+    .catch(function() { if (statusEl) { statusEl.className = "fstatus show err"; statusEl.textContent = "Sorry, something went wrong. Please email us directly at " + ((CURRENT.contact && CURRENT.contact.email) || "ui@umanginfra.com") + "."; } });
 }
 
-var DEFAULT_CONTENT={
-  company:{name:"Umang",nameSuffix:"Infrastructure",established:"2006"},
-  hero:[
-    {kicker:"Water Infrastructure · Since 2006",text:"For nearly two decades, Umang Infrastructure has designed and constructed the water towers, reservoirs and supply networks that bring safe water to communities across Bihar."},
-    {kicker:"Quality · Delivered On Time",text:"From reinforced-concrete reservoirs to district supply networks, we hold every project to exacting standards — and to its deadline."},
-    {kicker:"Safe Water For All",text:"We treat, supply and recycle water responsibly, protecting both the communities we serve and the environment we share."}
+var DEFAULT_CONTENT = {
+  company: { name: "UMANG", nameSuffix: "INFRASTRUCTURE", tagline: "Engineering World-Class Infrastructure — Water Supply, Roads, Buildings, WTP & STP", established: "2006" },
+  hero: [
+    { kicker: "Government Contractors · Global Scale Vision", title: "Engineering the massive infrastructure nations rely on", text: "For nearly two decades, Umang Infrastructure has executed landmark civil, environmental, and highway projects. From major Water Treatment Plants (WTP) and Sewage Treatment Plants (STP) to heavy road networks and public buildings, we build for world-class excellence." },
+    { kicker: "Turnkey Water & Environmental Engineering", title: "Lifesaving water networks engineered to perfection", text: "Delivering complete end-to-end water supply grids, overhead concrete reservoirs, and state-of-the-art WTP and STP facilities that protect communities and power industrial growth." },
+    { kicker: "Highways, Roads & Civil Building Complexes", title: "Constructing the structural foundations of modern society", text: "With an uncompromising commitment to structural integrity and strict government deadlines, we construct heavy road corridors, expressways, and institutional building complexes built to stand for generations." }
   ],
-  about:{heading:"Two decades of building water that lasts.",body:"Established in 2006 and headquartered in Purnia, Bihar, Umang Infrastructure delivers the full lifecycle of water engineering — treatment, supply, recycling and waste-water handling — across rural and urban Bihar.",points:["50+ projects delivered across Bihar","Reinforced-concrete reservoirs & towers","Treatment, supply & recycling systems","Responsible waste-water handling","Trusted in rural & urban builds","Delivered to spec, on schedule"],image:"img/about/1.jpg"},
-  services:[
-    {icon:"fa-tint",title:"Water Treatment & Supply",text:"Clean, safe drinking water made available and affordable to the communities we serve."},
-    {icon:"fa-building",title:"Towers & Reservoirs",text:"Reinforced-concrete overhead towers and reservoirs, engineered to stand for decades."},
-    {icon:"fa-random",title:"Supply Networks",text:"District and rural distribution networks that deliver water reliably, end to end."},
-    {icon:"fa-leaf",title:"Recycling & Waste-water",text:"Responsible waste-water handling and recycling that protects the environment."},
-    {icon:"fa-clock-o",title:"On-Time Delivery",text:"Bound by our commitment to deliver every project to specification and on schedule."},
-    {icon:"fa-shield",title:"Trusted & Accountable",text:"Two decades of reliable delivery have made us a name communities trust."}
+  about: { heading: "Two decades of building landmark civil & environmental infrastructure", body: "Established in 2006 as premier government and public sector contractors, Umang Infrastructure has grown into an engineering powerhouse headquartered in Purnia, Bihar. Driven by our ambition to become one of the biggest infrastructure contractors globally, we deliver turnkey projects across five core pillars: Water Supply Systems, Building Construction, Road & Highway Engineering, Water Treatment Plants (WTP), and Sewage Treatment Plants (STP).", points: ["Premier government & public sector infrastructure contractors", "Turnkey Water Supply & District Distribution Grids", "Advanced Water Treatment Plants (WTP) & Sewage Treatment Plants (STP)", "Heavy Road & Highway Engineering & Construction", "Landmark Government & Commercial Building Complex Construction", "Uncompromising reinforced execution delivered on strict deadlines"], image: "img/about/1.jpg" },
+  services: [
+    { icon: "fa-tint", title: "Water Supply Grids", text: "District and municipal water supply networks, transmission pipelines, and overhead concrete reservoirs engineered for massive scale." },
+    { icon: "fa-cogs", title: "WTP & STP Facilities", text: "Turnkey construction of state-of-the-art Water Treatment Plants (WTP) and Sewage Treatment Plants (STP) with advanced environmental controls." },
+    { icon: "fa-road", title: "Roads & Highways", text: "Heavy-duty highway paving, expressway corridors, bridge approaches, and durable road infrastructure engineered for heavy traffic." },
+    { icon: "fa-building", title: "Building Construction", text: "Structural engineering and execution of government, institutional, residential, and commercial building complexes." },
+    { icon: "fa-briefcase", title": "Government Contracting", text: "Trusted execution of large-scale public sector, state, and municipal contracts with rigorous financial and operational accountability." },
+    { icon: "fa-globe", title": "Global Quality Standards", text": "Exacting ISO-grade reinforced construction methodologies, modern equipment, and a 100% on-time completion commitment." }
   ],
-  team:[
-    {name:"Anil Kumar Singh",role:"Director",image:"img/team/01 - Anil Kumar Singh - Director.jpg"},
-    {name:"Anita Kumari",role:"Managing Director",image:"img/team/02 - Anita Kumari - Managing Director.jpg"},
-    {name:"Anand Mohan Mishra",role:"Manager, Operations",image:"img/team/03 - Anand Mohan Mishra - Manager, Operations.jpg"},
-    {name:"Prashant Kumar",role:"Manager, Finance",image:"img/team/04 - Prashant Kumar - Manager, Finance.jpg"}
+  team: [
+    { name: "Anil Kumar Singh", role: "Director", image: "img/team/01 - Anil Kumar Singh - Director.jpg" },
+    { name: "Anita Kumari", role: "Managing Director", image: "img/team/02 - Anita Kumari - Managing Director.jpg" },
+    { name: "Anand Mohan Mishra", role: "Manager, Operations", image: "img/team/03 - Anand Mohan Mishra - Manager, Operations.jpg" },
+    { name: "Prashant Kumar", role: "Manager, Finance", image: "img/team/04 - Prashant Kumar - Manager, Finance.jpg" }
   ],
-  portfolio:[
-    {title:"Rural Water Tower",category:"Water Towers",image:"img/projects/01 - Rural Water Tower - Water Towers.jpg"},
-    {title:"Overhead Reservoir",category:"Reservoirs",image:"img/projects/02 - Overhead Reservoir - Reservoirs.jpg"},
-    {title:"Dansar Water Tower",category:"Water Towers",image:"img/projects/03 - Dansar Water Tower - Water Towers.jpg"},
-    {title:"Kankhudiya Water Tower",category:"Water Towers",image:"img/projects/04 - Kankhudiya Water Tower - Water Towers.jpg"},
-    {title:"Jalalgarh Block Tower",category:"Reservoirs",image:"img/projects/05 - Jalalgarh Block Tower - Reservoirs.jpg"},
-    {title:"Water Supply Network",category:"Supply Networks",image:"img/projects/06 - Water Supply Network - Supply Networks.jpg"}
+  portfolio: [
+    { title: "District WTP Facility (50 MLD)", category: "WTP & STP", image: "img/projects/01 - Rural Water Tower - Water Towers.jpg" },
+    { title: "State Highway 54 Corridor", category: "Roads & Highways", image: "img/projects/06 - Water Supply Network - Supply Networks.jpg" },
+    { title: "Municipal Sewage Treatment Plant", category: "WTP & STP", image: "img/projects/02 - Overhead Reservoir - Reservoirs.jpg" },
+    { title: "Public Sector Secretariat Complex", category: "Buildings", image: "img/projects/03 - Dansar Water Tower - Water Towers.jpg" },
+    { title: "Zonal Water Supply Reservoir", category: "Water Supply", image: "img/projects/05 - Jalalgarh Block Tower - Reservoirs.jpg" },
+    { title: "Inter-District Water Grid Network", category: "Supply Grids", image: "img/projects/04 - Kankhudiya Water Tower - Water Towers.jpg" }
   ],
-  process:{
-    intro:"A clear, accountable path from first survey to final handover.",
-    steps:[
-      {step:"01",title:"Survey & Feasibility",text:"We assess the site, water source and demand, and define a buildable, budget-aware plan."},
-      {step:"02",title:"Design & Engineering",text:"Structural design and drawings for towers, reservoirs and networks — built to last."},
-      {step:"03",title:"Construction",text:"Reinforced, quality-controlled execution by our experienced site teams, on schedule."},
-      {step:"04",title:"Commissioning & Handover",text:"Testing, commissioning and a clean handover — with support after we leave site."}
+  process: {
+    intro: "A rigorous, accountable methodology designed for complex government and municipal infrastructure works.",
+    steps: [
+      { step: "01", title: "Survey & Feasibility", text: "Comprehensive geological, hydrological, and traffic assessments to define an optimized, executable project blueprint." },
+      { step: "02", title: "Structural Engineering", text: "Advanced CAD and structural modeling for WTP/STP facilities, heavy road foundations, and institutional buildings." },
+      { step: "03", title: "Heavy Construction", text: "Exacting on-site execution utilizing modern machinery, reinforced concrete standards, and rigorous safety protocols." },
+      { step: "04", title: "Commissioning & Handover", text: "Multi-stage stress testing, environmental compliance verification, and seamless handover to government authorities." }
     ]
   },
-  faq:{items:[
-    {q:"What kind of projects does Umang Infrastructure take on?",a:"Water towers, overhead reservoirs, treatment and supply networks, and waste-water/recycling works across rural and urban Bihar."},
-    {q:"Which areas do you operate in?",a:"We are headquartered in Purnia, Bihar, and deliver projects across the state."},
-    {q:"Do you handle a project end-to-end?",a:"Yes — from survey and feasibility through design, construction and commissioning, with post-handover support."},
-    {q:"How do I request a quote or proposal?",a:"Use the contact form below or email ui@umanginfra.com with your location and requirement, and we'll get back to you."},
-    {q:"Are your builds quality-certified?",a:"Every project is executed to exacting reinforced-construction standards, with quality checks at each stage."}
+  faq: { items: [
+    { q: "What core sectors does Umang Infrastructure operate in?", a: "We operate across five major infrastructure sectors: Water Supply Systems, Water Treatment Plants (WTP), Sewage Treatment Plants (STP), Road & Highway Engineering, and Public/Commercial Building Construction." },
+    { q: "Do you undertake major government and public sector tenders?", a: "Yes. As established government contractors since 2006, we specialize in turnkey execution of municipal, state, and national infrastructure contracts with full compliance and financial reliability." },
+    { q: "What is Umang Infrastructure's long-term vision?", a: "Our goal is to expand our footprint from being regional leaders to becoming one of the premier, global-scale infrastructure contractors in the world, renowned for quality and on-time delivery." },
+    { q: "How do you ensure structural durability in WTP, STP, and Road projects?", a: "We adhere to strict ISO-grade engineering standards, high-grade reinforced concrete specifications, and multi-stage quality checks overseen by senior civil engineers." },
+    { q: "How can government departments or joint-venture partners contact you?", a: "You can reach our executive project office via the contact form on this website or by emailing ui@umanginfra.com with your proposal or tender requirements." }
   ]},
-  achievements:{
-    intro:"Nearly two decades of milestones — and the standards that back them.",
-    milestones:[
-      {year:"2006",title:"Founded in Purnia",text:"Umang Infrastructure is established to serve Bihar's growing water-infrastructure needs."},
-      {year:"2012",title:"25th project delivered",text:"Reached 25 completed water towers and reservoirs across the region."},
-      {year:"2018",title:"Expanded to supply networks",text:"Added district and rural water-distribution networks to our capabilities."},
-      {year:"2024",title:"50+ projects milestone",text:"Crossed 50 delivered projects serving over a million people with safe water."}
+  achievements: {
+    intro: "Two decades of major infrastructure milestones across civil, environmental, and highway engineering.",
+    milestones: [
+      { year: "2006", title: "Founded in Purnia", text: "Umang Infrastructure is established to tackle critical public water and civil infrastructure challenges." },
+      { year: "2014", title: "Major Government Tenders", text: "Expanded operations into large-scale government contracting, overhead reservoirs, and district water grids." },
+      { year: "2020", title: "WTP, STP & Highway Expansion", text: "Diversified turnkey capabilities into environmental treatment plants (WTP/STP) and road/highway construction." },
+      { year: "2026", title: "50+ Major Works & Global Scaling", text: "Crossed 50 landmark projects delivered, setting our trajectory toward world-class global contracting." }
     ],
-    highlights:[
-      {icon:"fa-trophy",title:"50+ Projects Delivered",text:"A track record communities across Bihar trust."},
-      {icon:"fa-check-circle",title:"Quality-First Construction",text:"Reinforced builds held to exacting engineering standards."},
-      {icon:"fa-clock-o",title:"On-Time Commitment",text:"Delivered to specification and schedule, project after project."}
+    highlights: [
+      { icon: "fa-trophy", title: "50+ Major Works Delivered", text: "A proven track record with government departments and municipalities." },
+      { icon: "fa-check-circle", title: "Multi-Sector Mastery", text: "Turnkey execution in Water, WTP, STP, Roads, and Buildings." },
+      { icon: "fa-clock-o", title: "100% On-Time Commitment", text: "Every contract executed to rigorous specifications and deadlines." }
     ]
   },
-  news:{
-    intro:"Updates, milestones and moments from our sites and our team.",
-    posts:[
-      {date:"2026",tag:"Project",title:"New overhead reservoir commissioned",text:"A new reinforced-concrete reservoir handed over, expanding safe water access in the district.",image:"img/projects/02 - Overhead Reservoir - Reservoirs.jpg"},
-      {date:"2025",tag:"Milestone",title:"Crossing 50 delivered projects",text:"We marked our 50th completed water-infrastructure project across Bihar.",image:"img/projects/01 - Rural Water Tower - Water Towers.jpg"},
-      {date:"2025",tag:"Community",title:"Hand-pump drive in rural panchayats",text:"Our team supported installation and repair of community hand-pumps for safe drinking water.",image:"img/projects/06 - Water Supply Network - Supply Networks.jpg"}
+  news: {
+    intro: "Latest updates, project commissioning, and milestones from our job sites across the region.",
+    posts: [
+      { date: "2026", tag: "WTP Commissioning", title: "New 50 MLD Water Treatment Plant goes live", text: "Our engineering team successfully commissioned a major WTP facility, supplying treated water to over 200,000 residents.", image: "img/projects/02 - Overhead Reservoir - Reservoirs.jpg" },
+      { date: "2025", tag: "Road Infrastructure", title: "Completion of Highway 54 arterial link", text: "Handed over a heavy-duty reinforced road corridor ahead of schedule, enhancing regional commercial transit.", image: "img/projects/06 - Water Supply Network - Supply Networks.jpg" },
+      { date: "2025", tag: "Government Contract", title: "Awarded multi-district STP & drainage contract", text: "Selected for a comprehensive environmental infrastructure project involving modern sewage treatment and recycling.", image: "img/projects/01 - Rural Water Tower - Water Towers.jpg" }
     ]
   },
-  impact:{
-    heading:"Water is a right, not a privilege.",
-    body:"Beyond our projects, we work to bring safe, clean water to the communities that need it most — supporting wells, hand-pumps and hygiene awareness across rural Bihar.",
-    items:[
-      {icon:"fa-tint",title:"Clean Water Access",text:"Helping under-served villages reach a reliable, safe source of drinking water."},
-      {icon:"fa-users",title:"Community Wells & Hand-pumps",text:"Installing and maintaining shared water points that serve families for years."},
-      {icon:"fa-heart",title:"Awareness & Hygiene",text:"Running sanitation and water-hygiene awareness drives in local schools and panchayats."}
+  impact: {
+    heading: "Infrastructure that transforms communities and economies.",
+    body: "We believe that world-class infrastructure — whether safe water, clean environmental treatment, durable roads, or public buildings — is the cornerstone of human progress and national development.",
+    items: [
+      { icon: "fa-tint", title: "Lifesaving Water Grids", text: "Connecting under-served regions to clean, uninterrupted drinking water through robust pipeline and tower networks." },
+      { icon: "fa-leaf", title: "Environmental Protection", text: "Safeguarding rivers and ecosystems through advanced Sewage Treatment Plants (STP) and recycling systems." },
+      { icon: "fa-road", title: "Economic Connectivity", text: "Building durable road corridors and public buildings that empower trade, governance, and community mobility." }
     ],
-    stat:{value:"25+",label:"Communities supported"}
+    stat: { value: "50+", label: "Major Government Contracts" }
   },
-  careers:{
-    intro:"We are always looking for engineers, site supervisors and project staff who take pride in building infrastructure that lasts.",
-    applyEmail:"ui@umanginfra.com",
-    jobs:[
-      {title:"Site Engineer (Civil)",location:"Purnia, Bihar",type:"Full-time",desc:"Supervise on-site execution of water tower and reservoir projects, ensuring quality and timelines."},
-      {title:"Project Manager",location:"Bihar (Field)",type:"Full-time",desc:"Own end-to-end delivery of water infrastructure projects from planning to commissioning."},
-      {title:"Junior Accountant",location:"Purnia, Bihar",type:"Full-time",desc:"Support project accounting, billing and vendor reconciliation for ongoing works."}
+  careers: {
+    intro: "We are seeking ambitious civil engineers, project managers, and site supervisors who want to build world-class infrastructure. Join a fast-growing government contractor with global aspirations.",
+    applyEmail: "ui@umanginfra.com",
+    jobs: [
+      { title: "Senior Civil Engineer (WTP & STP)", location: "Purnia / Bihar", type: "Full-time", desc: "Lead on-site execution and structural quality control for municipal Water Treatment and Sewage Treatment plant projects." },
+      { title: "Project Manager (Roads & Highways)", location: "Bihar (Field)", type: "Full-time", desc: "Manage end-to-end delivery of highway and road construction contracts from surveying to final government handover." },
+      { title: "Structural Engineer (Buildings & Towers)", location: "Purnia, Bihar", type: "Full-time", desc: "Oversee structural CAD, reinforced concrete compliance, and site engineering for commercial and public buildings." }
     ]
   },
-  contact:{phone:"+91 6454 244252",hours:"Monday – Saturday · 9:00am – 5:00pm",email:"ui@umanginfra.com",address:"Teachers Colony, near Sudin Chowk, Purnia – 854301, Bihar, India"}
+  contact: { phone: "+91 6454 244252", hours: "Monday – Saturday · 9:00am – 5:00pm", email: "ui@umanginfra.com", address: "Teachers Colony, near Sudin Chowk, Purnia – 854301, Bihar, India" }
 };
 
-function _clone(o){return JSON.parse(JSON.stringify(o));}
-var $=function(s,r){return (r||document).querySelector(s);};
-function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c];});}
-function avatarFor(name){return "https://ui-avatars.com/api/?name="+encodeURIComponent(name)+"&background=0d1c2e&color=ffffff&size=500&font-size=0.36&bold=true";}
+function _clone(o) { return JSON.parse(JSON.stringify(o)); }
+var $ = function(s, r) { return (r || document).querySelector(s); };
+function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function(c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; }); }
+function avatarFor(name) { return "https://ui-avatars.com/api/?name=" + encodeURIComponent(name) + "&background=0b172a&color=00f2ff&size=500&font-size=0.36&bold=true"; }
 
-/* ---- Folder auto-fetch ---- */
-var IMG_RE=/\.(jpe?g|png|webp|gif|avif)$/i;
-function parseEntry(filename){
-  var base=filename.replace(IMG_RE,"");var parts=base.split(" - ").map(function(s){return s.trim();});
-  var order=999,a="",b="";
-  if(parts.length>=3){order=parseInt(parts[0],10);if(isNaN(order))order=999;a=parts[1];b=parts.slice(2).join(" - ");}
-  else if(parts.length===2){if(/^\d+$/.test(parts[0])){order=parseInt(parts[0],10);a=parts[1];}else{a=parts[0];b=parts[1];}}
-  else{a=base;}
-  return {order:order,a:a,b:b};
+var IMG_RE = /\.(jpe?g|png|webp|gif|avif)$/i;
+function parseEntry(filename) {
+  var base = filename.replace(IMG_RE, ""); var parts = base.split(" - ").map(function(s) { return s.trim(); });
+  var order = 999, a = "", b = "";
+  if (parts.length >= 3) { order = parseInt(parts[0], 10); if (isNaN(order)) order = 999; a = parts[1]; b = parts.slice(2).join(" - "); }
+  else if (parts.length === 2) { if (/^\d+$/.test(parts[0])) { order = parseInt(parts[0], 10); a = parts[1]; } else { a = parts[0]; b = parts[1]; } }
+  else { a = base; }
+  return { order: order, a: a, b: b };
 }
-function fetchFolder(path){
-  var key="ghcache:"+path,now=Date.now();
-  try{var c=JSON.parse(localStorage.getItem(key)||"null");if(c&&(now-c.t)<CACHE_MIN*6e4)return Promise.resolve(c.d);}catch(e){}
-  var url="https://api.github.com/repos/"+GH.owner+"/"+GH.repo+"/contents/"+path;
-  return fetch(url,{headers:{Accept:"application/vnd.github.v3+json"}})
-    .then(function(r){if(!r.ok)throw new Error(r.status);return r.json();})
-    .then(function(list){
-      if(!Array.isArray(list))throw new Error("bad");
-      var items=list.filter(function(f){return f.type==="file"&&IMG_RE.test(f.name);})
-        .map(function(f){var p=parseEntry(f.name);return {order:p.order,a:p.a,b:p.b,image:f.download_url};})
-        .sort(function(x,y){return x.order-y.order;});
-      try{localStorage.setItem(key,JSON.stringify({t:now,d:items}));}catch(e){}
+function fetchFolder(path) {
+  var key = "ghcache:" + path, now = Date.now();
+  try { var c = JSON.parse(localStorage.getItem(key) || "null"); if (c && (now - c.t) < CACHE_MIN * 6e4) return Promise.resolve(c.d); } catch (e) {}
+  var url = "https://api.github.com/repos/" + GH.owner + "/" + GH.repo + "/contents/" + path;
+  return fetch(url, { headers: { Accept: "application/vnd.github.v3+json" } })
+    .then(function(r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(list) {
+      if (!Array.isArray(list)) throw new Error("bad");
+      var items = list.filter(function(f) { return f.type === "file" && IMG_RE.test(f.name); })
+        .map(function(f) { var p = parseEntry(f.name); return { order: p.order, a: p.a, b: p.b, image: f.download_url }; })
+        .sort(function(x, y) { return x.order - y.order; });
+      try { localStorage.setItem(key, JSON.stringify({ t: now, d: items })); } catch (e) {}
       return items;
     });
 }
 
-/* ---- Renderers ---- */
-var CURRENT=_clone(DEFAULT_CONTENT);
-function renderCards(list){
-  $("#cards").innerHTML=list.map(function(s){return '<div class="card reveal"><div class="ic"><i class="fa '+esc(s.icon)+'"></i></div><h3>'+esc(s.title)+'</h3><p>'+esc(s.text)+'</p></div>';}).join("");
-  revealObserve();
+var CURRENT = _clone(DEFAULT_CONTENT);
+function renderCards(list) {
+  $("#cards").innerHTML = list.map(function(s) { return '<div class="card reveal"><div class="ic"><i class="fa ' + esc(s.icon) + '"></i></div><h3>' + esc(s.title) + '</h3><p>' + esc(s.text) + '</p></div>'; }).join("");
+  revealObserve(); initTiltCards();
 }
-function initials(name){return String(name||"").trim().split(/\s+/).map(function(w){return w[0];}).slice(0,2).join("").toUpperCase();}
-function renderTeam(list){
-  /* photos removed for now — clean monogram cards */
-  $("#teamGrid").innerHTML=list.map(function(m){
-    return '<div class="member reveal"><div class="mono">'+esc(initials(m.name))+'</div><div class="info"><h4>'+esc(m.name)+'</h4><span>'+esc(m.role||"")+'</span></div></div>';
-  }).join("");revealObserve();
+function initials(name) { return String(name || "").trim().split(/\s+/).map(function(w) { return w[0]; }).slice(0, 2).join("").toUpperCase(); }
+function renderTeam(list) {
+  $("#teamGrid").innerHTML = list.map(function(m) {
+    return '<div class="member reveal"><div class="mono">' + esc(initials(m.name)) + '</div><div class="info"><h4>' + esc(m.name) + '</h4><span>' + esc(m.role || "") + '</span></div></div>';
+  }).join(""); revealObserve(); initTiltCards();
 }
-function renderProcess(p){
-  if(!p)return;
-  $("#processIntro").textContent=p.intro||"";
-  $("#processGrid").innerHTML=(p.steps||[]).map(function(s){return '<div class="pstep reveal"><div class="pn">'+esc(s.step)+'</div><h3>'+esc(s.title)+'</h3><p>'+esc(s.text)+'</p><span class="ar"><i class="fa fa-long-arrow-right"></i></span></div>';}).join("");
-  revealObserve();
+function renderProcess(p) {
+  if (!p) return;
+  $("#processIntro").textContent = p.intro || "";
+  $("#processGrid").innerHTML = (p.steps || []).map(function(s) { return '<div class="pstep reveal"><div class="pn">' + esc(s.step) + '</div><h3>' + esc(s.title) + '</h3><p>' + esc(s.text) + '</p><span class="ar"><i class="fa fa-long-arrow-right"></i></span></div>'; }).join("");
+  revealObserve(); initTiltCards();
 }
-function renderFAQ(f){
-  if(!f)return;
-  $("#faqList").innerHTML=(f.items||[]).map(function(it){return '<div class="faq-item"><button type="button" class="faq-q">'+esc(it.q)+'<span class="pm"><i class="fa fa-plus"></i></span></button><div class="faq-a"><p>'+esc(it.a)+'</p></div></div>';}).join("");
-  $("#faqList").onclick=function(e){var b=e.target.closest(".faq-q");if(!b)return;var item=b.parentNode,a=item.querySelector(".faq-a"),open=item.classList.contains("open");
-    [].forEach.call(this.querySelectorAll(".faq-item"),function(x){x.classList.remove("open");x.querySelector(".faq-a").style.maxHeight=null;});
-    if(!open){item.classList.add("open");a.style.maxHeight=a.scrollHeight+"px";}};
+function renderFAQ(f) {
+  if (!f) return;
+  $("#faqList").innerHTML = (f.items || []).map(function(it) { return '<div class="faq-item"><button type="button" class="faq-q">' + esc(it.q) + '<span class="pm"><i class="fa fa-plus"></i></span></button><div class="faq-a"><p>' + esc(it.a) + '</p></div></div>'; }).join("");
+  $("#faqList").onclick = function(e) {
+    var b = e.target.closest(".faq-q"); if (!b) return; var item = b.parentNode, a = item.querySelector(".faq-a"), open = item.classList.contains("open");
+    [].forEach.call(this.querySelectorAll(".faq-item"), function(x) { x.classList.remove("open"); x.querySelector(".faq-a").style.maxHeight = null; });
+    if (!open) { item.classList.add("open"); a.style.maxHeight = a.scrollHeight + "px"; }
+  };
 }
-function renderProjects(list){
-  var grid=$("#projectGrid"),filters=$("#projectFilters");
-  var cats=["All"];list.forEach(function(p){if(p.category&&cats.indexOf(p.category)<0)cats.push(p.category);});
-  filters.innerHTML=cats.map(function(c,i){return '<button class="'+(i===0?"active":"")+'" data-cat="'+esc(c)+'">'+esc(c)+'</button>';}).join("");
-  function draw(cat){
-    var l=cat==="All"?list:list.filter(function(p){return p.category===cat;});
-    grid.innerHTML=l.map(function(p,i){
-      return '<div class="project reveal"><img src="'+esc(p.image)+'" alt="'+esc(p.title)+'" onerror="this.onerror=null;this.src=\''+esc(DEFAULT_CONTENT.portfolio[i%6].image)+'\'"><span class="go"><i class="fa fa-arrow-right"></i></span><div class="ov"><span class="cat">'+esc(p.category||"Project")+'</span><h4>'+esc(p.title)+'</h4></div></div>';
-    }).join("");revealObserve();
+function renderProjects(list) {
+  var grid = $("#projectGrid"), filters = $("#projectFilters");
+  var cats = ["All"]; list.forEach(function(p) { if (p.category && cats.indexOf(p.category) < 0) cats.push(p.category); });
+  filters.innerHTML = cats.map(function(c, i) { return '<button class="' + (i === 0 ? "active" : "") + '" data-cat="' + esc(c) + '">' + esc(c) + '</button>'; }).join("");
+  function draw(cat) {
+    var l = cat === "All" ? list : list.filter(function(p) { return p.category === cat; });
+    grid.innerHTML = l.map(function(p, i) {
+      return '<div class="project reveal"><img src="' + esc(p.image) + '" alt="' + esc(p.title) + '" onerror="this.onerror=null;this.src=\'' + esc(DEFAULT_CONTENT.portfolio[i % 6].image) + '\'"><span class="go"><i class="fa fa-arrow-right"></i></span><div class="ov"><span class="cat">' + esc(p.category || "Project") + '</span><h4>' + esc(p.title) + '</h4></div></div>';
+    }).join(""); revealObserve(); initTiltCards();
   }
   draw("All");
-  filters.onclick=function(e){var b=e.target.closest("button");if(!b)return;[].forEach.call(this.children,function(x){x.classList.remove("active");});b.classList.add("active");draw(b.getAttribute("data-cat"));};
+  filters.onclick = function(e) { var b = e.target.closest("button"); if (!b) return; [].forEach.call(this.children, function(x) { x.classList.remove("active"); }); b.classList.add("active"); draw(b.getAttribute("data-cat")); };
 }
 
-function renderAchievements(a){
-  if(!a)return;
-  $("#achIntro").textContent=a.intro||"";
-  $("#timeline").innerHTML=(a.milestones||[]).map(function(m){return '<div class="tl"><div class="yr">'+esc(m.year)+'</div><h4>'+esc(m.title)+'</h4><p>'+esc(m.text)+'</p></div>';}).join("");
-  $("#achHighlights").innerHTML=(a.highlights||[]).map(function(h){return '<div class="ach-hl"><div class="ic"><i class="fa '+esc(h.icon||"fa-trophy")+'"></i></div><div><h4>'+esc(h.title)+'</h4><p>'+esc(h.text)+'</p></div></div>';}).join("");
+function renderAchievements(a) {
+  if (!a) return;
+  $("#achIntro").textContent = a.intro || "";
+  $("#timeline").innerHTML = (a.milestones || []).map(function(m) { return '<div class="tl"><div class="yr">' + esc(m.year) + '</div><h4>' + esc(m.title) + '</h4><p>' + esc(m.text) + '</p></div>'; }).join("");
+  $("#achHighlights").innerHTML = (a.highlights || []).map(function(h) { return '<div class="ach-hl reveal"><div class="ic"><i class="fa ' + esc(h.icon || "fa-trophy") + '"></i></div><div><h4>' + esc(h.title) + '</h4><p>' + esc(h.text) + '</p></div></div>'; }).join("");
+  revealObserve(); initTiltCards();
 }
-function renderNews(n){
-  if(!n)return;
-  $("#newsIntro").textContent=n.intro||"";
-  $("#newsGrid").innerHTML=(n.posts||[]).map(function(p,i){
-    var img=p.image?'<div class="ph"><img src="'+esc(p.image)+'" alt="'+esc(p.title)+'" onerror="this.onerror=null;this.src=\''+esc(DEFAULT_CONTENT.portfolio[i%6].image)+'\'"></div>':'';
-    return '<div class="post reveal">'+img+'<div class="bd"><div class="meta"><span class="tag">'+esc(p.tag||"News")+'</span><span class="date">'+esc(p.date||"")+'</span></div><h4>'+esc(p.title)+'</h4><p>'+esc(p.text)+'</p></div></div>';
+function renderNews(n) {
+  if (!n) return;
+  $("#newsIntro").textContent = n.intro || "";
+  $("#newsGrid").innerHTML = (n.posts || []).map(function(p, i) {
+    var img = p.image ? '<div class="ph"><img src="' + esc(p.image) + '" alt="' + esc(p.title) + '" onerror="this.onerror=null;this.src=\'' + esc(DEFAULT_CONTENT.portfolio[i % 6].image) + '\'"></div>' : '';
+    return '<div class="post reveal">' + img + '<div class="bd"><div class="meta"><span class="tag">' + esc(p.tag || "News") + '</span><span class="date">' + esc(p.date || "") + '</span></div><h4>' + esc(p.title) + '</h4><p>' + esc(p.text) + '</p></div></div>';
   }).join("");
-  revealObserve();
+  revealObserve(); initTiltCards();
 }
-function renderImpact(im){
-  if(!im)return;
-  $("#impactHeading").textContent=im.heading||"";
-  $("#impactBody").textContent=im.body||"";
-  if(im.stat){$("#impactStatV").textContent=im.stat.value||"";$("#impactStatL").textContent=im.stat.label||"";}
-  $("#impactCards").innerHTML=(im.items||[]).map(function(s){return '<div class="card reveal"><div class="ic"><i class="fa '+esc(s.icon||"fa-tint")+'"></i></div><h3>'+esc(s.title)+'</h3><p>'+esc(s.text)+'</p></div>';}).join("");
-  revealObserve();
+function renderImpact(im) {
+  if (!im) return;
+  $("#impactHeading").textContent = im.heading || "";
+  $("#impactBody").textContent = im.body || "";
+  if (im.stat) { $("#impactStatV").textContent = im.stat.value || ""; $("#impactStatL").textContent = im.stat.label || ""; }
+  $("#impactCards").innerHTML = (im.items || []).map(function(s) { return '<div class="card reveal"><div class="ic"><i class="fa ' + esc(s.icon || "fa-tint") + '"></i></div><h3>' + esc(s.title) + '</h3><p>' + esc(s.text) + '</p></div>'; }).join("");
+  revealObserve(); initTiltCards();
 }
-function renderCareers(c){
-  if(!c)return;
-  $("#careersIntro").textContent=c.intro||"";
-  var email=c.applyEmail||CURRENT.contact.email;
-  var link=$("#applyEmailLink");if(link){link.href="mailto:"+email;link.textContent=email;}
-  var jobs=c.jobs||[];
-  $("#jobsList").innerHTML=jobs.map(function(j,i){
-    return '<div class="job reveal"><div class="jt"><div class="chips"><span class="chip"><i class="fa fa-map-marker"></i> '+esc(j.location||"Bihar")+'</span><span class="chip">'+esc(j.type||"Full-time")+'</span></div><h4>'+esc(j.title)+'</h4><p>'+esc(j.desc||"")+'</p></div><button type="button" class="btn btn-blue apply-btn" data-role="'+esc(j.title)+'">Apply <i class="fa fa-arrow-right"></i></button></div>';
+function renderCareers(c) {
+  if (!c) return;
+  $("#careersIntro").textContent = c.intro || "";
+  var email = c.applyEmail || CURRENT.contact.email;
+  var link = $("#applyEmailLink"); if (link) { link.href = "mailto:" + email; link.textContent = email; }
+  var jobs = c.jobs || [];
+  $("#jobsList").innerHTML = jobs.map(function(j, i) {
+    return '<div class="job reveal"><div class="jt"><div class="chips"><span class="chip"><i class="fa fa-map-marker"></i> ' + esc(j.location || "Bihar") + '</span><span class="chip">' + esc(j.type || "Full-time") + '</span></div><h4>' + esc(j.title) + '</h4><p>' + esc(j.desc || "") + '</p></div><button type="button" class="btn btn-blue apply-btn" data-role="' + esc(j.title) + '">Apply Now <i class="fa fa-arrow-right"></i></button></div>';
   }).join("");
-  var sel=$("#positionSelect");
-  if(sel){sel.innerHTML='<option value="General Application">General Application</option>'+jobs.map(function(j){return '<option value="'+esc(j.title)+'">'+esc(j.title)+'</option>';}).join("");}
-  $("#jobsList").onclick=function(e){var b=e.target.closest(".apply-btn");if(!b)return;var r=b.getAttribute("data-role");if(sel)sel.value=r;document.getElementById("careers").querySelector(".apply-card").scrollIntoView({behavior:"smooth",block:"center"});};
-  var af=$("#applyForm");
-  if(af)af.onsubmit=function(e){e.preventDefault();submitForm(af,"New Job Application — "+(sel?sel.value:"Careers"),$("#applyStatus"));};
-  revealObserve();
+  var sel = $("#positionSelect");
+  if (sel) { sel.innerHTML = '<option value="General Application">General Application</option>' + jobs.map(function(j) { return '<option value="' + esc(j.title) + '">' + esc(j.title) + '</option>'; }).join(""); }
+  $("#jobsList").onclick = function(e) { var b = e.target.closest(".apply-btn"); if (!b) return; var r = b.getAttribute("data-role"); if (sel) sel.value = r; document.getElementById("careers").querySelector(".apply-card").scrollIntoView({ behavior: "smooth", block: "center" }); };
+  var af = $("#applyForm");
+  if (af) af.onsubmit = function(e) { e.preventDefault(); submitForm(af, "New Job Application — " + (sel ? sel.value : "Careers"), $("#applyStatus")); };
+  revealObserve(); initTiltCards();
 }
 
-function renderText(C){
-  CURRENT=C;
-  document.title=C.company.name+" "+C.company.nameSuffix+" — Water Infrastructure in Bihar Since "+C.company.established;
-  $("#brandText").innerHTML='<b>'+esc(C.company.name)+" "+esc(C.company.nameSuffix)+'</b><small>WATER · SINCE '+esc(C.company.established)+'</small>';
+function renderText(C) {
+  CURRENT = C;
+  document.title = C.company.name + " " + C.company.nameSuffix + " — Premier Government & Civil Contractors Since " + C.company.established;
+  $("#brandText").innerHTML = '<b>' + esc(C.company.name) + " " + esc(C.company.nameSuffix) + '</b><small>INFRA · SINCE ' + esc(C.company.established) + '</small>';
 
-  var hImg=$("#heroImg");hImg.src=C.about.image;hImg.onerror=function(){this.onerror=null;this.src="img/portfolio/1.jpg";};
+  var hImg = $("#heroImg"); hImg.src = C.about.image; hImg.onerror = function() { this.onerror = null; this.src = "img/portfolio/1.jpg"; };
 
-  var heroIdx=0,dots=$("#heroDots");dots.innerHTML="";
-  C.hero.forEach(function(h,i){var b=document.createElement("button");b.className=i===0?"active":"";b.setAttribute("aria-label","Slide "+(i+1));b.addEventListener("click",function(){show(i);});dots.appendChild(b);});
-  function show(i){heroIdx=(i+C.hero.length)%C.hero.length;var h=C.hero[heroIdx];$("#heroKicker").textContent=h.kicker;$("#heroText").textContent=h.text;[].forEach.call(dots.children,function(d,n){d.className=n===heroIdx?"active":"";});}
-  show(0);if(C.hero.length>1)setInterval(function(){show(heroIdx+1);},6500);
+  var heroIdx = 0, dots = $("#heroDots"); dots.innerHTML = "";
+  C.hero.forEach(function(h, i) { var b = document.createElement("button"); b.className = i === 0 ? "active" : ""; b.setAttribute("aria-label", "Slide " + (i + 1)); b.addEventListener("click", function() { show(i); }); dots.appendChild(b); });
+  function show(i) { heroIdx = (i + C.hero.length) % C.hero.length; var h = C.hero[heroIdx]; $("#heroKicker").textContent = h.kicker; $("#heroText").textContent = h.text; [].forEach.call(dots.children, function(d, n) { d.className = n === heroIdx ? "active" : ""; }); }
+  show(0); if (C.hero.length > 1) setInterval(function() { show(heroIdx + 1); }, 6500);
 
-  var since=parseInt(C.company.established,10);
-  if(since){var n=new Date().getFullYear()-since;$("#statYears").textContent=n+"+";$("#aboutYears").textContent=n+"+";}
+  var since = parseInt(C.company.established, 10);
+  if (since) { var n = new Date().getFullYear() - since; $("#statYears").textContent = n + "+"; $("#aboutYears").textContent = n + "+"; }
 
-  var aImg=$("#aboutImg");aImg.src=C.about.image;aImg.alt=C.about.heading;aImg.onerror=function(){this.onerror=null;this.src="img/about/2.jpg";};
-  $("#aboutHeading").textContent=C.about.heading;
-  $("#aboutBody").textContent=C.about.body;
-  $("#aboutPoints").innerHTML=C.about.points.map(function(p){return '<li><i class="fa fa-check-circle"></i><span>'+esc(p)+'</span></li>';}).join("");
+  var aImg = $("#aboutImg"); aImg.src = C.about.image; aImg.alt = C.about.heading; aImg.onerror = function() { this.onerror = null; this.src = "img/about/2.jpg"; };
+  $("#aboutHeading").textContent = C.about.heading;
+  $("#aboutBody").textContent = C.about.body;
+  $("#aboutPoints").innerHTML = C.about.points.map(function(p) { return '<li><i class="fa fa-check-circle"></i><span>' + esc(p) + '</span></li>'; }).join("");
 
-  renderCards(C.services.map(function(s,i){return {icon:s.icon||ICONS[i%ICONS.length],title:s.title,text:s.text};}));
+  renderCards(C.services.map(function(s, i) { return { icon: s.icon || ICONS[i % ICONS.length], title: s.title, text: s.text }; }));
 
-  $("#contactInfo").innerHTML=
-    '<div class="info-row"><div class="ic"><i class="fa fa-phone"></i></div><div><div class="lb">Call Us</div><div class="vl">'+esc(C.contact.phone)+'</div><div class="lb" style="text-transform:none;letter-spacing:0;margin-top:4px;font-weight:500">'+esc(C.contact.hours)+'</div></div></div>'+
-    '<div class="info-row"><div class="ic"><i class="fa fa-envelope"></i></div><div><div class="lb">Email Us</div><div class="vl"><a href="mailto:'+esc(C.contact.email)+'">'+esc(C.contact.email)+'</a></div></div></div>'+
-    '<div class="info-row"><div class="ic"><i class="fa fa-map-marker"></i></div><div><div class="lb">Visit Us</div><div class="vl" style="font-weight:500;font-size:1.04rem">'+esc(C.contact.address)+'</div></div></div>';
-  $("#footerContact").innerHTML='<li>'+esc(C.contact.phone)+'</li><li><a href="mailto:'+esc(C.contact.email)+'">'+esc(C.contact.email)+'</a></li><li>'+esc(C.contact.address)+'</li>';
-  $("#contactForm").onsubmit=function(e){e.preventDefault();submitForm(e.target,"Website Enquiry — "+(e.target.subject.value||"General"),$("#contactStatus"));};
-  $("#year").textContent=new Date().getFullYear();
-  renderProcess(C.process);renderAchievements(C.achievements);renderNews(C.news);renderImpact(C.impact);renderCareers(C.careers);renderFAQ(C.faq);
-  revealObserve();
+  $("#contactInfo").innerHTML =
+    '<div class="info-row"><div class="ic"><i class="fa fa-phone"></i></div><div><div class="lb">Call Us Direct</div><div class="vl">' + esc(C.contact.phone) + '</div><div class="lb" style="text-transform:none;letter-spacing:0;margin-top:6px;font-weight:600;color:var(--text-sub)">' + esc(C.contact.hours) + '</div></div></div>' +
+    '<div class="info-row"><div class="ic"><i class="fa fa-envelope"></i></div><div><div class="lb">Email Support</div><div class="vl"><a href="mailto:' + esc(C.contact.email) + '">' + esc(C.contact.email) + '</a></div></div></div>' +
+    '<div class="info-row"><div class="ic"><i class="fa fa-map-marker"></i></div><div><div class="lb">Visit Office</div><div class="vl" style="font-weight:600;font-size:1.05rem">' + esc(C.contact.address) + '</div></div></div>';
+  $("#footerContact").innerHTML = '<li>' + esc(C.contact.phone) + '</li><li><a href="mailto:' + esc(C.contact.email) + '">' + esc(C.contact.email) + '</a></li><li>' + esc(C.contact.address) + '</li>';
+  $("#contactForm").onsubmit = function(e) { e.preventDefault(); submitForm(e.target, "Website Enquiry — " + (e.target.subject.value || "General"), $("#contactStatus")); };
+  $("#year").textContent = new Date().getFullYear();
+  renderProcess(C.process); renderAchievements(C.achievements); renderNews(C.news); renderImpact(C.impact); renderCareers(C.careers); renderFAQ(C.faq);
+  revealObserve(); initTiltCards();
 }
 
-/* ---- Count-up ---- */
-function runCount(el){var to=parseFloat(el.getAttribute("data-to"))||0,suf=el.getAttribute("data-suffix")||"",dur=1400,t0=null;
-  function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(to*e)+suf;if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+/* ---- Count-up Animation ---- */
+function runCount(el) {
+  var to = parseFloat(el.getAttribute("data-to")) || 0, suf = el.getAttribute("data-suffix") || "", dur = 1800, t0 = null;
+  function step(ts) { if (!t0) t0 = ts; var p = Math.min((ts - t0) / dur, 1), e = 1 - Math.pow(1 - p, 4); el.textContent = Math.round(to * e) + suf; if (p < 1) requestAnimationFrame(step); } requestAnimationFrame(step);
+}
 
 var io;
-function revealObserve(){
-  if(!("IntersectionObserver" in window)){document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in");});return;}
-  if(!io)io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}});},{threshold:.1});
-  document.querySelectorAll(".reveal:not(.in)").forEach(function(el){io.observe(el);});
+function revealObserve() {
+  if (!("IntersectionObserver" in window)) { document.querySelectorAll(".reveal").forEach(function(el) { el.classList.add("in"); }); return; }
+  if (!io) io = new IntersectionObserver(function(es) { es.forEach(function(en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } }); }, { threshold: 0.1 });
+  document.querySelectorAll(".reveal:not(.in)").forEach(function(el) { io.observe(el); });
 }
-function countObserve(){
-  if(!("IntersectionObserver" in window)){document.querySelectorAll(".count").forEach(runCount);return;}
-  var c=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){runCount(en.target);c.unobserve(en.target);}});},{threshold:.5});
-  document.querySelectorAll(".count").forEach(function(el){c.observe(el);});
+function countObserve() {
+  if (!("IntersectionObserver" in window)) { document.querySelectorAll(".count").forEach(runCount); return; }
+  var c = new IntersectionObserver(function(es) { es.forEach(function(en) { if (en.isIntersecting) { runCount(en.target); c.unobserve(en.target); } }); }, { threshold: 0.5 });
+  document.querySelectorAll(".count").forEach(function(el) { c.observe(el); });
 }
 
-/* ---- Header / nav / scroll ---- */
-var hdr=$("#hdr");
-window.addEventListener("scroll",function(){hdr.classList.toggle("scrolled",window.scrollY>60);$("#toTop").classList.toggle("show",window.scrollY>560);});
-$("#navToggle").addEventListener("click",function(){$("#navLinks").classList.toggle("open");});
-$("#navLinks").addEventListener("click",function(e){if(e.target.tagName==="A")this.classList.remove("open");});
-$("#toTop").addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});
+/* ---- 3D Tilt Cards & Glare Effect Engine ---- */
+function initTiltCards() {
+  if (window.innerWidth < 1024) return;
+  var cards = document.querySelectorAll(".card, .project, .member, .job, .pstep, .ach-hl, .post, .impact-stat");
+  cards.forEach(function(card) {
+    if (card._tiltInit) return;
+    card._tiltInit = true;
+    card.addEventListener("mousemove", function(e) {
+      var rect = card.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var centerX = rect.width / 2;
+      var centerY = rect.height / 2;
+      var rotateX = ((y - centerY) / centerY) * -8;
+      var rotateY = ((x - centerX) / centerX) * 8;
+      card.style.transform = "perspective(1000px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) scale3d(1.02, 1.02, 1.02)";
+      card.style.setProperty("--mouse-x", x + "px");
+      card.style.setProperty("--mouse-y", y + "px");
+    });
+    card.addEventListener("mouseleave", function() {
+      card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+    });
+  });
+}
+
+/* ---- Three.js Live 3D Water & Engineering Wave Engine ---- */
+function initThreeJS() {
+  var container = document.getElementById("hero3d-container");
+  if (!container || !window.THREE) return;
+  try {
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    var scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x030712, 0.006);
+    
+    var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
+    camera.position.set(0, -45, 55);
+    camera.lookAt(0, 5, 0);
+
+    var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(width, height);
+    container.appendChild(renderer.domElement);
+
+    var infraGroup = new THREE.Group();
+    scene.add(infraGroup);
+    infraGroup.rotation.x = -Math.PI / 2.3;
+    infraGroup.position.y = -8;
+
+    /* 1. Digital Terrain / Water Grid (Water Supply & WTP Base) */
+    var gridGeo = new THREE.PlaneGeometry(240, 180, 60, 45);
+    var gridMat = new THREE.MeshStandardMaterial({
+      color: 0x005588,
+      emissive: 0x001122,
+      roughness: 0.2,
+      metalness: 0.8,
+      transparent: true,
+      opacity: 0.45,
+      side: THREE.DoubleSide
+    });
+    var wireMat = new THREE.MeshBasicMaterial({
+      color: 0x00f2ff,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.22
+    });
+    var gridMesh = new THREE.Mesh(gridGeo, gridMat);
+    var wireMesh = new THREE.Mesh(gridGeo.clone(), wireMat);
+    infraGroup.add(gridMesh);
+    infraGroup.add(wireMesh);
+
+    /* 2. Architectural Skyscraper Complexes (Building Construction) */
+    var bMat = new THREE.MeshStandardMaterial({
+      color: 0x081e36,
+      emissive: 0x020813,
+      roughness: 0.1,
+      metalness: 0.9,
+      transparent: true,
+      opacity: 0.85
+    });
+    var bWireMat = new THREE.MeshBasicMaterial({ color: 0x00f2ff, wireframe: true, transparent: true, opacity: 0.45 });
+    
+    var towers = [];
+    var towerCoords = [
+      [-40, -30, 15], [-20, -50, 22], [10, -40, 30], [35, -25, 18], [55, -45, 25],
+      [-55, -10, 20], [-30, 0, 28], [5, -10, 35], [30, 5, 22], [50, -10, 16],
+      [-45, 20, 18], [-15, 30, 25], [20, 25, 30], [45, 30, 20], [0, -25, 40]
+    ];
+    towerCoords.forEach(function(pos) {
+      var w = 6 + Math.random() * 4;
+      var d = 6 + Math.random() * 4;
+      var h = pos[2];
+      var geo = new THREE.BoxGeometry(w, d, h);
+      var mesh = new THREE.Mesh(geo, bMat);
+      var wire = new THREE.Mesh(geo, bWireMat);
+      mesh.add(wire);
+      mesh.position.set(pos[0], pos[1], h / 2);
+      infraGroup.add(mesh);
+      towers.push(mesh);
+    });
+
+    /* 3. WTP & STP Cylindrical Treatment Reservoirs */
+    var cMat = new THREE.MeshStandardMaterial({
+      color: 0x0a3a60,
+      emissive: 0x001a33,
+      roughness: 0.2,
+      metalness: 0.8,
+      transparent: true,
+      opacity: 0.8
+    });
+    var cWireMat = new THREE.MeshBasicMaterial({ color: 0xf4c430, wireframe: true, transparent: true, opacity: 0.5 });
+    var cylCoords = [
+      [-25, -20, 12], [25, -20, 12], [-10, 15, 14], [35, 20, 10], [-45, -45, 10]
+    ];
+    cylCoords.forEach(function(pos) {
+      var r = 4 + Math.random() * 2;
+      var h = pos[2];
+      var geo = new THREE.CylinderGeometry(r, r, h, 16);
+      var mesh = new THREE.Mesh(geo, cMat);
+      var wire = new THREE.Mesh(geo, cWireMat);
+      mesh.add(wire);
+      mesh.rotation.x = Math.PI / 2;
+      mesh.position.set(pos[0], pos[1], h / 2);
+      infraGroup.add(mesh);
+    });
+
+    /* 4. Highway & Pipeline Telemetry Particle Streams (Roads & Water Flows) */
+    var pCount = 800;
+    var pGeo = new THREE.BufferGeometry();
+    var pPos = new Float32Array(pCount * 3);
+    for (var i = 0; i < pCount * 3; i += 3) {
+      pPos[i] = (Math.random() - 0.5) * 200;
+      pPos[i + 1] = (Math.random() - 0.5) * 150;
+      pPos[i + 2] = Math.random() * 50;
+    }
+    pGeo.setAttribute("position", new THREE.BufferAttribute(pPos, 3));
+    var pMat = new THREE.PointsMaterial({
+      color: 0xf4c430,
+      size: 1.1,
+      transparent: true,
+      opacity: 0.8
+    });
+    var particles = new THREE.Points(pGeo, pMat);
+    infraGroup.add(particles);
+
+    /* 5. Holographic Command Blueprint Rings */
+    var ringGroup = new THREE.Group();
+    ringGroup.position.set(0, 0, 45);
+    infraGroup.add(ringGroup);
+
+    var rGeo1 = new THREE.TorusGeometry(45, 0.3, 8, 80);
+    var rMat1 = new THREE.MeshBasicMaterial({ color: 0x00f2ff, wireframe: true, transparent: true, opacity: 0.25 });
+    var ring1 = new THREE.Mesh(rGeo1, rMat1);
+    ringGroup.add(ring1);
+
+    var rGeo2 = new THREE.TorusGeometry(38, 0.4, 8, 60);
+    var rMat2 = new THREE.MeshBasicMaterial({ color: 0xf4c430, wireframe: true, transparent: true, opacity: 0.3 });
+    var ring2 = new THREE.Mesh(rGeo2, rMat2);
+    ring2.rotation.x = 0.5;
+    ringGroup.add(ring2);
+
+    /* Lighting */
+    var ambient = new THREE.AmbientLight(0xffffff, 0.75);
+    scene.add(ambient);
+    
+    var blueLight = new THREE.PointLight(0x00f2ff, 4, 250);
+    blueLight.position.set(0, 10, 60);
+    scene.add(blueLight);
+
+    var goldLight = new THREE.PointLight(0xf4c430, 3, 220);
+    goldLight.position.set(60, -30, 40);
+    scene.add(goldLight);
+
+    /* Interactive Mouse Parallax */
+    var targetX = 0, targetY = 0;
+    window.addEventListener("mousemove", function(e) {
+      targetX = (e.clientX - width / 2) * 0.08;
+      targetY = (e.clientY - height / 2) * 0.08;
+    });
+
+    var time = 0;
+    function animate() {
+      requestAnimationFrame(animate);
+      time += 0.02;
+
+      /* Animate Wave Grid Vertices */
+      var pos = gridGeo.attributes.position;
+      var wirePos = wireMesh.geometry.attributes.position;
+      for (var j = 0; j < pos.count; j++) {
+        var vx = pos.getX(j);
+        var vy = pos.getY(j);
+        var vz = Math.sin(vx * 0.08 + time) * 2.2 + Math.cos(vy * 0.08 + time * 0.7) * 2.2;
+        pos.setZ(j, vz);
+        wirePos.setZ(j, vz + 0.1);
+      }
+      pos.needsUpdate = true;
+      wirePos.needsUpdate = true;
+
+      /* Animate Command Rings & Towers */
+      ring1.rotation.z = time * 0.15;
+      ring2.rotation.y = time * 0.2;
+      ring2.rotation.z = -time * 0.1;
+
+      particles.rotation.z = -time * 0.05;
+
+      /* Camera Parallax Smoothing */
+      camera.position.x += (targetX - camera.position.x) * 0.04;
+      camera.position.y += (-45 + targetY * 0.4 - camera.position.y) * 0.04;
+      camera.lookAt(0, 5, 0);
+
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener("resize", function() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+    });
+  } catch (err) {
+    console.log("WebGL 3D Fallback Mode:", err);
+  }
+}
+
+/* ---- Header / Nav / Scroll ---- */
+var hdr = $("#hdr");
+window.addEventListener("scroll", function() {
+  hdr.classList.toggle("scrolled", window.scrollY > 50);
+  $("#toTop").classList.toggle("show", window.scrollY > 500);
+});
+$("#navToggle").addEventListener("click", function() { $("#navLinks").classList.toggle("open"); });
+$("#navLinks").addEventListener("click", function(e) { if (e.target.tagName === "A") this.classList.remove("open"); });
+$("#toTop").addEventListener("click", function() { window.scrollTo({ top: 0, behavior: "smooth" }); });
 
 /* ---- Boot ---- */
-function boot(C){
+function boot(C) {
   renderText(C);
-  renderTeam(C.team);renderProjects(C.portfolio);
-  fetchFolder(FOLDERS.team).then(function(items){if(items&&items.length)renderTeam(items.map(function(it){return {name:it.a,role:it.b,image:it.image};}));}).catch(function(){});
-  fetchFolder(FOLDERS.projects).then(function(items){if(items&&items.length)renderProjects(items.map(function(it){return {title:it.a,category:it.b,image:it.image};}));}).catch(function(){});
-  setTimeout(countObserve,200);
+  renderTeam(C.team); renderProjects(C.portfolio);
+  fetchFolder(FOLDERS.team).then(function(items) { if (items && items.length) renderTeam(items.map(function(it) { return { name: it.a, role: it.b, image: it.image }; })); }).catch(function() {});
+  fetchFolder(FOLDERS.projects).then(function(items) { if (items && items.length) renderProjects(items.map(function(it) { return { title: it.a, category: it.b, image: it.image }; })); }).catch(function() {});
+  setTimeout(countObserve, 200);
+  setTimeout(initThreeJS, 100);
 }
-(function init(){
-  if(window.fetch){
-    fetch("content.json",{cache:"no-store"}).then(function(r){return r.ok?r.json():null;})
-      .then(function(j){boot(j?Object.assign(_clone(DEFAULT_CONTENT),j):_clone(DEFAULT_CONTENT));})
-      .catch(function(){boot(_clone(DEFAULT_CONTENT));});
-  }else{boot(_clone(DEFAULT_CONTENT));}
+(function init() {
+  if (window.fetch) {
+    fetch("content.json", { cache: "no-store" }).then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(j) { boot(j ? Object.assign(_clone(DEFAULT_CONTENT), j) : _clone(DEFAULT_CONTENT)); })
+      .catch(function() { boot(_clone(DEFAULT_CONTENT)); });
+  } else { boot(_clone(DEFAULT_CONTENT)); }
 })();
 </script>
 </body>

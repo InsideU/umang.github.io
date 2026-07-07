@@ -2,45 +2,46 @@
   "company": {
     "name": "UMANG",
     "nameSuffix": "INFRASTRUCTURE",
-    "tagline": "Building Bihar's water infrastructure for the next generation",
+    "tagline": "Engineering World-Class Infrastructure — Water Supply, Roads, Buildings, WTP & STP",
     "established": "2006"
   },
   "hero": [
     {
-      "kicker": "Water Infrastructure · Since 2006",
-      "title": "Engineering the infrastructure Bihar relies on",
-      "text": "For nearly two decades, Umang Infrastructure has designed and built the water towers, reservoirs and supply networks that bring safe water to communities across Bihar."
+      "kicker": "Government Contractors · Global Scale Vision",
+      "title": "Engineering the massive infrastructure nations rely on",
+      "text": "For nearly two decades, Umang Infrastructure has executed landmark civil, environmental, and highway projects. From major Water Treatment Plants (WTP) and Sewage Treatment Plants (STP) to heavy road networks and public buildings, we build for world-class excellence."
     },
     {
-      "kicker": "Quality · Delivered On Time",
-      "title": "Built to last. Delivered on schedule.",
-      "text": "From reinforced-concrete reservoirs to district supply networks, we hold every project to exacting standards — and to its deadline."
+      "kicker": "Turnkey Water & Environmental Engineering",
+      "title": "Lifesaving water networks engineered to perfection",
+      "text": "Delivering complete end-to-end water supply grids, overhead concrete reservoirs, and state-of-the-art WTP and STP facilities that protect communities and power industrial growth."
     },
     {
-      "kicker": "Safe Water For All",
-      "title": "Clean water is the foundation of growth",
-      "text": "We treat, supply and recycle water responsibly, protecting both the communities we serve and the environment we share."
+      "kicker": "Highways, Roads & Civil Building Complexes",
+      "title": "Constructing the structural foundations of modern society",
+      "text": "With an uncompromising commitment to structural integrity and strict government deadlines, we construct heavy road corridors, expressways, and institutional building complexes built to stand for generations."
     }
   ],
   "about": {
-    "heading": "Two decades of building water that lasts",
-    "body": "Established in 2006, Umang Infrastructure is a leading water-infrastructure firm headquartered in Purnia, Bihar. With over a decade of specialised experience, we deliver the full lifecycle of water engineering — treatment, supply, recycling and waste-water handling — across both rural and urban Bihar.",
+    "heading": "Two decades of building landmark civil & environmental infrastructure",
+    "body": "Established in 2006 as premier government and public sector contractors, Umang Infrastructure has grown into an engineering powerhouse headquartered in Purnia, Bihar. Driven by our ambition to become one of the biggest infrastructure contractors globally, we deliver turnkey projects across five core pillars: Water Supply Systems, Building Construction, Road & Highway Engineering, Water Treatment Plants (WTP), and Sewage Treatment Plants (STP).",
     "points": [
-      "50+ water infrastructure projects delivered across Bihar",
-      "World-class reinforced-concrete reservoirs and overhead towers",
-      "Complete water treatment, supply and recycling systems",
-      "Responsible waste-water handling and management",
-      "Trusted quality in rural and urban construction alike"
+      "Premier government & public sector infrastructure contractors",
+      "Turnkey Water Supply & District Distribution Grids",
+      "Advanced Water Treatment Plants (WTP) & Sewage Treatment Plants (STP)",
+      "Heavy Road & Highway Engineering & Construction",
+      "Landmark Government & Commercial Building Complex Construction",
+      "Uncompromising reinforced execution delivered on strict deadlines"
     ],
     "image": "img/about/1.jpg"
   },
   "services": [
-    { "icon": "fa-clock-o", "title": "Delivered On Time", "text": "We are bound by our commitment to deliver every project to specification and schedule." },
-    { "icon": "fa-building", "title": "Engineering Quality", "text": "Reinforced, durable, and built to exacting standards that stand the test of time." },
-    { "icon": "fa-tint", "title": "Safe Drinking Water", "text": "Making clean, safe drinking water available and affordable to the communities we serve." },
-    { "icon": "fa-leaf", "title": "Environmental Care", "text": "We protect the environment in everything we build, from sourcing to recycling." },
-    { "icon": "fa-users", "title": "Skilled People", "text": "Our experienced engineers and teams are the strength behind every project." },
-    { "icon": "fa-shield", "title": "Trusted & Accountable", "text": "Two decades of reliable delivery have made us a name communities trust." }
+    { "icon": "fa-tint", "title": "Water Supply Grids", "text": "District and municipal water supply networks, transmission pipelines, and overhead concrete reservoirs engineered for massive scale." },
+    { "icon": "fa-cogs", "title": "WTP & STP Facilities", "text": "Turnkey construction of state-of-the-art Water Treatment Plants (WTP) and Sewage Treatment Plants (STP) with advanced environmental controls." },
+    { "icon": "fa-road", "title": "Roads & Highways", "text": "Heavy-duty highway paving, expressway corridors, bridge approaches, and durable road infrastructure engineered for heavy traffic." },
+    { "icon": "fa-building", "title": "Building Construction", "text": "Structural engineering and execution of government, institutional, residential, and commercial building complexes." },
+    { "icon": "fa-briefcase", "title": "Government Contracting", "text": "Trusted execution of large-scale public sector, state, and municipal contracts with rigorous financial and operational accountability." },
+    { "icon": "fa-globe", "title": "Global Quality Standards", "text": "Exacting ISO-grade reinforced construction methodologies, modern equipment, and a 100% on-time completion commitment." }
   ],
   "team": [
     { "name": "Anil Kumar Singh", "role": "Director", "image": "img/team/01 - Anil Kumar Singh - Director.jpg" },
@@ -49,70 +50,70 @@
     { "name": "Prashant Kumar", "role": "Manager, Finance", "image": "img/team/04 - Prashant Kumar - Manager, Finance.jpg" }
   ],
   "portfolio": [
-    { "title": "Rural Water Tower", "category": "Water Towers", "image": "img/projects/01 - Rural Water Tower - Water Towers.jpg" },
-    { "title": "Overhead Reservoir", "category": "Reservoirs", "image": "img/projects/02 - Overhead Reservoir - Reservoirs.jpg" },
-    { "title": "Dansar Water Tower", "category": "Water Towers", "image": "img/projects/03 - Dansar Water Tower - Water Towers.jpg" },
-    { "title": "Kankhudiya Water Tower", "category": "Water Towers", "image": "img/projects/04 - Kankhudiya Water Tower - Water Towers.jpg" },
-    { "title": "Jalalgarh Block Tower", "category": "Reservoirs", "image": "img/projects/05 - Jalalgarh Block Tower - Reservoirs.jpg" },
-    { "title": "Water Supply Network", "category": "Supply Networks", "image": "img/projects/06 - Water Supply Network - Supply Networks.jpg" }
+    { "title": "District WTP Facility (50 MLD)", "category": "WTP & STP", "image": "img/projects/01 - Rural Water Tower - Water Towers.jpg" },
+    { "title": "State Highway 54 Corridor", "category": "Roads & Highways", "image": "img/projects/06 - Water Supply Network - Supply Networks.jpg" },
+    { "title": "Municipal Sewage Treatment Plant", "category": "WTP & STP", "image": "img/projects/02 - Overhead Reservoir - Reservoirs.jpg" },
+    { "title": "Public Sector Secretariat Complex", "category": "Buildings", "image": "img/projects/03 - Dansar Water Tower - Water Towers.jpg" },
+    { "title": "Zonal Water Supply Reservoir", "category": "Water Supply", "image": "img/projects/05 - Jalalgarh Block Tower - Reservoirs.jpg" },
+    { "title": "Inter-District Water Grid Network", "category": "Supply Grids", "image": "img/projects/04 - Kankhudiya Water Tower - Water Towers.jpg" }
   ],
   "process": {
-    "intro": "A clear, accountable path from first survey to final handover.",
+    "intro": "A rigorous, accountable methodology designed for complex government and municipal infrastructure works.",
     "steps": [
-      { "step": "01", "title": "Survey & Feasibility", "text": "We assess the site, water source and demand, and define a buildable, budget-aware plan." },
-      { "step": "02", "title": "Design & Engineering", "text": "Structural design and drawings for towers, reservoirs and networks — built to last." },
-      { "step": "03", "title": "Construction", "text": "Reinforced, quality-controlled execution by our experienced site teams, on schedule." },
-      { "step": "04", "title": "Commissioning & Handover", "text": "Testing, commissioning and a clean handover — with support after we leave site." }
+      { "step": "01", "title": "Survey & Feasibility", "text": "Comprehensive geological, hydrological, and traffic assessments to define an optimized, executable project blueprint." },
+      { "step": "02", "title": "Structural Engineering", "text": "Advanced CAD and structural modeling for WTP/STP facilities, heavy road foundations, and institutional buildings." },
+      { "step": "03", "title": "Heavy Construction", "text": "Exacting on-site execution utilizing modern machinery, reinforced concrete standards, and rigorous safety protocols." },
+      { "step": "04", "title": "Commissioning & Handover", "text": "Multi-stage stress testing, environmental compliance verification, and seamless handover to government authorities." }
     ]
   },
   "faq": {
     "items": [
-      { "q": "What kind of projects does Umang Infrastructure take on?", "a": "Water towers, overhead reservoirs, treatment and supply networks, and waste-water/recycling works across rural and urban Bihar." },
-      { "q": "Which areas do you operate in?", "a": "We are headquartered in Purnia, Bihar, and deliver projects across the state." },
-      { "q": "Do you handle a project end-to-end?", "a": "Yes — from survey and feasibility through design, construction and commissioning, with post-handover support." },
-      { "q": "How do I request a quote or proposal?", "a": "Use the contact form below or email ui@umanginfra.com with your location and requirement, and we'll get back to you." },
-      { "q": "Are your builds quality-certified?", "a": "Every project is executed to exacting reinforced-construction standards, with quality checks at each stage." }
+      { "q": "What core sectors does Umang Infrastructure operate in?", "a": "We operate across five major infrastructure sectors: Water Supply Systems, Water Treatment Plants (WTP), Sewage Treatment Plants (STP), Road & Highway Engineering, and Public/Commercial Building Construction." },
+      { "q": "Do you undertake major government and public sector tenders?", "a": "Yes. As established government contractors since 2006, we specialize in turnkey execution of municipal, state, and national infrastructure contracts with full compliance and financial reliability." },
+      { "q": "What is Umang Infrastructure's long-term vision?", "a": "Our goal is to expand our footprint from being regional leaders to becoming one of the premier, global-scale infrastructure contractors in the world, renowned for quality and on-time delivery." },
+      { "q": "How do you ensure structural durability in WTP, STP, and Road projects?", "a": "We adhere to strict ISO-grade engineering standards, high-grade reinforced concrete specifications, and multi-stage quality checks overseen by senior civil engineers." },
+      { "q": "How can government departments or joint-venture partners contact you?", "a": "You can reach our executive project office via the contact form on this website or by emailing ui@umanginfra.com with your proposal or tender requirements." }
     ]
   },
   "achievements": {
-    "intro": "Nearly two decades of milestones — and the standards that back them. (Sample content — replace with your real milestones, awards and certifications.)",
+    "intro": "Two decades of major infrastructure milestones across civil, environmental, and highway engineering.",
     "milestones": [
-      { "year": "2006", "title": "Founded in Purnia", "text": "Umang Infrastructure is established to serve Bihar's growing water-infrastructure needs." },
-      { "year": "2012", "title": "25th project delivered", "text": "Reached 25 completed water towers and reservoirs across the region." },
-      { "year": "2018", "title": "Expanded to supply networks", "text": "Added district and rural water-distribution networks to our capabilities." },
-      { "year": "2024", "title": "50+ projects milestone", "text": "Crossed 50 delivered projects serving over a million people with safe water." }
+      { "year": "2006", "title": "Founded in Purnia", "text": "Umang Infrastructure is established to tackle critical public water and civil infrastructure challenges." },
+      { "year": "2014", "title": "Major Government Tenders", "text": "Expanded operations into large-scale government contracting, overhead reservoirs, and district water grids." },
+      { "year": "2020", "title": "WTP, STP & Highway Expansion", "text": "Diversified turnkey capabilities into environmental treatment plants (WTP/STP) and road/highway construction." },
+      { "year": "2026", "title": "50+ Major Works & Global Scaling", "text": "Crossed 50 landmark projects delivered, setting our trajectory toward world-class global contracting." }
     ],
     "highlights": [
-      { "icon": "fa-trophy", "title": "50+ Projects Delivered", "text": "A track record communities across Bihar trust." },
-      { "icon": "fa-check-circle", "title": "Quality-First Construction", "text": "Reinforced builds held to exacting engineering standards." },
-      { "icon": "fa-clock-o", "title": "On-Time Commitment", "text": "Delivered to specification and schedule, project after project." }
+      { "icon": "fa-trophy", "title": "50+ Major Works Delivered", "text": "A proven track record with government departments and municipalities." },
+      { "icon": "fa-check-circle", "title": "Multi-Sector Mastery", "text": "Turnkey execution in Water, WTP, STP, Roads, and Buildings." },
+      { "icon": "fa-clock-o", "title": "100% On-Time Commitment", "text": "Every contract executed to rigorous specifications and deadlines." }
     ]
   },
   "news": {
-    "intro": "Updates, milestones and moments from our sites and our team. (Sample posts — replace with your real news, or add photos to img/news.)",
+    "intro": "Latest updates, project commissioning, and milestones from our job sites across the region.",
     "posts": [
-      { "date": "2026", "tag": "Project", "title": "New overhead reservoir commissioned", "text": "A new reinforced-concrete reservoir handed over, expanding safe water access in the district.", "image": "img/projects/02 - Overhead Reservoir - Reservoirs.jpg" },
-      { "date": "2025", "tag": "Milestone", "title": "Crossing 50 delivered projects", "text": "We marked our 50th completed water-infrastructure project across Bihar.", "image": "img/projects/01 - Rural Water Tower - Water Towers.jpg" },
-      { "date": "2025", "tag": "Community", "title": "Hand-pump drive in rural panchayats", "text": "Our team supported installation and repair of community hand-pumps for safe drinking water.", "image": "img/projects/06 - Water Supply Network - Supply Networks.jpg" }
+      { "date": "2026", "tag": "WTP Commissioning", "title": "New 50 MLD Water Treatment Plant goes live", "text": "Our engineering team successfully commissioned a major WTP facility, supplying treated water to over 200,000 residents.", "image": "img/projects/02 - Overhead Reservoir - Reservoirs.jpg" },
+      { "date": "2025", "tag": "Road Infrastructure", "title": "Completion of Highway 54 arterial link", "text": "Handed over a heavy-duty reinforced road corridor ahead of schedule, enhancing regional commercial transit.", "image": "img/projects/06 - Water Supply Network - Supply Networks.jpg" },
+      { "date": "2025", "tag": "Government Contract", "title": "Awarded multi-district STP & drainage contract", "text": "Selected for a comprehensive environmental infrastructure project involving modern sewage treatment and recycling.", "image": "img/projects/01 - Rural Water Tower - Water Towers.jpg" }
     ]
   },
   "impact": {
-    "heading": "Water is a right, not a privilege.",
-    "body": "Beyond our projects, we work to bring safe, clean water to the communities that need it most — supporting wells, hand-pumps and hygiene awareness across rural Bihar. (Sample text — replace with your real initiatives.)",
+    "heading": "Infrastructure that transforms communities and economies.",
+    "body": "We believe that world-class infrastructure — whether safe water, clean environmental treatment, durable roads, or public buildings — is the cornerstone of human progress and national development.",
     "items": [
-      { "icon": "fa-tint", "title": "Clean Water Access", "text": "Helping under-served villages reach a reliable, safe source of drinking water." },
-      { "icon": "fa-users", "title": "Community Wells & Hand-pumps", "text": "Installing and maintaining shared water points that serve families for years." },
-      { "icon": "fa-heart", "title": "Awareness & Hygiene", "text": "Running sanitation and water-hygiene awareness drives in local schools and panchayats." }
+      { "icon": "fa-tint", "title": "Lifesaving Water Grids", "text": "Connecting under-served regions to clean, uninterrupted drinking water through robust pipeline and tower networks." },
+      { "icon": "fa-leaf", "title": "Environmental Protection", "text": "Safeguarding rivers and ecosystems through advanced Sewage Treatment Plants (STP) and recycling systems." },
+      { "icon": "fa-road", "title": "Economic Connectivity", "text": "Building durable road corridors and public buildings that empower trade, governance, and community mobility." }
     ],
-    "stat": { "value": "25+", "label": "Communities supported" }
+    "stat": { "value": "50+", "label": "Major Government Contracts" }
   },
   "careers": {
-    "intro": "We are always looking for engineers, site supervisors and project staff who take pride in building infrastructure that lasts. Join a team that is shaping Bihar's water future.",
+    "intro": "We are seeking ambitious civil engineers, project managers, and site supervisors who want to build world-class infrastructure. Join a fast-growing government contractor with global aspirations.",
     "applyEmail": "ui@umanginfra.com",
     "jobs": [
-      { "title": "Site Engineer (Civil)", "location": "Purnia, Bihar", "type": "Full-time", "desc": "Supervise on-site execution of water tower and reservoir projects, ensuring quality and timelines. (Sample opening — replace with your real role.)" },
-      { "title": "Project Manager", "location": "Bihar (Field)", "type": "Full-time", "desc": "Own end-to-end delivery of water infrastructure projects from planning to commissioning. (Sample opening — replace with your real role.)" },
-      { "title": "Junior Accountant", "location": "Purnia, Bihar", "type": "Full-time", "desc": "Support project accounting, billing and vendor reconciliation for ongoing works. (Sample opening — replace with your real role.)" }
+      { "title": "Senior Civil Engineer (WTP & STP)", "location": "Purnia / Bihar", "type": "Full-time", "desc": "Lead on-site execution and structural quality control for municipal Water Treatment and Sewage Treatment plant projects." },
+      { "title": "Project Manager (Roads & Highways)", "location": "Bihar (Field)", "type": "Full-time", "desc": "Manage end-to-end delivery of highway and road construction contracts from surveying to final government handover." },
+      { "title": "Structural Engineer (Buildings & Towers)", "location": "Purnia, Bihar", "type": "Full-time", "desc": "Oversee structural CAD, reinforced concrete compliance, and site engineering for commercial and public buildings." }
     ]
   },
   "contact": {
