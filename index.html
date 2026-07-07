@@ -25,31 +25,31 @@
 
 <style>
 :root {
-  --bg-void: #030712;
-  --bg-dark: #070e1b;
-  --bg-navy: #0b172a;
-  --bg-card: rgba(15, 28, 48, 0.65);
-  --bg-card-hover: rgba(22, 40, 68, 0.85);
-  --bg-glass: rgba(255, 255, 255, 0.04);
+  --bg-void: #060a14;
+  --bg-dark: #0a1122;
+  --bg-navy: #101b34;
+  --bg-card: rgba(16, 27, 52, 0.75);
+  --bg-card-hover: rgba(24, 40, 75, 0.9);
+  --bg-glass: rgba(255, 255, 255, 0.05);
   
-  --cyan: #00f2ff;
-  --cyan-glow: rgba(0, 242, 255, 0.4);
-  --cyan-deep: #0088cc;
+  --cyan: #38bdf8;
+  --cyan-glow: rgba(56, 189, 248, 0.35);
+  --cyan-deep: #0284c7;
   
-  --gold: #f4c430;
-  --gold-glow: rgba(244, 196, 48, 0.35);
+  --gold: #dfbe6f;
+  --gold-glow: rgba(223, 190, 111, 0.35);
   
-  --blue: #0a66c2;
-  --blue-h: #0080ff;
-  --blue-deep: #063e7a;
+  --blue: #1d4ed8;
+  --blue-h: #2563eb;
+  --blue-deep: #1e3a8a;
   
-  --text-main: #f0f4f8;
-  --text-sub: #a0aec0;
-  --text-muted: #64748b;
+  --text-main: #f8fafc;
+  --text-sub: #cbd5e1;
+  --text-muted: #94a3b8;
   
-  --border-glass: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(0, 242, 255, 0.4);
-  --border-gold: rgba(244, 196, 48, 0.4);
+  --border-glass: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(223, 190, 111, 0.5);
+  --border-gold: rgba(223, 190, 111, 0.45);
   
   --radius: 8px;
   --radius-lg: 18px;
@@ -59,7 +59,7 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 30px 70px rgba(0, 0, 0, 0.6);
-  --shadow-cyan: 0 0 35px rgba(0, 242, 255, 0.2);
+  --shadow-cyan: 0 0 35px rgba(56, 189, 248, 0.2);
   
   --sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --display: "Outfit", "Syne", system-ui, sans-serif;
@@ -76,9 +76,9 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   background-image: 
-    radial-gradient(circle at 15% 15%, rgba(0, 242, 255, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.05) 0%, transparent 45%),
     radial-gradient(circle at 85% 85%, rgba(10, 102, 194, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(244, 196, 48, 0.03) 0%, transparent 60%);
+    radial-gradient(circle at 50% 50%, rgba(223, 190, 111, 0.03) 0%, transparent 60%);
   background-attachment: fixed;
 }
 
@@ -108,12 +108,12 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
   font-size: 0.78rem;
   color: var(--cyan);
-  background: rgba(0, 242, 255, 0.08);
+  background: rgba(56, 189, 248, 0.08);
   padding: 6px 14px;
   border-radius: 99px;
-  border: 1px solid rgba(0, 242, 255, 0.2);
+  border: 1px solid rgba(56, 189, 248, 0.2);
   margin-bottom: 16px;
-  box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
 }
 .eyebrow::before {
   content: "";
@@ -160,13 +160,13 @@ img { max-width: 100%; display: block; }
   background: linear-gradient(135deg, var(--blue) 0%, var(--cyan-deep) 100%);
   color: #fff;
   box-shadow: 0 12px 30px rgba(10, 102, 194, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(0, 242, 255, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.3);
 }
 .btn-blue:hover {
   background: linear-gradient(135deg, var(--cyan-deep) 0%, var(--cyan) 100%);
   color: #fff;
   transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(0, 242, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(56, 189, 248, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
   border-color: var(--cyan);
 }
 .btn-line {
@@ -176,11 +176,11 @@ img { max-width: 100%; display: block; }
   backdrop-filter: blur(10px);
 }
 .btn-line:hover {
-  background: rgba(0, 242, 255, 0.15);
+  background: rgba(56, 189, 248, 0.15);
   color: #fff;
   border-color: var(--cyan);
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 242, 255, 0.25);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
 }
 .btn-dark {
   background: rgba(15, 28, 48, 0.8);
@@ -205,8 +205,8 @@ img { max-width: 100%; display: block; }
   background: rgba(5, 11, 20, 0.82);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 242, 255, 0.15);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 242, 255, 0.05);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.05);
   padding: 14px 0;
 }
 .hdr-in {
@@ -230,7 +230,7 @@ img { max-width: 100%; display: block; }
   background: linear-gradient(135deg, #ffffff 0%, #d0e8ff 100%);
   border-radius: 12px;
   padding: 5px;
-  box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
   transition: transform 0.3s var(--ease);
 }
 .brand:hover .logo-mark {
@@ -276,7 +276,7 @@ img { max-width: 100%; display: block; }
 }
 .nav-links a:hover {
   color: var(--cyan);
-  background: rgba(0, 242, 255, 0.1);
+  background: rgba(56, 189, 248, 0.1);
 }
 .nav-cta {
   margin-left: 8px;
@@ -285,8 +285,8 @@ img { max-width: 100%; display: block; }
   padding: 10px 24px !important;
   border-radius: 999px !important;
   font-weight: 700;
-  border: 1px solid rgba(0, 242, 255, 0.3);
-  box-shadow: 0 0 20px rgba(0, 242, 255, 0.25);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
 }
 .nav-cta:hover {
   background: linear-gradient(135deg, var(--cyan-deep) 0%, var(--cyan) 100%) !important;
@@ -365,7 +365,7 @@ img { max-width: 100%; display: block; }
 .hero h1 em {
   font-style: normal;
   color: var(--cyan);
-  text-shadow: 0 0 30px rgba(0, 242, 255, 0.5);
+  text-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
 }
 .hero-sub {
   color: rgba(255, 255, 255, 0.88);
@@ -402,7 +402,7 @@ img { max-width: 100%; display: block; }
   display: block;
   line-height: 1;
   color: #fff;
-  text-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
 }
 .hero-stats .s span {
   font-size: 0.88rem;
@@ -443,7 +443,7 @@ img { max-width: 100%; display: block; }
   z-index: 3;
   background: rgba(11, 23, 42, 0.75);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 242, 255, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.3);
   padding: 12px 20px;
   border-radius: 99px;
   display: flex;
@@ -452,7 +452,7 @@ img { max-width: 100%; display: block; }
   color: #fff;
   font-size: 0.85rem;
   font-weight: 600;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px rgba(0, 242, 255, 0.15);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px rgba(56, 189, 248, 0.15);
   pointer-events: none;
   animation: float-badge 6s ease-in-out infinite;
 }
@@ -510,7 +510,7 @@ section { padding: 120px 0; position: relative; }
 .about-media .main {
   border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: var(--shadow-lg), 0 0 40px rgba(0, 242, 255, 0.1);
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(56, 189, 248, 0.1);
   border: 1px solid var(--border-glass);
   position: relative;
 }
@@ -529,8 +529,8 @@ section { padding: 120px 0; position: relative; }
   color: #fff;
   padding: 28px 34px;
   border-radius: var(--radius-lg);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(0, 242, 255, 0.3);
-  border: 1px solid rgba(0, 242, 255, 0.4);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(56, 189, 248, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.4);
   text-align: center;
   backdrop-filter: blur(10px);
 }
@@ -541,7 +541,7 @@ section { padding: 120px 0; position: relative; }
   display: block;
   line-height: 1;
   color: var(--cyan);
-  text-shadow: 0 0 15px rgba(0, 242, 255, 0.5);
+  text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
 }
 .about-media .badge span {
   font-size: 0.78rem;
@@ -598,7 +598,7 @@ section { padding: 120px 0; position: relative; }
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(450px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 242, 255, 0.12), transparent 45%);
+  background: radial-gradient(450px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(56, 189, 248, 0.12), transparent 45%);
   opacity: 0;
   transition: opacity 0.3s;
   pointer-events: none;
@@ -633,17 +633,17 @@ section { padding: 120px 0; position: relative; }
   place-items: center;
   font-size: 1.8rem;
   color: var(--cyan);
-  background: rgba(0, 242, 255, 0.08);
-  border: 1px solid rgba(0, 242, 255, 0.2);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.2);
   margin-bottom: 26px;
   transition: all 0.3s;
-  box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
 }
 .card:hover .ic {
   background: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 100%);
   color: #fff;
   transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 0 30px rgba(0, 242, 255, 0.5);
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
 }
 .card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; color: #fff; }
 .card p { margin: 0; font-size: 1rem; color: var(--text-sub); line-height: 1.65; }
@@ -686,7 +686,7 @@ section { padding: 120px 0; position: relative; }
 .band .st:hover {
   transform: translateY(-5px);
   border-color: var(--gold);
-  box-shadow: 0 10px 30px rgba(244, 196, 48, 0.15);
+  box-shadow: 0 10px 30px rgba(223, 190, 111, 0.15);
 }
 .band .st strong {
   font-family: var(--display);
@@ -695,7 +695,7 @@ section { padding: 120px 0; position: relative; }
   display: block;
   line-height: 1;
   color: #fff;
-  text-shadow: 0 0 25px rgba(0, 242, 255, 0.4);
+  text-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
 }
 .band .st span {
   color: rgba(255, 255, 255, 0.8);
@@ -732,7 +732,7 @@ section { padding: 120px 0; position: relative; }
   background: linear-gradient(135deg, var(--blue) 0%, var(--cyan-deep) 100%);
   color: #fff;
   border-color: var(--cyan);
-  box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
   transform: translateY(-2px);
 }
 .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
@@ -768,7 +768,7 @@ section { padding: 120px 0; position: relative; }
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--gold);
-  text-shadow: 0 0 10px rgba(244, 196, 48, 0.5);
+  text-shadow: 0 0 10px rgba(223, 190, 111, 0.5);
 }
 .project .ov h4 {
   color: #fff;
@@ -784,7 +784,7 @@ section { padding: 120px 0; position: relative; }
   top: 22px; right: 22px;
   width: 48px; height: 48px;
   border-radius: 50%;
-  background: rgba(0, 242, 255, 0.2);
+  background: rgba(56, 189, 248, 0.2);
   backdrop-filter: blur(10px);
   border: 1px solid var(--cyan);
   display: grid;
@@ -795,7 +795,7 @@ section { padding: 120px 0; position: relative; }
   transform: translateY(-10px) rotate(-45deg);
   transition: all 0.4s var(--ease);
   z-index: 5;
-  box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
 }
 .project:hover .go { opacity: 1; transform: none; background: var(--cyan); color: #000; }
 
@@ -822,13 +822,13 @@ section { padding: 120px 0; position: relative; }
   aspect-ratio: 1/1;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, rgba(0, 242, 255, 0.1), rgba(10, 102, 194, 0.25));
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(10, 102, 194, 0.25));
   color: var(--cyan);
   font-family: var(--display);
   font-weight: 900;
   font-size: 3rem;
   letter-spacing: 0.02em;
-  text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
 }
 .member .info { padding: 26px 20px; }
 .member .info h4 { margin: 0; font-size: 1.25rem; font-weight: 800; color: #fff; }
@@ -895,11 +895,11 @@ section { padding: 120px 0; position: relative; }
   border-radius: 16px;
   display: grid;
   place-items: center;
-  background: rgba(0, 242, 255, 0.08);
-  border: 1px solid rgba(0, 242, 255, 0.2);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.2);
   color: var(--cyan);
   font-size: 1.4rem;
-  box-shadow: 0 0 20px rgba(0, 242, 255, 0.15);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
 }
 .info-row .lb { font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 700; }
 .info-row .vl { font-size: 1.15rem; color: #fff; font-weight: 700; margin-top: 4px; }
@@ -908,7 +908,7 @@ section { padding: 120px 0; position: relative; }
 
 .form, .apply-card {
   padding: 44px;
-  box-shadow: var(--shadow-lg), 0 0 40px rgba(0, 242, 255, 0.05);
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(56, 189, 248, 0.05);
 }
 .form .row, .apply-card .row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .field { margin-bottom: 20px; }
@@ -935,7 +935,7 @@ section { padding: 120px 0; position: relative; }
 .field input:focus, .field textarea:focus, .field select:focus {
   outline: none;
   border-color: var(--cyan);
-  box-shadow: 0 0 0 3px rgba(0, 242, 255, 0.2), 0 0 20px rgba(0, 242, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2), 0 0 20px rgba(56, 189, 248, 0.2);
   background: rgba(11, 23, 42, 0.9);
 }
 .field select option { background: var(--bg-dark); color: #fff; }
@@ -991,7 +991,7 @@ section { padding: 120px 0; position: relative; }
   border: 3px solid var(--cyan);
   box-shadow: 0 0 15px var(--cyan);
 }
-.tl .yr { font-family: var(--display); font-weight: 900; color: var(--gold); font-size: 1.2rem; text-shadow: 0 0 10px rgba(244, 196, 48, 0.4); }
+.tl .yr { font-family: var(--display); font-weight: 900; color: var(--gold); font-size: 1.2rem; text-shadow: 0 0 10px rgba(223, 190, 111, 0.4); }
 .tl h4 { margin: 4px 0 8px; font-size: 1.3rem; font-weight: 800; color: #fff; }
 .tl p { margin: 0; font-size: 1rem; color: var(--text-sub); }
 .ach-side { display: grid; gap: 20px; }
@@ -1001,11 +1001,11 @@ section { padding: 120px 0; position: relative; }
   border-radius: 16px;
   display: grid;
   place-items: center;
-  background: rgba(244, 196, 48, 0.1);
-  border: 1px solid rgba(244, 196, 48, 0.3);
+  background: rgba(223, 190, 111, 0.1);
+  border: 1px solid rgba(223, 190, 111, 0.3);
   color: var(--gold);
   font-size: 1.5rem;
-  box-shadow: 0 0 20px rgba(244, 196, 48, 0.2);
+  box-shadow: 0 0 20px rgba(223, 190, 111, 0.2);
 }
 .ach-hl h4 { margin: 0 0 4px; font-size: 1.2rem; font-weight: 800; color: #fff; }
 .ach-hl p { margin: 0; font-size: 0.98rem; color: var(--text-sub); }
@@ -1030,11 +1030,11 @@ section { padding: 120px 0; position: relative; }
 .impact-head .lead { font-size: 1.2rem; color: var(--text-sub); margin: 0; line-height: 1.7; }
 .impact-stat {
   text-align: center;
-  background: linear-gradient(135deg, rgba(0, 242, 255, 0.15) 0%, rgba(10, 102, 194, 0.3) 100%);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(10, 102, 194, 0.3) 100%);
   border: 1px solid var(--cyan);
   border-radius: var(--radius-xl);
   padding: 38px 28px;
-  box-shadow: 0 0 40px rgba(0, 242, 255, 0.2);
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
 }
 .impact-stat strong { font-family: var(--display); font-size: 3.6rem; font-weight: 900; display: block; line-height: 1; color: var(--cyan); text-shadow: 0 0 20px var(--cyan); }
 .impact-stat span { font-size: 0.95rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; color: #fff; margin-top: 10px; display: block; }
@@ -1044,7 +1044,7 @@ section { padding: 120px 0; position: relative; }
 .jobs { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 960px; margin: 0 auto 60px; }
 .job { display: flex; justify-content: space-between; gap: 28px; align-items: center; padding: 32px 36px; }
 .job .chips { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
-.chip { font-size: 0.76rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--cyan); background: rgba(0, 242, 255, 0.1); padding: 6px 14px; border-radius: 99px; border: 1px solid rgba(0, 242, 255, 0.2); }
+.chip { font-size: 0.76rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--cyan); background: rgba(56, 189, 248, 0.1); padding: 6px 14px; border-radius: 99px; border: 1px solid rgba(56, 189, 248, 0.2); }
 .job h4 { margin: 0 0 8px; font-size: 1.35rem; font-weight: 800; color: #fff; }
 .job p { margin: 0; color: var(--text-sub); font-size: 1rem; max-width: 65ch; }
 .job .apply-btn { flex: 0 0 auto; }
@@ -1147,14 +1147,14 @@ section { padding: 120px 0; position: relative; }
   border-radius: 14px;
   background: linear-gradient(135deg, var(--blue) 0%, var(--cyan-deep) 100%);
   color: #fff;
-  border: 1px solid rgba(0, 242, 255, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.3);
   cursor: pointer;
   display: grid;
   place-items: center;
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s var(--ease);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 15px rgba(0, 242, 255, 0.3);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 15px rgba(56, 189, 248, 0.3);
   z-index: 90;
   font-size: 1.2rem;
 }
@@ -1187,8 +1187,8 @@ section { padding: 120px 0; position: relative; }
     background: rgba(7, 14, 27, 0.95);
     padding: 18px;
     gap: 6px;
-    box-shadow: var(--shadow-lg), 0 0 30px rgba(0, 242, 255, 0.15);
-    border: 1px solid rgba(0, 242, 255, 0.2);
+    box-shadow: var(--shadow-lg), 0 0 30px rgba(56, 189, 248, 0.15);
+    border: 1px solid rgba(56, 189, 248, 0.2);
     border-radius: var(--radius-lg);
     backdrop-filter: blur(25px);
     transform: translateY(-15px);
@@ -1226,7 +1226,7 @@ section { padding: 120px 0; position: relative; }
 .spline-badge, .spline-controls {
   background: rgba(11, 23, 42, 0.75);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(0, 242, 255, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.3);
   border-radius: 999px;
   padding: 8px 18px;
   display: flex;
@@ -1234,14 +1234,14 @@ section { padding: 120px 0; position: relative; }
   gap: 10px;
   font-size: 0.8rem;
   color: #e2e8f0;
-  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5), 0 0 15px rgba(0, 242, 255, 0.15);
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5), 0 0 15px rgba(56, 189, 248, 0.15);
   pointer-events: auto;
 }
 .spline-logo-dot {
   width: 10px; height: 10px;
-  background: #00f2ff;
+  background: #38bdf8;
   border-radius: 50%;
-  box-shadow: 0 0 10px #00f2ff;
+  box-shadow: 0 0 10px #38bdf8;
   animation: pulseNeon 2s infinite;
 }
 .spline-tip {
@@ -1261,10 +1261,10 @@ section { padding: 120px 0; position: relative; }
   transition: all 0.2s;
 }
 .spline-btn:hover {
-  background: #00f2ff;
+  background: #38bdf8;
   color: #030712;
-  border-color: #00f2ff;
-  box-shadow: 0 0 12px #00f2ff;
+  border-color: #38bdf8;
+  box-shadow: 0 0 12px #38bdf8;
 }
 @media (max-width: 768px) {
   .spline-ui-overlay { bottom: 12px; left: 12px; right: 12px; }
@@ -1299,10 +1299,10 @@ section { padding: 120px 0; position: relative; }
     <div id="hero3d-container"></div>
     <div class="spline-ui-overlay">
       <div class="spline-badge">
-        <span class="spline-logo-dot"></span>
-        <strong>Spline™ Retrofuturistic Glass Matrix</strong>
+        <span class="spline-logo-dot" style="background:#dfbe6f;box-shadow:0 0 10px #dfbe6f;"></span>
+        <strong>Turnkey Civil Infrastructure Diorama</strong>
         <span class="divider" style="opacity:0.3">|</span>
-        <span style="color:#00f2ff">Live WebGL Studio</span>
+        <span style="color:#dfbe6f">Live 3D Architectural Studio</span>
       </div>
       <div class="spline-controls">
         <span class="spline-tip"><i class="fa fa-hand-pointer-o"></i> Drag to Orbit</span>
@@ -1868,7 +1868,7 @@ function initTiltCards() {
   });
 }
 
-/* ---- Three.js Spline™ Retrofuturistic Glass Refraction & Interactive Studio Engine ---- */
+/* ---- Three.js Turnkey Civil Infrastructure & Architectural Diorama Showcase ---- */
 function initThreeJS() {
   var container = document.getElementById("hero3d-container");
   if (!container || !window.THREE) return;
@@ -1876,17 +1876,17 @@ function initThreeJS() {
     var width = window.innerWidth;
     var height = window.innerHeight;
     var scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x030712, 0.005);
+    scene.fog = new THREE.FogExp2(0x060a14, 0.0045);
     
-    var camera = new THREE.PerspectiveCamera(55, width / height, 0.1, 1000);
-    camera.position.set(0, -42, 50);
+    var camera = new THREE.PerspectiveCamera(54, width / height, 0.1, 1000);
+    camera.position.set(0, -45, 52);
     camera.lookAt(0, 4, 0);
 
     var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(width, height);
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.2;
+    renderer.toneMappingExposure = 1.3;
     container.appendChild(renderer.domElement);
 
     var infraGroup = new THREE.Group();
@@ -1894,164 +1894,193 @@ function initThreeJS() {
     infraGroup.rotation.x = -Math.PI / 2.3;
     infraGroup.position.y = -6;
 
-    /* 1. Spline Retrofuturistic Isometric Base / Podium */
-    var podiumGeo = new THREE.CylinderGeometry(58, 62, 3, 40);
-    var podiumMat = new THREE.MeshStandardMaterial({
-      color: 0x070e1b,
-      metalness: 0.9,
+    /* 1. Sturdy Architectural Slate & Bronze Podium Island */
+    var podiumTopGeo = new THREE.CylinderGeometry(58, 60, 4, 48);
+    var podiumTopMat = new THREE.MeshStandardMaterial({
+      color: 0x0c1424,
+      metalness: 0.8,
       roughness: 0.2,
-      emissive: 0x020813
+      emissive: 0x040810
     });
-    var podium = new THREE.Mesh(podiumGeo, podiumMat);
-    podium.position.set(0, 0, -3);
-    podium.rotation.x = Math.PI / 2;
-    infraGroup.add(podium);
+    var podiumTop = new THREE.Mesh(podiumTopGeo, podiumTopMat);
+    podiumTop.position.set(0, 0, -3);
+    podiumTop.rotation.x = Math.PI / 2;
+    infraGroup.add(podiumTop);
 
-    /* Glowing Neon Ring around Podium */
-    var ringGeoBase = new THREE.TorusGeometry(60, 0.5, 16, 100);
-    var ringMatBase = new THREE.MeshBasicMaterial({ color: 0x00f2ff, transparent: true, opacity: 0.8 });
-    var ringBase = new THREE.Mesh(ringGeoBase, ringMatBase);
-    ringBase.position.set(0, 0, -1.4);
-    infraGroup.add(ringBase);
-
-    /* 2. Retrofuturistic Cyber Grid Floor */
-    var gridGeo = new THREE.PlaneGeometry(260, 200, 50, 40);
-    var gridMat = new THREE.MeshBasicMaterial({
-      color: 0x005588,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.25
+    var podiumBaseGeo = new THREE.CylinderGeometry(52, 46, 7, 48);
+    var podiumBaseMat = new THREE.MeshStandardMaterial({
+      color: 0x060a14,
+      metalness: 0.9,
+      roughness: 0.3
     });
-    var gridMesh = new THREE.Mesh(gridGeo, gridMat);
-    gridMesh.position.z = -12;
-    infraGroup.add(gridMesh);
+    var podiumBase = new THREE.Mesh(podiumBaseGeo, podiumBaseMat);
+    podiumBase.position.set(0, 0, -8.5);
+    podiumBase.rotation.x = Math.PI / 2;
+    infraGroup.add(podiumBase);
 
-    /* 3. Spline Frosted Glass Refraction Skyscraper Matrix */
-    // Using MeshPhysicalMaterial to emulate Spline's glowing glass refraction
+    /* Brushed Gold Architectural Edge Ring */
+    var trimGeo = new THREE.TorusGeometry(59.5, 0.5, 16, 100);
+    var trimMat = new THREE.MeshStandardMaterial({
+      color: 0xdfbe6f,
+      metalness: 0.95,
+      roughness: 0.15,
+      emissive: 0x3a2e10,
+      emissiveIntensity: 0.5
+    });
+    var trimRing = new THREE.Mesh(trimGeo, trimMat);
+    trimRing.position.set(0, 0, -1.2);
+    infraGroup.add(trimRing);
+
+    /* 2. Architectural Skyscrapers & Governance Towers (Buildings & Masonry) */
     var glassMat = new THREE.MeshPhysicalMaterial({
-      color: 0x0b1d33,
-      emissive: 0x001122,
-      roughness: 0.1,
-      metalness: 0.1,
-      transmission: 0.85, // Real glass refraction
+      color: 0x1e293b,
+      emissive: 0x081020,
+      roughness: 0.12,
+      metalness: 0.25,
+      transmission: 0.82,
       ior: 1.5,
-      thickness: 2.5,
+      thickness: 3.0,
       transparent: true,
-      opacity: 0.9,
+      opacity: 0.92,
       reflectivity: 0.9,
       clearcoat: 1.0,
       clearcoatRoughness: 0.1
     });
-    var glassWireMat = new THREE.MeshBasicMaterial({ color: 0x00f2ff, wireframe: true, transparent: true, opacity: 0.35 });
 
-    var towers = [];
+    var coreMat = new THREE.MeshStandardMaterial({
+      color: 0xfffaed,
+      emissive: 0xdfbe6f,
+      emissiveIntensity: 0.35,
+      roughness: 0.5,
+      metalness: 0.4
+    });
+
     var towerCoords = [
-      [-35, -25, 18], [-18, -45, 26], [12, -35, 32], [35, -20, 20], [50, -40, 28],
-      [-48, -8, 22], [-25, 5, 30], [8, -8, 38], [28, 8, 25], [45, -8, 18],
-      [-40, 22, 20], [-12, 28, 28], [22, 22, 34], [40, 28, 22], [0, -22, 45]
+      [-36, -24, 20], [-18, -44, 28], [14, -36, 34], [36, -22, 22], [48, -40, 30],
+      [-46, -8, 24], [-24, 6, 32], [8, -8, 40], [28, 8, 26], [45, -8, 20],
+      [-38, 22, 22], [-12, 28, 30], [22, 22, 36], [40, 28, 24], [0, -22, 48]
     ];
+
     towerCoords.forEach(function(pos) {
       var w = 7 + Math.random() * 4;
       var d = 7 + Math.random() * 4;
       var h = pos[2];
+      
+      /* Outer Architectural Glass Shell */
       var geo = new THREE.BoxGeometry(w, d, h);
       var mesh = new THREE.Mesh(geo, glassMat);
-      var wire = new THREE.Mesh(geo, glassWireMat);
-      mesh.add(wire);
-      mesh.position.set(pos[0], pos[1], h / 2);
+      mesh.position.set(pos[0], pos[1], h / 2 - 1);
       infraGroup.add(mesh);
-      towers.push(mesh);
+
+      /* Inner Warm Illuminated Structural Core */
+      var coreGeo = new THREE.BoxGeometry(w * 0.65, d * 0.65, h * 0.9);
+      var coreMesh = new THREE.Mesh(coreGeo, coreMat);
+      coreMesh.position.set(pos[0], pos[1], (h * 0.9) / 2 - 1);
+      infraGroup.add(coreMesh);
     });
 
-    /* 4. Glowing Neon Core Tanks (WTP / STP Refraction Elements) */
-    var neonCyanMat = new THREE.MeshBasicMaterial({ color: 0x00f2ff, transparent: true, opacity: 0.85 });
-    var neonGoldMat = new THREE.MeshBasicMaterial({ color: 0xf4c430, transparent: true, opacity: 0.85 });
-    var neonPurpleMat = new THREE.MeshBasicMaterial({ color: 0xa855f7, transparent: true, opacity: 0.85 });
-    var neonMats = [neonCyanMat, neonGoldMat, neonPurpleMat];
+    /* 3. Municipal Water Towers & Treatment Reservoirs (Water Supply, WTP, STP) */
+    var concreteMat = new THREE.MeshStandardMaterial({
+      color: 0xe2e8f0,
+      roughness: 0.35,
+      metalness: 0.1,
+      emissive: 0x111827
+    });
 
-    var cylCoords = [
-      [-22, -18, 14], [22, -18, 14], [-8, 18, 16], [32, 18, 12], [-40, -40, 12]
+    var waterMat = new THREE.MeshPhysicalMaterial({
+      color: 0x0284c7,
+      transmission: 0.9,
+      roughness: 0.05,
+      metalness: 0.1,
+      ior: 1.33,
+      transparent: true,
+      opacity: 0.85
+    });
+
+    var waterResCoords = [
+      [-26, -18, 16], [24, -18, 16], [-10, 20, 18], [34, 18, 14]
     ];
-    cylCoords.forEach(function(pos, idx) {
-      var r = 4.5 + Math.random() * 2;
+
+    waterResCoords.forEach(function(pos) {
+      var r = 5.5;
       var h = pos[2];
-      var geo = new THREE.CylinderGeometry(r, r, h, 24);
-      var mat = neonMats[idx % neonMats.length];
-      var mesh = new THREE.Mesh(geo, mat);
-      mesh.rotation.x = Math.PI / 2;
-      mesh.position.set(pos[0], pos[1], h / 2);
-      infraGroup.add(mesh);
+      
+      /* Concrete Reservoir Wall Structure */
+      var tankGeo = new THREE.CylinderGeometry(r, r, h, 32);
+      var tankMesh = new THREE.Mesh(tankGeo, concreteMat);
+      tankMesh.rotation.x = Math.PI / 2;
+      tankMesh.position.set(pos[0], pos[1], h / 2 - 1);
+      infraGroup.add(tankMesh);
+
+      /* Shimmering Azure Water Surface inside Tank */
+      var waterGeo = new THREE.CylinderGeometry(r - 0.6, r - 0.6, 2, 32);
+      var waterMesh = new THREE.Mesh(waterGeo, waterMat);
+      waterMesh.rotation.x = Math.PI / 2;
+      waterMesh.position.set(pos[0], pos[1], h - 1.5);
+      infraGroup.add(waterMesh);
     });
 
-    /* 5. Floating Spline Geometric Orbs & Capsules (Retrofuturistic BG Elements) */
-    var floatingOrbs = [];
-    for (var i = 0; i < 16; i++) {
-      var r = 1.5 + Math.random() * 2.5;
-      var geoOrb = Math.random() > 0.5 ? new THREE.SphereGeometry(r, 24, 24) : new THREE.TorusGeometry(r, r * 0.3, 16, 32);
-      var matOrb = neonMats[i % neonMats.length];
-      var orb = new THREE.Mesh(geoOrb, matOrb);
-      orb.position.set((Math.random() - 0.5) * 120, (Math.random() - 0.5) * 100, 15 + Math.random() * 35);
-      orb.userData = {
-        speed: 0.02 + Math.random() * 0.03,
-        offset: Math.random() * Math.PI * 2,
-        baseZ: orb.position.z
+    /* 4. Elevated Highway Corridor & Bridge Viaduct (Roads & Highways) */
+    var highwayGroup = new THREE.Group();
+    infraGroup.add(highwayGroup);
+
+    /* Sweeping Elevated Roadway Arch */
+    var roadGeo = new THREE.TorusGeometry(42, 3.2, 4, 60, Math.PI * 0.75);
+    var roadMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.7, metalness: 0.1 });
+    var roadMesh = new THREE.Mesh(roadGeo, roadMat);
+    roadMesh.position.set(-5, 0, 14);
+    roadMesh.rotation.z = -Math.PI * 0.15;
+    highwayGroup.add(roadMesh);
+
+    /* Highway Guardrail Trim */
+    var railGeo = new THREE.TorusGeometry(45.2, 0.4, 4, 60, Math.PI * 0.75);
+    var railMat = new THREE.MeshStandardMaterial({ color: 0xdfbe6f, roughness: 0.2, metalness: 0.8 });
+    var railMesh = new THREE.Mesh(railGeo, railMat);
+    railMesh.position.set(-5, 0, 14.5);
+    railMesh.rotation.z = -Math.PI * 0.15;
+    highwayGroup.add(railMesh);
+
+    /* Vehicular Traffic Light Stream along Highway */
+    var vehicles = [];
+    var vehicleColors = [0xfff8ed, 0xdfbe6f, 0xef4444];
+    for (var v = 0; v < 28; v++) {
+      var vGeo = new THREE.SphereGeometry(0.7, 12, 12);
+      var vColor = vehicleColors[v % vehicleColors.length];
+      var vMat = new THREE.MeshBasicMaterial({ color: vColor });
+      var vMesh = new THREE.Mesh(vGeo, vMat);
+      
+      var angle = (v / 28) * (Math.PI * 0.7);
+      vMesh.userData = {
+        angle: angle,
+        speed: 0.004 + Math.random() * 0.003,
+        radius: 42 + (Math.random() - 0.5) * 4
       };
-      infraGroup.add(orb);
-      floatingOrbs.push(orb);
+      highwayGroup.add(vMesh);
+      vehicles.push(vMesh);
     }
 
-    /* 6. Telemetry Particle Streams */
-    var pCount = 900;
-    var pGeo = new THREE.BufferGeometry();
-    var pPos = new Float32Array(pCount * 3);
-    for (var j = 0; j < pCount * 3; j += 3) {
-      pPos[j] = (Math.random() - 0.5) * 220;
-      pPos[j + 1] = (Math.random() - 0.5) * 160;
-      pPos[j + 2] = Math.random() * 60;
-    }
-    pGeo.setAttribute("position", new THREE.BufferAttribute(pPos, 3));
-    var pMat = new THREE.PointsMaterial({ color: 0x00f2ff, size: 1.2, transparent: true, opacity: 0.7 });
-    var particles = new THREE.Points(pGeo, pMat);
-    infraGroup.add(particles);
-
-    /* 7. Holographic Blueprint Orbital Rings */
-    var ringGroup = new THREE.Group();
-    ringGroup.position.set(0, 0, 42);
-    infraGroup.add(ringGroup);
-
-    var rGeo1 = new THREE.TorusGeometry(48, 0.4, 12, 100);
-    var rMat1 = new THREE.MeshBasicMaterial({ color: 0x00f2ff, wireframe: true, transparent: true, opacity: 0.35 });
-    var ring1 = new THREE.Mesh(rGeo1, rMat1);
-    ringGroup.add(ring1);
-
-    var rGeo2 = new THREE.TorusGeometry(40, 0.5, 12, 80);
-    var rMat2 = new THREE.MeshBasicMaterial({ color: 0xf4c430, wireframe: true, transparent: true, opacity: 0.4 });
-    var ring2 = new THREE.Mesh(rGeo2, rMat2);
-    ring2.rotation.x = 0.6;
-    ringGroup.add(ring2);
-
-    /* Spline Studio Lighting Setup */
-    var ambient = new THREE.AmbientLight(0xffffff, 0.85);
+    /* 5. Professional Architectural Gallery Lighting */
+    var ambient = new THREE.AmbientLight(0xffffff, 0.9);
     scene.add(ambient);
     
-    var blueLight = new THREE.PointLight(0x00f2ff, 5, 300);
-    blueLight.position.set(0, 20, 70);
-    scene.add(blueLight);
+    var sunLight = new THREE.PointLight(0xfffaed, 5.5, 350);
+    sunLight.position.set(60, 80, 70);
+    scene.add(sunLight);
 
-    var goldLight = new THREE.PointLight(0xf4c430, 4, 250);
-    goldLight.position.set(70, -40, 50);
-    scene.add(goldLight);
+    var skyFill = new THREE.PointLight(0x38bdf8, 4.0, 300);
+    skyFill.position.set(-60, 40, 50);
+    scene.add(skyFill);
 
-    var purpleLight = new THREE.PointLight(0xa855f7, 4, 250);
-    purpleLight.position.set(-70, 30, 50);
-    scene.add(purpleLight);
+    var bronzeRim = new THREE.PointLight(0xdfbe6f, 4.5, 300);
+    bronzeRim.position.set(0, -70, 45);
+    scene.add(bronzeRim);
 
-    /* Interactive Spline Controls: Mouse Drag Orbiting & Zooming */
+    /* 6. Interactive Studio Controls: Smooth Orbiting & Zooming */
     var isDragging = false;
     var previousMousePosition = { x: 0, y: 0 };
     var targetRotX = -Math.PI / 2.3;
     var targetRotY = 0;
-    var cameraDist = 50;
+    var cameraDist = 52;
 
     container.style.cursor = "grab";
     container.addEventListener("mousedown", function(e) {
@@ -2068,12 +2097,11 @@ function initThreeJS() {
         targetRotX = Math.max(-Math.PI * 0.8, Math.min(-0.2, targetRotX));
         previousMousePosition = { x: e.clientX, y: e.clientY };
       } else {
-        // Subtle hover parallax
         var rect = container.getBoundingClientRect();
         var hx = (e.clientX - rect.left) / rect.width * 2 - 1;
         var hy = -(e.clientY - rect.top) / rect.height * 2 + 1;
-        targetRotY = hx * 0.2;
-        targetRotX = -Math.PI / 2.3 - hy * 0.15;
+        targetRotY = hx * 0.15;
+        targetRotX = -Math.PI / 2.3 - hy * 0.12;
       }
     });
     window.addEventListener("mouseup", function() {
@@ -2083,7 +2111,7 @@ function initThreeJS() {
     container.addEventListener("wheel", function(e) {
       e.preventDefault();
       cameraDist += e.deltaY * 0.03;
-      cameraDist = Math.max(25, Math.min(90, cameraDist));
+      cameraDist = Math.max(28, Math.min(85, cameraDist));
     }, { passive: false });
 
     var resetBtn = document.getElementById("splineResetBtn");
@@ -2091,36 +2119,26 @@ function initThreeJS() {
       resetBtn.addEventListener("click", function() {
         targetRotX = -Math.PI / 2.3;
         targetRotY = 0;
-        cameraDist = 50;
+        cameraDist = 52;
       });
     }
 
     var time = 0;
     function animate() {
       requestAnimationFrame(animate);
-      time += 0.02;
+      time += 0.015;
 
-      /* Animate Grid Floor Waves */
-      var pos = gridGeo.attributes.position;
-      for (var k = 0; k < pos.count; k++) {
-        var vx = pos.getX(k);
-        var vy = pos.getY(k);
-        pos.setZ(k, Math.sin(vx * 0.06 + time) * 2.5 + Math.cos(vy * 0.06 + time * 0.8) * 2.5);
-      }
-      pos.needsUpdate = true;
-
-      /* Animate Floating Spline Orbs */
-      floatingOrbs.forEach(function(orb) {
-        orb.position.z = orb.userData.baseZ + Math.sin(time * 2 + orb.userData.offset) * 4;
-        orb.rotation.x += orb.userData.speed;
-        orb.rotation.y += orb.userData.speed;
+      /* Animate Vehicular Traffic Stream along Expressway */
+      vehicles.forEach(function(vMesh) {
+        vMesh.userData.angle += vMesh.userData.speed;
+        if (vMesh.userData.angle > Math.PI * 0.72) vMesh.userData.angle = 0;
+        var a = vMesh.userData.angle - Math.PI * 0.15;
+        var r = vMesh.userData.radius;
+        vMesh.position.set(-5 + Math.cos(a) * r, Math.sin(a) * r, 15.5);
       });
 
-      /* Animate Blueprint Rings & Particles */
-      ring1.rotation.z = time * 0.2;
-      ring2.rotation.y = time * 0.25;
-      ring2.rotation.z = -time * 0.15;
-      particles.rotation.z = -time * 0.04;
+      /* Gentle Shimmering Water Animation */
+      infraGroup.rotation.z = Math.sin(time * 0.5) * 0.02;
 
       /* Spring Damping Camera & Orbit Rotation */
       infraGroup.rotation.x += (targetRotX - infraGroup.rotation.x) * 0.08;
