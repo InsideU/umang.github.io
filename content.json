@@ -50,12 +50,12 @@
     { "name": "Prashant Kumar", "role": "Manager, Finance", "image": "img/team/04 - Prashant Kumar - Manager, Finance.jpg" }
   ],
   "portfolio": [
-    { "title": "District WTP Facility (50 MLD)", "category": "WTP & STP", "image": "img/projects/01 - Rural Water Tower - Water Towers.jpg" },
-    { "title": "State Highway 54 Corridor", "category": "Roads & Highways", "image": "img/projects/06 - Water Supply Network - Supply Networks.jpg" },
-    { "title": "Municipal Sewage Treatment Plant", "category": "WTP & STP", "image": "img/projects/02 - Overhead Reservoir - Reservoirs.jpg" },
-    { "title": "Public Sector Secretariat Complex", "category": "Buildings", "image": "img/projects/03 - Dansar Water Tower - Water Towers.jpg" },
-    { "title": "Zonal Water Supply Reservoir", "category": "Water Supply", "image": "img/projects/05 - Jalalgarh Block Tower - Reservoirs.jpg" },
-    { "title": "Inter-District Water Grid Network", "category": "Supply Grids", "image": "img/projects/04 - Kankhudiya Water Tower - Water Towers.jpg" }
+    { "title": "District WTP Facility (50 MLD)", "category": "WTP & STP", "image": "img/portfolio/1.jpg" },
+    { "title": "State Highway 54 Corridor", "category": "Roads & Highways", "image": "img/portfolio/6.jpg" },
+    { "title": "Municipal Sewage Treatment Plant", "category": "WTP & STP", "image": "img/portfolio/2.jpg" },
+    { "title": "Public Sector Secretariat Complex", "category": "Buildings", "image": "img/portfolio/3.jpg" },
+    { "title": "Zonal Water Supply Reservoir", "category": "Water Supply", "image": "img/portfolio/5.jpg" },
+    { "title": "Inter-District Water Grid Network", "category": "Supply Grids", "image": "img/portfolio/4.jpg" }
   ],
   "process": {
     "intro": "A rigorous, accountable methodology designed for complex government and municipal infrastructure works.",
